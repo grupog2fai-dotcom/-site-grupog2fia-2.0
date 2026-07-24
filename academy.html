@@ -1,170 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>G2F Academy & Partner Program | Grupo G2F AI</title>
-    <meta name="description" content="G2F Academy: Formação técnica e executiva em IA para PMEs e o programa de parceiros certificados do Grupo G2F AI."/>
-    <meta property="og:title" content="G2F Academy & Partner Program | Grupo G2F AI" />
-    <meta property="og:description" content="G2F Academy: Formação técnica e executiva em IA para PMEs e o programa de parceiros certificados do Grupo G2F AI." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://g2f.ai/academy.html" />
-    <link rel="canonical" href="https://g2f.ai/academy.html" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-
-    <script id="tailwind-config">
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#c46244",
-                        "primary-hover": "#b6553a",
-                        "surface": "#ffffff",
-                        "surface-container-high": "#f2efe9",
-                        "surface-container-low": "#f8f6f0",
-                        "surface-container": "#ffffff",
-                        "on-surface": "#1a1816",
-                        "on-surface-variant": "#756e65",
-                        "outline-variant": "rgba(196, 98, 68, 0.18)"
-                    },
-                    fontFamily: {
-                        "sans": ["Manrope", "sans-serif"],
-                        "serif": ["Playfair Display", "serif"]
-                    }
-                }
-            }
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy - G2F</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <style>
-        body { background-color: #f8f6f0; color: #1a1816; font-family: 'Manrope', sans-serif; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        .copper-hairline { border: 1px solid rgba(196, 98, 68, 0.18); }
-        .whatsapp-float {
-            position: fixed; right: 24px; bottom: 24px; width: 60px; height: 60px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; background-color: #25D366;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 9999; transition: all 0.3s ease;
+        :root {
+            --bg-obsidian: #050811;
+            --card-dark: #0f1726;
+            --card-elevated: #131d2e;
+            --text-primary: #ffffff;
+            --text-secondary: #e2e9f5;
+            --copper-base: #c46244;
+            --copper-light: #d46a4c;
+            --copper-hairline: rgba(196, 98, 68, 0.28);
         }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128C7E; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-obsidian);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        /* Header */
+        header { border-bottom: 1px solid var(--copper-hairline); padding: 1.5rem 0; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--copper-light); }
+        nav { display: flex; gap: 2rem; }
+        nav a { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--copper-light); }
+        .btn-copper { background: var(--copper-base); color: #fff; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s; }
+        .btn-copper:hover { background: var(--copper-light); }
+
+        /* Hero */
+        .hero { padding: 6rem 0; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto; }
+
+        /* Courses Grid */
+        .courses-section { padding: 4rem 0; }
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+        .course-card {
+            background: var(--card-dark);
+            border: 1px solid var(--copper-hairline);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .course-card:hover { transform: translateY(-5px); background: var(--card-elevated); }
+        .course-image { height: 200px; background: rgba(196, 98, 68, 0.05); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--copper-hairline); }
+        .course-image .material-symbols-outlined { font-size: 4rem; color: var(--copper-light); opacity: 0.8; }
+        .course-content { padding: 2.5rem; }
+        .course-tag { display: inline-block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--copper-light); margin-bottom: 1rem; border: 1px solid var(--copper-hairline); padding: 0.25rem 0.75rem; border-radius: 100px; }
+        .course-title { font-size: 1.5rem; margin-bottom: 1rem; }
+        .course-desc { color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem; }
+        .course-meta { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; color: var(--text-secondary); font-size: 0.9rem; }
+        .course-meta div { display: flex; align-items: center; gap: 0.5rem; }
+        .course-meta .material-symbols-outlined { font-size: 1.2rem; color: var(--copper-light); }
+        .guarantee { display: flex; align-items: center; gap: 0.5rem; color: var(--copper-light); font-size: 0.85rem; font-weight: 600; margin-top: 1.5rem; justify-content: center; }
+
+        /* Footer */
+        footer { border-top: 1px solid var(--copper-hairline); padding: 4rem 0 2rem; margin-top: 4rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+        .footer-col h4 { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-primary); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.75rem; }
+        .footer-col ul li a { color: var(--text-secondary); font-size: 0.9rem; transition: color 0.3s; }
+        .footer-col ul li a:hover { color: var(--copper-light); }
+        .copyright { text-align: center; color: var(--text-secondary); font-size: 0.85rem; padding-top: 2rem; border-top: 1px solid var(--copper-hairline); }
     </style>
 </head>
-<body class="overflow-x-hidden selection:bg-primary/30 selection:text-primary">
-
-    <!-- Header Navigation -->
-    <header class="sticky top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant">
-        <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center h-20">
-            <a href="index.html" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center">
-                    <span class="font-serif text-primary text-xl font-bold">G2F</span>
-                </div>
-                <div>
-                    <span class="font-bold text-xl tracking-tight text-on-surface block leading-none">GRUPO G2F <span class="text-primary font-serif italic">AI</span></span>
-                    <span class="text-[10px] tracking-widest text-on-surface-variant uppercase block">Para quem quer mais</span>
-                </div>
-            </a>
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-                <a href="index.html" class="text-on-surface hover:text-primary transition-colors">Início</a>
-                <a href="solucoes.html" class="text-on-surface hover:text-primary transition-colors">Soluções & Programas</a>
-                <a href="academy.html" class="text-primary font-bold border-b-2 border-primary pb-1">Academy</a>
-                <a href="academy.html#parceiros" class="text-on-surface hover:text-primary transition-colors">Comunidade & Parceiros</a>
-                <a href="sobre.html" class="text-on-surface hover:text-primary transition-colors">Sobre Nós</a>
-                <a href="blog.html" class="text-on-surface hover:text-primary transition-colors">Blog</a>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">G2F.</div>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="solucoes.html">Soluções</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="academy.html" class="active">Academy</a>
+                <a href="blog.html">Blog</a>
             </nav>
-            <div class="hidden lg:flex items-center gap-4">
-                <button aria-label="Inscrever na Academy" onclick="openLeadModal('G2F Academy')" class="bg-primary text-white hover:bg-primary-hover px-6 py-2.5 text-xs uppercase tracking-widest font-bold transition-all">
-                    Inscrever na Academy
-                </button>
-            </div>
+            <a href="#contato" class="btn-copper">Fale Conosco</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Banner -->
-        <section class="py-16 md:py-24 bg-surface-container-low border-b border-outline-variant">
-            <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-12 items-center">
-                <div class="md:col-span-7">
-                    <span class="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-3 block">PILAR LEARNING & COMUNIDADE</span>
-                    <h1 class="font-serif text-3xl md:text-5xl font-bold text-on-surface mb-6">
-                        G2F Academy: Formando a <span class="text-primary italic font-normal">Liderança de IA</span>
-                    </h1>
-                    <p class="text-on-surface-variant text-base md:text-lg mb-8 leading-relaxed">
-                        <strong>Formação executiva e técnica</strong> para empresários, gestores e consultores que buscam <strong>dominar a implementação de IA</strong>, <strong>automação</strong> e <strong>vendas digitais</strong> na prática.
-                    </p>
-                    <button aria-label="Matricular na Academy" onclick="openLeadModal('G2F Academy')" class="bg-primary text-white hover:bg-primary-hover px-8 py-4 font-bold text-xs uppercase tracking-widest transition-all shadow-sm">
-                        Matricular na Academy (R$ 197/mês)
-                    </button>
-                </div>
-                <div class="md:col-span-5 copper-hairline p-4 bg-surface shadow-sm">
-                    <img class="w-full h-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgab4LVhqFtAlSSCbwScP7Fpc7zHE1naPRxBZO44b5grJ06x3GPIqETxwswzwCiYB0OVWEtzmgSrKBgjH0EoqqOFr1IKZf_w4n8OEmkiW_G5rMdTmLfPKagvmaR9E5fXlqnKiRMu5RS0l9JdSUq6ECB2wmHwYoYWKbmdhDqEJ9cWqYJVBGIAeunDAG89d03uVrPjBwKMJERBLyTHXhdxXSnyF-7S0C08TLZhTsiIesbZ9dWR1dMbsxxW2sAkTyBb_K12mOuMH0z0kg" alt="Academy Image"/>
-                </div>
-            </div>
+        <section class="hero container">
+            <h1>G2F Academy</h1>
+            <p>Conhecimento prático e estratégico para líderes e empreendedores que buscam excelência operacional e domínio de mercado.</p>
         </section>
 
-        <!-- Partner Program Section -->
-        <section id="parceiros" class="py-20 bg-surface">
-            <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3 block">PILAR CLUB & PARCERIAS</span>
-                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-on-surface mb-6">G2F Partner Program</h2>
-                    <p class="text-on-surface-variant text-sm md:text-base leading-relaxed mb-6">
-                        <strong>PMEs, agências e consultores parceiros</strong> podem <strong>revender os produtos G2F AI</strong> na sua região com <strong>20% de comissão recorrente</strong>. Todo o <strong>trabalho técnico de entrega</strong> é realizado <strong>100% pelo time de engenharia</strong> da G2F AI.
-                    </p>
-                    <div class="space-y-3 text-xs font-semibold text-on-surface mb-8">
-                        <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Treinamento completo na G2F Academy incluso</p>
-                        <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> 20% de comissão direta por venda e mensalidade</p>
-                        <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Entrega e suporte 100% executados pela G2F (Garantia de 30 Dias)</p>
+        <section class="courses-section container">
+            <div class="courses-grid">
+                <!-- Curso 1 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <span class="material-symbols-outlined">campaign</span>
                     </div>
-                    <button aria-label="Tornar-se Parceiro G2F" onclick="openLeadModal('G2F Partner Program')" class="bg-primary text-white hover:bg-primary-hover px-8 py-4 font-bold text-xs uppercase tracking-widest transition-all shadow-sm">
-                        Quero me Tornar um Parceiro G2F
-                    </button>
+                    <div class="course-content">
+                        <span class="course-tag">Marketing</span>
+                        <h3 class="course-title">Formação em SEO Local</h3>
+                        <p class="course-desc">Domine as estratégias para posicionar negócios físicos no topo do Google e gerar fluxo constante de clientes.</p>
+                        <div class="course-meta">
+                            <div><span class="material-symbols-outlined">schedule</span> 40 Horas</div>
+                            <div><span class="material-symbols-outlined">school</span> Certificação</div>
+                        </div>
+                        <a href="#" class="btn-copper" style="display: block; text-align: center;">Acessar Curso</a>
+                        <div class="guarantee">
+                            <span class="material-symbols-outlined">verified_user</span>
+                            GARANTIA DE 30 DIAS
+                        </div>
+                    </div>
                 </div>
-                <div class="copper-hairline p-4 bg-surface-container-low shadow-sm">
-                    <img class="w-full h-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaJNmWAM1nZzOU2v_Uw91otHAhnF8T1mpRlcgkpk0QB4csKhNtfWrDuJFJ15DEm1-prQqOuiktPykG2iW8mfaQnpDaLWTOBpy-lZPXENrVDqHR7-ehTILVLLiTJvuSGiEZkcz43RxIGYkd127rhPWH3Eirja9clCLGRxjAGe2tuWBYmpPXsMusfgRGDojbPMnrk4seoI-LCUl_Rk2DYCQ390084gH1_z8XUgzvh_NpGxowo4PvaNOMAuEDw-8nWbIo7ctyDo1iUzQ3" alt="Partner Image"/>
+
+                <!-- Curso 2 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <span class="material-symbols-outlined">robot_2</span>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-tag">Tecnologia</span>
+                        <h3 class="course-title">Automação com IA</h3>
+                        <p class="course-desc">Aprenda a construir e implementar agentes inteligentes para qualificação de leads e atendimento automatizado.</p>
+                        <div class="course-meta">
+                            <div><span class="material-symbols-outlined">schedule</span> 35 Horas</div>
+                            <div><span class="material-symbols-outlined">school</span> Certificação</div>
+                        </div>
+                        <a href="#" class="btn-copper" style="display: block; text-align: center;">Acessar Curso</a>
+                        <div class="guarantee">
+                            <span class="material-symbols-outlined">verified_user</span>
+                            GARANTIA DE 30 DIAS
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <span class="material-symbols-outlined">analytics</span>
+                    </div>
+                    <div class="course-content">
+                        <span class="course-tag">Gestão</span>
+                        <h3 class="course-title">Masterclass: Conversão Total</h3>
+                        <p class="course-desc">Frameworks avançados de vendas, estruturação de CRM e gestão de pipeline para maximizar fechamentos.</p>
+                        <div class="course-meta">
+                            <div><span class="material-symbols-outlined">schedule</span> 20 Horas</div>
+                            <div><span class="material-symbols-outlined">school</span> Masterclass</div>
+                        </div>
+                        <a href="#" class="btn-copper" style="display: block; text-align: center;">Acessar Curso</a>
+                        <div class="guarantee">
+                            <span class="material-symbols-outlined">verified_user</span>
+                            GARANTIA DE 30 DIAS
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full pt-16 pb-12 bg-surface-container-low border-t border-outline-variant text-xs text-on-surface-variant">
-        <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
-            <p>Grupo G2F AI LTDA © 2026. Todos os direitos reservados.</p>
-            <a href="index.html" class="text-primary font-bold hover:underline">Voltar para Início</a>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">G2F.</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Engenharia comercial e inteligência de negócios para escalar sua operação.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Soluções</h4>
+                    <ul>
+                        <li><a href="solucoes.html">SEO Local Premium</a></li>
+                        <li><a href="solucoes.html">Agente WhatsApp IA</a></li>
+                        <li><a href="solucoes.html">Landing Page & Tráfego</a></li>
+                        <li><a href="solucoes.html">G2F Business OS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="sobre.html">Sobre a G2F</a></li>
+                        <li><a href="academy.html">Academy</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 G2F Inteligência de Negócios. Todos os direitos reservados.
+            </div>
         </div>
     </footer>
-
-    <!-- Lead Modal -->
-    <div id="leadModal" class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-surface border border-outline-variant max-w-lg w-full p-8 relative shadow-xl">
-            <button aria-label="Fechar Modal" onclick="closeLeadModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
-            <h3 class="font-serif text-2xl font-bold text-on-surface mb-2">Inscrição G2F Academy / Parceiro</h3>
-            <form onsubmit="handleLeadSubmit(event)" class="space-y-4">
-                <input type="text" id="leadName" required placeholder="Seu Nome Completo" class="w-full bg-surface-container-low border border-outline-variant text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
-                <input type="tel" id="leadPhone" required placeholder="Seu WhatsApp" class="w-full bg-surface-container-low border border-outline-variant text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
-                <input type="hidden" id="leadProduct" value="G2F Academy / Partner"/>
-                <button aria-label="Enviar Formulário" type="submit" class="w-full bg-primary text-white py-3.5 font-bold text-xs uppercase tracking-widest hover:bg-primary-hover transition-all">
-                    Enviar Inscrição via WhatsApp
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp -->
-    <a aria-label="Falar conosco pelo WhatsApp" href="https://wa.me/5531990000000?text=Ol%C3%A1!%20Tenho%20interesse%20na%20G2F%20Academy%20ou%20Partner%20Program." target="_blank" class="whatsapp-float">
-        <span class="whatsapp-icon"><svg viewBox="0 0 32 32"><path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.6-1.7A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.5 1 1-4.4-.3-.5A11 11 0 1 1 16 26zm6-8.3c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7 0a9 9 0 0 1-2.6-1.6 10 10 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5a.4.4 0 0 0 0-.4c0-.2-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.2 2.7 6.4 6.4 0 0 0 1.4 3.4c1.5 2.1 3.6 3.7 6.1 4.7.7.3 1.3.5 1.8.6.8.2 1.5.2 2.1.1.7-.1 2.2-.9 2.5-1.8s.3-1.6.2-1.8c-.1-.1-.3-.2-.6-.4z" fill="#FFF"/></svg></span>
-    </a>
-
-    <script>
-        function openLeadModal() { document.getElementById('leadModal').classList.remove('hidden'); }
-        function closeLeadModal() { document.getElementById('leadModal').classList.add('hidden'); }
-        function handleLeadSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('leadName').value;
-            const phone = document.getElementById('leadPhone').value;
-            window.open(`https://wa.me/5531990000000?text=${encodeURIComponent(`Olá! Meu nome é ${name} (${phone}) e quero me inscrever na G2F Academy / Partner Program.`)}`, '_blank');
-            closeLeadModal();
-        }
-    </script>
 </body>
 </html>

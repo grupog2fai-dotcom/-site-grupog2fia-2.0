@@ -1,242 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Sobre Nós | Grupo G2F AI</title>
-    <meta name="description" content="A História do Grupo G2F AI e nossos Princípios Inegociáveis."/>
-    <meta property="og:title" content="Sobre Nós | Grupo G2F AI" />
-    <meta property="og:description" content="A História do Grupo G2F AI e nossos Princípios Inegociáveis." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://g2f.ai/sobre.html" />
-    <link rel="canonical" href="https://g2f.ai/sobre.html" />
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Grupo G2F AI",
-      "url": "https://g2f.ai/sobre.html",
-      "logo": "https://g2f.ai/logo.png",
-      "foundingDate": "2023",
-      "founder": {
-        "@type": "Person",
-        "name": "Gabriel Alexandre"
-      }
-    }
-    </script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-
-    <script id="tailwind-config">
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#c46244",
-                        "primary-hover": "#b6553a",
-                        "surface": "#ffffff",
-                        "surface-container-high": "#f2efe9",
-                        "surface-container-low": "#f8f6f0",
-                        "surface-container": "#ffffff",
-                        "on-surface": "#1a1816",
-                        "on-surface-variant": "#756e65",
-                        "outline-variant": "rgba(196, 98, 68, 0.18)"
-                    },
-                    fontFamily: {
-                        "sans": ["Manrope", "sans-serif"],
-                        "serif": ["Playfair Display", "serif"]
-                    }
-                }
-            }
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - G2F</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <style>
-        body { background-color: #f8f6f0; color: #1a1816; font-family: 'Manrope', sans-serif; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        .copper-hairline { border: 1px solid rgba(196, 98, 68, 0.18); }
-        .whatsapp-float {
-            position: fixed; right: 24px; bottom: 24px; width: 60px; height: 60px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; background-color: #25D366;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 9999; transition: all 0.3s ease;
+        :root {
+            --bg-obsidian: #050811;
+            --card-dark: #0f1726;
+            --card-elevated: #131d2e;
+            --text-primary: #ffffff;
+            --text-secondary: #e2e9f5;
+            --copper-base: #c46244;
+            --copper-light: #d46a4c;
+            --copper-hairline: rgba(196, 98, 68, 0.28);
         }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128C7E; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-obsidian);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        /* Header */
+        header { border-bottom: 1px solid var(--copper-hairline); padding: 1.5rem 0; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--copper-light); }
+        nav { display: flex; gap: 2rem; }
+        nav a { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--copper-light); }
+        .btn-copper { background: var(--copper-base); color: #fff; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s; }
+        .btn-copper:hover { background: var(--copper-light); }
+
+        /* Hero */
+        .hero { padding: 6rem 0; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto; }
+
+        /* Manifesto */
+        .manifesto-section { padding: 4rem 0; }
+        .manifesto-card {
+            background: var(--card-dark);
+            border: 1px solid var(--copper-hairline);
+            border-radius: 8px;
+            padding: 4rem;
+            text-align: center;
+        }
+        .manifesto-card h2 { font-size: 2.5rem; margin-bottom: 2rem; color: var(--copper-light); }
+        .manifesto-card p { font-size: 1.2rem; color: var(--text-primary); max-width: 800px; margin: 0 auto 1.5rem; font-weight: 400; }
+        
+        /* Principles */
+        .principles-section { padding: 6rem 0; }
+        .principles-header { text-align: center; margin-bottom: 4rem; }
+        .principles-header h2 { font-size: 2.5rem; }
+        .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .principle-card {
+            background: var(--card-dark);
+            border: 1px solid var(--copper-hairline);
+            border-radius: 8px;
+            padding: 2.5rem;
+            transition: background 0.3s;
+        }
+        .principle-card:hover { background: var(--card-elevated); }
+        .principle-icon { 
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 48px; height: 48px;
+            border-radius: 8px;
+            background: rgba(196, 98, 68, 0.1);
+            color: var(--copper-light);
+            border: 1px solid var(--copper-hairline);
+            margin-bottom: 1.5rem;
+        }
+        .principle-title { font-size: 1.4rem; margin-bottom: 1rem; }
+        .principle-desc { color: var(--text-secondary); font-size: 1rem; }
+
+        /* Footer */
+        footer { border-top: 1px solid var(--copper-hairline); padding: 4rem 0 2rem; margin-top: 4rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+        .footer-col h4 { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-primary); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.75rem; }
+        .footer-col ul li a { color: var(--text-secondary); font-size: 0.9rem; transition: color 0.3s; }
+        .footer-col ul li a:hover { color: var(--copper-light); }
+        .copyright { text-align: center; color: var(--text-secondary); font-size: 0.85rem; padding-top: 2rem; border-top: 1px solid var(--copper-hairline); }
     </style>
 </head>
-<body class="overflow-x-hidden selection:bg-primary/30 selection:text-primary">
-
-    <!-- Header Navigation -->
-    <header class="sticky top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant">
-        <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center h-20">
-            <a href="index.html" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center">
-                    <span class="font-serif text-primary text-xl font-bold">G2F</span>
-                </div>
-                <div>
-                    <span class="font-bold text-xl tracking-tight text-on-surface block leading-none">GRUPO G2F <span class="text-primary font-serif italic">AI</span></span>
-                    <span class="text-[10px] tracking-widest text-on-surface-variant uppercase block">Para quem quer mais</span>
-                </div>
-            </a>
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-                <a href="index.html" class="text-on-surface hover:text-primary transition-colors">Início</a>
-                <a href="solucoes.html" class="text-on-surface hover:text-primary transition-colors">Soluções & Programas</a>
-                <a href="academy.html" class="text-on-surface hover:text-primary transition-colors">Academy</a>
-                <a href="academy.html#parceiros" class="text-on-surface hover:text-primary transition-colors">Comunidade & Parceiros</a>
-                <a href="sobre.html" class="text-primary font-bold border-b-2 border-primary pb-1">Sobre Nós</a>
-                <a href="blog.html" class="text-on-surface hover:text-primary transition-colors">Blog</a>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">G2F.</div>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="solucoes.html">Soluções</a>
+                <a href="sobre.html" class="active">Sobre</a>
+                <a href="academy.html">Academy</a>
+                <a href="blog.html">Blog</a>
             </nav>
-            <div class="hidden lg:flex items-center gap-4">
-                <button aria-label="Falar com Consultor" onclick="openLeadModal('Geral')" class="bg-primary text-white hover:bg-primary-hover px-6 py-2.5 min-h-[44px] min-w-[44px] text-xs uppercase tracking-widest font-bold transition-all">
-                    Falar com Consultor
-                </button>
-            </div>
-            <button aria-label="Menu Mobile" class="lg:hidden text-on-surface min-h-[44px] min-w-[44px] flex items-center justify-center" onclick="toggleMobileMenu()">
-                <span class="material-symbols-outlined text-3xl">menu</span>
-            </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-surface-container-high border-b border-outline-variant px-6 py-4">
-            <nav class="flex flex-col gap-4 text-sm font-medium">
-                <a href="index.html" class="text-on-surface hover:text-primary transition-colors">Início</a>
-                <a href="solucoes.html" class="text-on-surface hover:text-primary transition-colors">Soluções & Programas</a>
-                <a href="academy.html" class="text-on-surface hover:text-primary transition-colors">Academy</a>
-                <a href="academy.html#parceiros" class="text-on-surface hover:text-primary transition-colors">Comunidade & Parceiros</a>
-                <a href="sobre.html" class="text-primary font-bold">Sobre Nós</a>
-                <a href="blog.html" class="text-on-surface hover:text-primary transition-colors">Blog</a>
-                <button aria-label="Falar com Consultor Mobile" onclick="openLeadModal('Geral')" class="bg-primary text-white hover:bg-primary-hover px-6 py-2.5 min-h-[44px] min-w-[44px] text-xs uppercase tracking-widest font-bold transition-all w-full mt-2">
-                    Falar com Consultor
-                </button>
-            </nav>
+            <a href="#contato" class="btn-copper">Fale Conosco</a>
         </div>
     </header>
 
     <main>
-        <!-- Manifesto Header -->
-        <section class="py-24 md:py-32 bg-surface border-b border-outline-variant text-center">
-            <div class="max-w-[1000px] mx-auto px-6 md:px-12">
-                <h1 class="font-serif text-4xl md:text-6xl font-bold text-primary italic leading-tight mb-8">
-                    "A inteligência não é apenas a capacidade de processar dados, mas a disciplina de extrair significado do caos com precisão cirúrgica, parando de perder dinheiro para concorrentes."
-                </h1>
-                <p class="text-on-surface-variant text-lg font-bold tracking-widest uppercase">— Gabriel Alexandre</p>
+        <section class="hero container">
+            <h1>A Engenharia por trás da G2F</h1>
+            <p>Construindo ecossistemas de negócios pautados na inteligência, previsibilidade e resultados concretos.</p>
+        </section>
+
+        <section class="manifesto-section container">
+            <div class="manifesto-card">
+                <h2>O Nosso Manifesto</h2>
+                <p>Acreditamos que o crescimento não deve ser obra do acaso. Ele é o resultado de processos desenhados com rigor, tecnologia aplicada de forma estratégica e execução impecável.</p>
+                <p>Nossa missão é transformar negócios através da engenharia comercial — substituindo a intuição por dados, o esforço desmedido por alavancagem inteligente, e a incerteza por previsibilidade de caixa.</p>
+                <p>Não entregamos apenas ferramentas. Entregamos a arquitetura do seu próximo patamar de escala.</p>
             </div>
         </section>
 
-        <!-- Story Section -->
-        <section class="py-20 bg-surface-container-low">
-            <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="font-serif text-3xl md:text-5xl font-bold text-on-surface mb-6">A História do Grupo G2F AI</h2>
-                    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-6">
-                        Fundado por Gabriel Alexandre, a empresa surgiu da crença de que as PMEs merecem as mesmas ferramentas de Inteligência Artificial e engenharia de crescimento que as grandes corporações globais.
-                    </p>
-                    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
-                        Nossa sede está em Belo Horizonte, atendendo clientes e parceiros em todo o Brasil. Entregamos soluções baseadas em tecnologia de ponta, sem complexidade desnecessária.
-                    </p>
-                </div>
-                <div class="copper-hairline p-4 bg-surface h-full flex items-center justify-center min-h-[300px] shadow-sm">
-                    <span class="font-serif text-primary text-6xl opacity-30">G2F</span>
-                </div>
+        <section class="principles-section container">
+            <div class="principles-header">
+                <h2>Os 5 Princípios Fundamentais</h2>
             </div>
-        </section>
-
-        <!-- Princípios Section -->
-        <section class="py-20 bg-surface border-y border-outline-variant">
-            <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-                <div class="text-center mb-16">
-                    <span class="text-xs uppercase tracking-[0.2em] text-primary font-bold block mb-3">Nossos Valores</span>
-                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-on-surface">5 Princípios Inegociáveis</h2>
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <span class="material-symbols-outlined">precision_manufacturing</span>
+                    </div>
+                    <h3 class="principle-title">Previsibilidade</h3>
+                    <p class="principle-desc">Construímos máquinas de aquisição e conversão que funcionam de forma sistemática. Resultados constantes não dependem de sorte, mas de engenharia.</p>
                 </div>
                 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
-                        <div class="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">verified</span>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-on-surface mb-4">Resultado em 30 Dias ou Garantia</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Cada entrega tem marco auditável em até 30 dias úteis. Se não atingirmos, devolvemos 100% do valor.</p>
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <span class="material-symbols-outlined">insights</span>
                     </div>
-                    <div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
-                        <div class="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">trending_up</span>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-on-surface mb-4">Margem Bruta > 70%</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Arquiteturas baseadas em IA e automação. Sem custos operacionais inflados.</p>
-                    </div>
-                    <div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
-                        <div class="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">public</span>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-on-surface mb-4">Operação Transparente</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Infraestrutura em nuvem, agentes ativos 24/7, atendimento onde o cliente estiver.</p>
-                    </div>
-                    <div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
-                        <div class="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">visibility</span>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-on-surface mb-4">Construção Aberta</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Métricas, cases e números publicados abertamente para gerar confiança técnica.</p>
-                    </div>
-                    <div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
-                        <div class="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">moving</span>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-on-surface mb-4">Upsell Natural</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Cada produto é a porta de entrada para o próximo. O cliente cresce conosco.</p>
-                    </div>
+                    <h3 class="principle-title">Dados sobre Opinião</h3>
+                    <p class="principle-desc">Toda decisão estratégica deve ser pautada em métricas e análise profunda de dados. A intuição cede lugar à certeza analítica.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-24 text-center bg-surface-container-low">
-            <div class="max-w-[800px] mx-auto px-6 md:px-12">
-                <h2 class="font-serif text-4xl font-bold text-on-surface mb-8">Pronto para transformar seu negócio?</h2>
-                <a aria-label="Falar com o Gabriel" href="https://wa.me/5531990000000" target="_blank" class="inline-block bg-primary text-white hover:bg-primary-hover min-h-[44px] px-10 py-5 font-bold text-sm uppercase tracking-widest transition-all">
-                    Falar com o Gabriel
-                </a>
+                
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <span class="material-symbols-outlined">architecture</span>
+                    </div>
+                    <h3 class="principle-title">Design de Ecossistema</h3>
+                    <p class="principle-desc">Soluções isoladas falham. Projetamos ecossistemas integrados onde marketing, vendas e operações operam em perfeita sincronia.</p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <span class="material-symbols-outlined">bolt</span>
+                    </div>
+                    <h3 class="principle-title">Alavancagem Tecnológica</h3>
+                    <p class="principle-desc">Utilizamos inteligência artificial e automação não apenas para reduzir custos, mas para escalar o potencial humano ao limite.</p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <span class="material-symbols-outlined">verified</span>
+                    </div>
+                    <h3 class="principle-title">Garantia de Excelência</h3>
+                    <p class="principle-desc">O compromisso com o resultado é absoluto. Respaldamos nossa entrega com a firmeza de uma garantia de 30 dias em todos os nossos sistemas.</p>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full pt-16 pb-12 bg-surface border-t border-outline-variant text-xs text-on-surface-variant">
-        <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
-            <p>Grupo G2F AI LTDA © 2026. Todos os direitos reservados.</p>
-            <a href="index.html" class="text-primary font-bold hover:underline">Voltar para Início</a>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">G2F.</div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Engenharia comercial e inteligência de negócios para escalar sua operação.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Soluções</h4>
+                    <ul>
+                        <li><a href="solucoes.html">SEO Local Premium</a></li>
+                        <li><a href="solucoes.html">Agente WhatsApp IA</a></li>
+                        <li><a href="solucoes.html">Landing Page & Tráfego</a></li>
+                        <li><a href="solucoes.html">G2F Business OS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="sobre.html">Sobre a G2F</a></li>
+                        <li><a href="academy.html">Academy</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 G2F Inteligência de Negócios. Todos os direitos reservados.
+            </div>
         </div>
     </footer>
-
-    <!-- Lead Modal -->
-    <div id="leadModal" class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-surface border border-outline-variant max-w-lg w-full p-8 relative shadow-xl">
-            <button aria-label="Fechar Modal" onclick="closeLeadModal()" class="absolute top-4 right-4 min-h-[44px] min-w-[44px] flex items-center justify-center text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
-            <h3 class="font-serif text-2xl font-bold text-on-surface mb-2">Falar com Consultor</h3>
-            <form onsubmit="handleLeadSubmit(event)" class="space-y-4">
-                <input type="text" id="leadName" required placeholder="Seu Nome Completo" class="w-full bg-surface-container-low border border-outline-variant text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
-                <input type="tel" id="leadPhone" required placeholder="Seu WhatsApp" class="w-full bg-surface-container-low border border-outline-variant text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
-                <button aria-label="Enviar Formulário" type="submit" class="w-full bg-primary text-white py-3.5 font-bold text-xs uppercase tracking-widest hover:bg-primary-hover transition-all">
-                    Iniciar Contato
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp -->
-    <a aria-label="Falar conosco pelo WhatsApp" href="https://wa.me/5531990000000?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20o%20Gabriel." target="_blank" class="whatsapp-float min-h-[44px] min-w-[44px]">
-        <span class="whatsapp-icon"><svg viewBox="0 0 32 32"><path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.6-1.7A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.5 1 1-4.4-.3-.5A11 11 0 1 1 16 26zm6-8.3c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7 0a9 9 0 0 1-2.6-1.6 10 10 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5a.4.4 0 0 0 0-.4c0-.2-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.2 2.7 6.4 6.4 0 0 0 1.4 3.4c1.5 2.1 3.6 3.7 6.1 4.7.7.3 1.3.5 1.8.6.8.2 1.5.2 2.1.1.7-.1 2.2-.9 2.5-1.8s.3-1.6.2-1.8c-.1-.1-.3-.2-.6-.4z" fill="#FFF"/></svg></span>
-    </a>
-
-    <script>
-        function openLeadModal() { document.getElementById('leadModal').classList.remove('hidden'); }
-        function closeLeadModal() { document.getElementById('leadModal').classList.add('hidden'); }
-        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
-        function handleLeadSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('leadName').value;
-            const phone = document.getElementById('leadPhone').value;
-            window.open(`https://wa.me/5531990000000?text=${encodeURIComponent(`Olá! Meu nome é ${name} (${phone}) e gostaria de conversar.`)}`, '_blank');
-            closeLeadModal();
-        }
-    </script>
 </body>
 </html>
