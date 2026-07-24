@@ -1,1696 +1,2051 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G2F AI | Inteligência e Crescimento para PMEs</title>
-    <meta name="description" content="Inteligência artificial, automação e engenharia de crescimento para PMEs que querem escalar com método, resultado em 30 dias e garantia contratual.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo G2F AI — Inteligência & Escala para PMEs | Para Quem Quer Mais</title>
+  <meta name="description" content="Portal Institucional do Grupo G2F AI. Soluções avançadas em SEO Local, Agentes de IA para WhatsApp, Lançamentos e Business OS para pequenas e médias empresas.">
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+  <style>
+    /* CSS RESET & VARIABLES */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    :root {
+      --bg-obsidian: #050811;
+      --surface-dark: #0f1726;
+      --surface-elevated: #131d2e;
+      --border-copper: rgba(196, 98, 68, 0.28);
+      --border-copper-hover: rgba(229, 114, 82, 0.6);
+      --copper-primary: #c46244;
+      --copper-light: #d46a4c;
+      --copper-hover: #e57252;
+      --copper-glow: rgba(196, 98, 68, 0.22);
+      --text-white: #ffffff;
+      --text-secondary: #e2e9f5;
+      --text-muted: #bac6d9;
+      --font-main: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-obsidian);
+      color: var(--text-white);
+      font-family: var(--font-main);
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TYPOGRAPHY UTILITIES */
+    .font-serif { font-family: var(--font-serif); }
+    .font-italic { font-style: italic; }
+    .text-copper { color: var(--copper-light); }
+    .text-muted { color: var(--text-muted); }
+    .text-secondary { color: var(--text-secondary); }
+
+    /* LAYOUT CONTAINERS */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* BUTTONS & BADGES */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition-fast);
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
     
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
-
-    <!-- CSS -->
-    <style>
-        :root {
-            /* Design Tokens: Deep Obsidian & Burnt Copper */
-            --canvas-bg: #050811;
-            --card-surface: #0f1726;
-            --card-elevated: #131d2e;
-            
-            --text-primary: #ffffff;
-            --text-secondary: #e2e9f5;
-            --text-subtitle: #bac6d9;
-            
-            --brand-accent: #c46244;
-            --brand-accent-light: #d46a4c;
-            --brand-accent-hover: #e57252;
-            
-            --border-copper: 1px solid rgba(196, 98, 68, 0.28);
-            --glow-copper: radial-gradient(circle at 50% 35%, rgba(196, 98, 68, 0.22) 0%, rgba(5, 8, 17, 0) 70%);
-            
-            --font-body: 'Manrope', sans-serif;
-            --font-heading: 'Playfair Display', serif;
-            
-            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Reset & Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--canvas-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            line-height: 1.2;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        button {
-            cursor: pointer;
-            border: none;
-            background: none;
-            font-family: inherit;
-        }
-
-        /* Reusable Components */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section {
-            padding: 96px 0;
-            position: relative;
-        }
-
-        .text-copper {
-            color: var(--brand-accent-light);
-        }
-
-        .font-serif {
-            font-family: var(--font-heading);
-        }
-
-        .italic {
-            font-style: italic;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: var(--transition-smooth);
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: var(--brand-accent);
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--brand-accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(196, 98, 68, 0.2);
-        }
-
-        .btn-outline {
-            border: var(--border-copper);
-            color: var(--text-primary);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: rgba(196, 98, 68, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .section-title {
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .section-subtitle {
-            font-size: 18px;
-            color: var(--text-subtitle);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* 1. Announcement Bar */
-        .announcement-bar {
-            background-color: var(--brand-accent);
-            color: #ffffff;
-            text-align: center;
-            padding: 8px 16px;
-            font-size: 14px;
-            font-weight: 500;
-            z-index: 100;
-            position: relative;
-        }
-
-        /* 2. Sticky Header */
-        .header {
-            position: sticky;
-            top: 0;
-            background: rgba(5, 8, 17, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            z-index: 99;
-            padding: 16px 0;
-            transition: var(--transition-smooth);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .desktop-nav {
-            display: flex;
-            gap: 32px;
-        }
-
-        .desktop-nav a {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: color 0.3s ease;
-        }
-
-        .desktop-nav a:hover {
-            color: var(--brand-accent-light);
-        }
-
-        .header-cta {
-            display: none;
-        }
-
-        .menu-btn {
-            display: block;
-            color: var(--text-primary);
-            font-size: 28px;
-        }
-
-        @media (min-width: 1024px) {
-            .header-cta {
-                display: block;
-                padding: 10px 24px;
-                font-size: 14px;
-            }
-            .menu-btn {
-                display: none;
-            }
-        }
-
-        /* 3. Hero Section */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding: 120px 20px 80px;
-            background: var(--glow-copper);
-        }
-
-        .hero-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 6vw, 72px);
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 24px;
-        }
-
-        .hero p {
-            font-size: clamp(18px, 2vw, 24px);
-            color: var(--text-secondary);
-            margin-bottom: 48px;
-            max-width: 760px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-btns {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @media (min-width: 640px) {
-            .hero-btns {
-                flex-direction: row;
-            }
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            color: var(--text-subtitle);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-10px) translateX(-50%); }
-            60% { transform: translateY(-5px) translateX(-50%); }
-        }
-
-        /* 4. Pilares */
-        .pilares-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .pilares-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .pilares-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .pilar-card {
-            background: var(--card-surface);
-            border: var(--border-copper);
-            border-radius: 16px;
-            padding: 32px;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pilar-card:hover {
-            transform: translateY(-5px);
-            background: var(--card-elevated);
-        }
-
-        .pilar-icon {
-            font-size: 40px;
-            color: var(--brand-accent-light);
-            margin-bottom: 24px;
-        }
-
-        .pilar-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .pilar-desc {
-            color: var(--text-subtitle);
-            font-size: 15px;
-        }
-
-        /* 5. Autoridade */
-        .autoridade {
-            background: var(--card-surface);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .autoridade-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-
-        @media (min-width: 1024px) {
-            .autoridade-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .autoridade-quote {
-            font-size: clamp(28px, 4vw, 48px);
-            line-height: 1.3;
-            color: var(--text-primary);
-        }
-
-        .autoridade-info h4 {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-
-        .autoridade-info p {
-            color: var(--brand-accent-light);
-            font-size: 16px;
-            margin-bottom: 24px;
-            font-weight: 600;
-        }
-
-        .credentials-list li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-            color: var(--text-secondary);
-        }
-
-        .credentials-list .material-symbols-outlined {
-            color: var(--brand-accent);
-        }
-
-        /* 6. Depoimentos Carousel */
-        .carousel-wrapper {
-            position: relative;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-
-        .carousel-track {
-            display: flex;
-            gap: 24px;
-            transition: transform 0.5s ease;
-            cursor: grab;
-        }
-
-        .carousel-track:active {
-            cursor: grabbing;
-        }
-
-        .depoimento-card {
-            flex: 0 0 100%;
-            background: var(--card-surface);
-            border: var(--border-copper);
-            border-radius: 16px;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .depoimento-card {
-                flex: 0 0 calc(50% - 12px);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .depoimento-card {
-                flex: 0 0 calc(33.333% - 16px);
-            }
-        }
-
-        .stars {
-            display: flex;
-            gap: 4px;
-            color: var(--brand-accent-light);
-        }
-
-        .depoimento-text {
-            font-size: 18px;
-            line-height: 1.6;
-            color: var(--text-primary);
-            flex-grow: 1;
-        }
-
-        .depoimento-author {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--card-elevated);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--brand-accent-light);
-            border: 1px solid rgba(196, 98, 68, 0.4);
-        }
-
-        .author-info h5 {
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
-
-        .author-info p {
-            font-size: 14px;
-            color: var(--text-subtitle);
-        }
-
-        .carousel-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 24px;
-            margin-top: 48px;
-        }
-
-        .carousel-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: var(--border-copper);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            transition: var(--transition-smooth);
-        }
-
-        .carousel-btn:hover {
-            background: var(--brand-accent);
-            border-color: var(--brand-accent);
-        }
-
-        .carousel-dots {
-            display: flex;
-            gap: 8px;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        .dot.active {
-            background: var(--brand-accent-light);
-            width: 24px;
-            border-radius: 4px;
-        }
-
-        /* 7. Números */
-        .numeros {
-            background: var(--card-elevated);
-            border-top: var(--border-copper);
-            border-bottom: var(--border-copper);
-            padding: 64px 0;
-        }
-
-        .numeros-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            text-align: center;
-        }
-
-        @media (min-width: 1024px) {
-            .numeros-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .numero-item .valor {
-            font-size: clamp(36px, 4vw, 56px);
-            font-weight: 800;
-            color: var(--brand-accent-light);
-            margin-bottom: 8px;
-        }
-
-        .numero-item .label {
-            color: var(--text-secondary);
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        /* 8. Soluções (Pricing) */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 32px;
-        }
-
-        @media (min-width: 768px) {
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .pricing-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .pricing-card {
-            background: var(--card-surface);
-            border: var(--border-copper);
-            border-radius: 16px;
-            padding: 40px 32px;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            background: var(--card-elevated);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .pricing-card.highlight {
-            border-color: var(--brand-accent);
-            box-shadow: inset 0 0 0 1px var(--brand-accent);
-        }
-
-        .pricing-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .pricing-desc {
-            color: var(--text-subtitle);
-            font-size: 14px;
-            margin-bottom: 32px;
-            min-height: 42px;
-        }
-
-        .pricing-price {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-        
-        .pricing-price span {
-            font-size: 16px;
-            color: var(--text-subtitle);
-            font-weight: 400;
-        }
-
-        .pricing-guarantee {
-            font-size: 13px;
-            color: var(--brand-accent-light);
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .pricing-features {
-            flex-grow: 1;
-            margin-bottom: 40px;
-        }
-
-        .pricing-features li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 16px;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        .pricing-features .material-symbols-outlined {
-            color: var(--brand-accent);
-            font-size: 20px;
-        }
-
-        /* 9. Blog / Conteúdos */
-        .filter-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 48px;
-        }
-
-        .filter-btn {
-            padding: 8px 24px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-secondary);
-            font-size: 14px;
-            transition: var(--transition-smooth);
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--brand-accent);
-            border-color: var(--brand-accent);
-            color: #ffffff;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 32px;
-        }
-
-        @media (min-width: 768px) {
-            .blog-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .blog-card {
-            background: var(--card-surface);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: var(--transition-smooth);
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(196, 98, 68, 0.4);
-        }
-
-        .blog-img {
-            width: 100%;
-            height: 200px;
-            background: var(--card-elevated);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-subtitle);
-        }
-
-        .blog-content {
-            padding: 24px;
-        }
-
-        .blog-category {
-            font-size: 12px;
-            text-transform: uppercase;
-            color: var(--brand-accent-light);
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .blog-title {
-            font-size: 18px;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-
-        .blog-link {
-            color: var(--brand-accent);
-            font-weight: 600;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* 10. FAQ */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .faq-question {
-            width: 100%;
-            text-align: left;
-            padding: 24px 0;
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-primary);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .faq-question:hover {
-            color: var(--brand-accent-light);
-        }
-
-        .faq-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-            color: var(--text-subtitle);
-            line-height: 1.6;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-            padding-bottom: 24px;
-        }
-
-        /* 11. Footer */
-        .footer {
-            background-color: var(--canvas-bg);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 80px 0 40px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 48px;
-            margin-bottom: 64px;
-        }
-
-        @media (min-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 2fr 1fr 1fr;
-            }
-        }
-
-        .footer-logo {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            display: inline-block;
-        }
-
-        .footer-desc {
-            color: var(--text-subtitle);
-            max-width: 300px;
-            margin-bottom: 24px;
-        }
-
-        .footer-heading {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: var(--text-primary);
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: var(--text-subtitle);
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--brand-accent-light);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 32px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: center;
-            text-align: center;
-            color: var(--text-subtitle);
-            font-size: 14px;
-        }
-
-        @media (min-width: 768px) {
-            .footer-bottom {
-                flex-direction: row;
-                justify-content: space-between;
-                text-align: left;
-            }
-        }
-
-        /* 12. Modals & Floating Components */
-        /* WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: transform 0.3s ease;
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* Mobile Bottom Bar */
-        .mobile-bottom-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(15, 23, 38, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding: 12px 24px;
-            z-index: 999;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        @media (max-width: 767px) {
-            .mobile-bottom-bar {
-                display: flex;
-            }
-            .whatsapp-float {
-                bottom: 80px;
-            }
-        }
-
-        .mobile-bottom-bar .btn-primary {
-            width: 100%;
-            padding: 12px;
-            font-size: 14px;
-        }
-
-        /* Quiz Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(5, 8, 17, 0.9);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition-smooth);
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: var(--card-surface);
-            border: var(--border-copper);
-            border-radius: 16px;
-            width: 90%;
-            max-width: 500px;
-            padding: 40px;
-            position: relative;
-            transform: translateY(20px);
-            transition: var(--transition-smooth);
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            color: var(--text-subtitle);
-            font-size: 24px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 4px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 2px;
-            margin-bottom: 32px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: var(--brand-accent);
-            width: 33%;
-            transition: width 0.3s ease;
-        }
-
-        .quiz-step {
-            display: none;
-        }
-
-        .quiz-step.active {
-            display: block;
-        }
-
-        .quiz-step h3 {
-            font-size: 24px;
-            margin-bottom: 24px;
-        }
-
-        .quiz-options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .quiz-option {
-            padding: 16px;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            text-align: left;
-            color: var(--text-primary);
-            transition: var(--transition-smooth);
-        }
-
-        .quiz-option:hover {
-            border-color: var(--brand-accent);
-            background: rgba(196, 98, 68, 0.05);
-        }
-
-    </style>
+    .btn-copper {
+      background: linear-gradient(135deg, var(--copper-primary), var(--copper-light));
+      color: #ffffff;
+      box-shadow: 0 4px 20px var(--copper-glow);
+    }
+    .btn-copper:hover {
+      background: linear-gradient(135deg, var(--copper-light), var(--copper-hover));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(229, 114, 82, 0.4);
+    }
+
+    .btn-outline-copper {
+      background: transparent;
+      border-color: var(--copper-primary);
+      color: var(--text-white);
+    }
+    .btn-outline-copper:hover {
+      background: rgba(196, 98, 68, 0.12);
+      border-color: var(--copper-hover);
+      color: var(--copper-hover);
+    }
+
+    .badge-copper {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 9999px;
+      background: rgba(196, 98, 68, 0.15);
+      border: 1px solid var(--border-copper);
+      color: var(--copper-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* 1. TOP ANNOUNCEMENT BAR */
+    .top-bar {
+      background: linear-gradient(90deg, #b05035, #c46244, #d46a4c);
+      color: #ffffff;
+      text-align: center;
+      padding: 0.45rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 1010;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .top-bar:hover {
+      background: linear-gradient(90deg, #c46244, #d46a4c, #e57252);
+    }
+    .top-bar .material-symbols-outlined { font-size: 1.1rem; }
+
+    /* 2. STICKY HEADER & MEGA MENU */
+    .header-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 8, 17, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: var(--transition-fast);
+    }
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-white);
+    }
+    .logo-badge {
+      background: linear-gradient(135deg, var(--copper-primary), #e57252);
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px var(--copper-glow);
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .brand-tagline {
+      font-size: 0.7rem;
+      color: var(--copper-light);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+
+    /* NAV MENU & DROPDOWNS */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+    .nav-item {
+      position: relative;
+    }
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 1.5rem 0;
+      transition: var(--transition-fast);
+      cursor: pointer;
+    }
+    .nav-link:hover, .nav-item:hover > .nav-link {
+      color: var(--copper-light);
+    }
+
+    /* MEGA DROPDOWN BOX */
+    .mega-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      width: 620px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-copper);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1020;
+    }
+    .mega-dropdown.wide {
+      width: 780px;
+    }
+    .nav-item:hover .mega-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .dropdown-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.85rem;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid transparent;
+      transition: var(--transition-fast);
+    }
+    .dropdown-card:hover {
+      background: rgba(196, 98, 68, 0.1);
+      border-color: var(--border-copper);
+      transform: translateY(-2px);
+    }
+    .dropdown-icon {
+      background: rgba(196, 98, 68, 0.2);
+      color: var(--copper-light);
+      padding: 0.5rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dropdown-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+    .dropdown-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* MOBILE HAMBURGER & DRAWER */
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--text-white);
+      cursor: pointer;
+    }
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 360px;
+      height: 100vh;
+      background: var(--surface-dark);
+      border-left: 1px solid var(--border-copper);
+      z-index: 2000;
+      padding: 2rem 1.5rem;
+      transition: right 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+    }
+    .mobile-drawer.open {
+      right: 0;
+    }
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 1999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* 3. HERO CAROUSEL MULTINÍVEL */
+    .hero-section {
+      position: relative;
+      padding: 4rem 0 6rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 30%, var(--copper-glow) 0%, rgba(5, 8, 17, 0) 70%);
+    }
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      min-height: 480px;
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: scale(0.97);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      position: relative;
+    }
+    
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin: 1.25rem 0;
+      max-width: 920px;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, #ffffff, var(--text-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--copper-light);
+      font-weight: 600;
+      background: none;
+      -webkit-text-fill-color: var(--copper-light);
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-nav-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 3rem;
+    }
+    .hero-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+    .hero-dot.active {
+      width: 36px;
+      background: var(--copper-primary);
+      box-shadow: 0 0 12px var(--copper-glow);
+    }
+
+    /* 4. ECOSSISTEMA G2F EM 4 PILARES */
+    .section-padding {
+      padding: 5rem 0;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+    }
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-top: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .pilares-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+    .pilar-card {
+      background: var(--surface-dark);
+      border: 1px solid var(--border-copper);
+      border-radius: 20px;
+      padding: 2.25rem 1.75rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+    .pilar-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--copper-primary), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .pilar-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-copper-hover);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+    .pilar-card:hover::before {
+      opacity: 1;
+    }
+
+    .pilar-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--copper-light);
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .pilar-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(196, 98, 68, 0.15);
+      border: 1px solid var(--border-copper);
+      color: var(--copper-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .pilar-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .pilar-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.55;
+    }
+    .pilar-link {
+      color: var(--copper-light);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .pilar-link:hover {
+      color: var(--copper-hover);
+    }
+
+    /* 5. SEÇÃO DE AUTORIDADE & GABRIEL ALEXANDRE */
+    .authority-box {
+      background: var(--surface-dark);
+      border: 1px solid var(--border-copper);
+      border-radius: 28px;
+      padding: 3.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    }
+    .authority-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .quote-mark {
+      font-family: var(--font-serif);
+      font-size: 5rem;
+      line-height: 0;
+      color: var(--copper-primary);
+      opacity: 0.4;
+      margin-bottom: 1rem;
+    }
+    .authority-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.75rem;
+      line-height: 1.4;
+      color: var(--text-white);
+      margin-bottom: 1.75rem;
+    }
+    .author-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--copper-light);
+    }
+    .author-role {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    .achievement-card {
+      background: var(--surface-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .achieve-num {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--copper-light);
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+    }
+    .achieve-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* 6. CARROSSEL DE DEPOIMENTOS */
+    .testimonial-carousel-container {
+      position: relative;
+      overflow: hidden;
+      padding: 1rem 0;
+    }
+    .testimonial-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .testimonial-card {
+      min-width: 360px;
+      max-width: 380px;
+      background: var(--surface-dark);
+      border: 1px solid var(--border-copper);
+      border-radius: 20px;
+      padding: 2rem;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .stars {
+      color: #f59e0b;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 0.2rem;
+    }
+    .stars .material-symbols-outlined { font-size: 1.25rem; }
+    .testimonial-text {
+      font-style: italic;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .client-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      background: var(--copper-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .client-details h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .client-details p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* 7. CONTADORES NUMÉRICOS ANIMADOS */
+    .counters-section {
+      background: var(--surface-dark);
+      border-y: 1px solid var(--border-copper);
+      padding: 4rem 0;
+    }
+    .counters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .counter-value {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--copper-light);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .counter-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    /* 8. CATÁLOGO DE SOLUÇÕES (BENTO GRID) */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.5rem;
+    }
+    .bento-card {
+      background: var(--surface-dark);
+      border: 1px solid var(--border-copper);
+      border-radius: 24px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+    .bento-card:hover {
+      border-color: var(--border-copper-hover);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      transform: translateY(-4px);
+    }
+    .col-span-12 { grid-column: span 12; }
+    .col-span-6 { grid-column: span 6; }
+    .col-span-4 { grid-column: span 4; }
+
+    .bento-badge-guarantee {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #4ade80;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+    }
+
+    .solucao-price {
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+    .price-value {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-white);
+    }
+    .price-period {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.65rem;
+    }
+    .feature-list .material-symbols-outlined {
+      color: var(--copper-light);
+      font-size: 1.1rem;
+    }
+
+    /* 9. CENTRO DE CONTEÚDOS & BLOG PREVIEWS */
+    .filter-tabs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: var(--surface-dark);
+      border: 1px solid var(--border-copper);
+      color: var(--text-secondary);
+      padding: 0.6rem 1.35rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+    .tab-btn:hover, .tab-btn.active {
+      background: var(--copper-primary);
+      border-color: var(--copper-primary);
+      color: var(--text-white);
+      box-shadow: 0 4px 15px var(--copper-glow);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .blog-card {
+      background: var(--surface-dark);
+      border: 1px solid var(--border-copper);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-copper-hover);
+    }
+    .blog-thumb {
+      height: 170px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--copper-light);
+    }
+    .blog-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+    .blog-category {
+      font-size: 0.75rem;
+      color: var(--copper-light);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .blog-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+      color: var(--text-white);
+    }
+    .blog-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* 10. FAQ ACCORDION */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--surface-dark);
+      border: 1px solid var(--border-copper);
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: var(--transition-fast);
+    }
+    .faq-header {
+      padding: 1.35rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-white);
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+      color: var(--copper-light);
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+      padding: 0 1.5rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .faq-item.active .faq-body {
+      max-height: 500px;
+      padding-bottom: 1.5rem;
+      transition: max-height 0.35s ease-in-out;
+    }
+
+    /* 11. FOOTER MULTI-COLUNAS */
+    .footer-portal {
+      background: #020409;
+      border-top: 1px solid var(--border-copper);
+      padding: 5rem 0 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(4, 1fr);
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .footer-brand p {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      color: var(--text-white);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+    .footer-links {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+    .footer-links a:hover {
+      color: var(--copper-light);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8rem;
+    }
+
+    /* 12. FLOATING & MODAL ELEMENTS */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      background: #25d366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    .whatsapp-pulse {
+      position: absolute;
+      inset: -4px;
+      border-radius: 9999px;
+      border: 2px solid #25d366;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+
+    /* QUIZ MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 1rem;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-box {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-copper);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 580px;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    .quiz-progress-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 9999px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      width: 33%;
+      background: var(--copper-primary);
+      transition: width 0.3s ease;
+    }
+    .quiz-step {
+      display: none;
+    }
+    .quiz-step.active {
+      display: block;
+    }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+    .quiz-option-btn {
+      background: var(--surface-dark);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      color: var(--text-white);
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .quiz-option-btn:hover {
+      background: rgba(196, 98, 68, 0.15);
+      border-color: var(--copper-primary);
+    }
+
+    /* MOBILE BOTTOM NAV */
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(15, 23, 38, 0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-copper);
+      z-index: 999;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .bottom-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    .bottom-nav-item.active, .bottom-nav-item:hover {
+      color: var(--copper-light);
+    }
+
+    /* RESPONSIVE MEDIA QUERIES */
+    @media (max-width: 1024px) {
+      .hero-title { font-size: 2.5rem; }
+      .bento-grid { display: flex; flex-direction: column; }
+      .authority-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-menu, .header-actions .btn { display: none; }
+      .mobile-toggle { display: block; }
+      .hero-title { font-size: 2rem; }
+      .mobile-bottom-nav { display: flex; }
+      .whatsapp-float { bottom: 5rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .modal-box { padding: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- 1. Announcement Bar -->
-    <div class="announcement-bar">
-        Nova solução: G2F Business OS acaba de ser lançado. Vagas limitadas.
+  <!-- 1. TOP ANNOUNCEMENT BAR -->
+  <div class="top-bar" onclick="openQuizModal()">
+    <span>🚀 Descubra em 30 segundos qual G2F AI é ideal para o momento da sua empresa</span>
+    <span class="material-symbols-outlined">arrow_forward</span>
+  </div>
+
+  <!-- 2. STICKY HEADER WITH MEGA MENU -->
+  <header class="header-sticky">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo">
+        <div class="logo-badge">G2F</div>
+        <div class="brand-text">
+          <span class="brand-name">Grupo G2F AI</span>
+          <span class="brand-tagline">Para quem quer mais</span>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAV MENU -->
+      <nav>
+        <ul class="nav-menu">
+          <!-- PROGRAMAS DROPDOWN -->
+          <li class="nav-item">
+            <a class="nav-link">
+              Programas <span class="material-symbols-outlined">expand_more</span>
+            </a>
+            <div class="mega-dropdown">
+              <div class="dropdown-grid">
+                <a href="#solucoes" class="dropdown-card">
+                  <div class="dropdown-icon"><span class="material-symbols-outlined">map</span></div>
+                  <div class="dropdown-info">
+                    <h4>G2F SEO Local</h4>
+                    <p>Dominância no Google Maps e busca local para atrair clientes diariamente.</p>
+                  </div>
+                </a>
+                <a href="#solucoes" class="dropdown-card">
+                  <div class="dropdown-icon"><span class="material-symbols-outlined">smart_toy</span></div>
+                  <div class="dropdown-info">
+                    <h4>Agente WhatsApp IA</h4>
+                    <p>Atendimento 24/7, agendamento e qualificação automática de leads.</p>
+                  </div>
+                </a>
+                <a href="#solucoes" class="dropdown-card">
+                  <div class="dropdown-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+                  <div class="dropdown-info">
+                    <h4>G2F Launch</h4>
+                    <p>Aceleração de vendas com tráfego pago de altíssima conversão.</p>
+                  </div>
+                </a>
+                <a href="#solucoes" class="dropdown-card">
+                  <div class="dropdown-icon"><span class="material-symbols-outlined">display_settings</span></div>
+                  <div class="dropdown-info">
+                    <h4>G2F Business OS</h4>
+                    <p>Sistema completo de gestão, CRM e inteligência operacional.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- COMUNIDADES -->
+          <li class="nav-item">
+            <a class="nav-link">
+              Comunidades <span class="material-symbols-outlined">expand_more</span>
+            </a>
+            <div class="mega-dropdown">
+              <div class="dropdown-grid">
+                <a href="#ecossistema" class="dropdown-card">
+                  <div class="dropdown-icon"><span class="material-symbols-outlined">groups</span></div>
+                  <div class="dropdown-info">
+                    <h4>G2F Club</h4>
+                    <p>Rede exclusiva de empresários e mentoria continuada.</p>
+                  </div>
+                </a>
+                <a href="#ecossistema" class="dropdown-card">
+                  <div class="dropdown-icon"><span class="material-symbols-outlined">handshake</span></div>
+                  <div class="dropdown-info">
+                    <h4>Partner Program</h4>
+                    <p>Ganhe 20% de comissão recorrente indicando nossas soluções.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- TOOLS -->
+          <li class="nav-item">
+            <a href="#solucoes" class="nav-link">G2F Tools</a>
+          </li>
+
+          <!-- MENTORES -->
+          <li class="nav-item">
+            <a href="#autoridade" class="nav-link">Mentores</a>
+          </li>
+
+          <!-- CONTEÚDOS -->
+          <li class="nav-item">
+            <a href="#conteudos" class="nav-link">Conteúdos</a>
+          </li>
+
+          <!-- SOBRE NÓS -->
+          <li class="nav-item">
+            <a href="#autoridade" class="nav-link">Sobre Nós</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- HEADER ACTION CTAS -->
+      <div class="header-actions">
+        <a href="https://wa.me/5531990000000?text=Ol%C3%A1!%20Gostaria%20de%20acessar%20a%20%C3%81rea%20do%20Aluno." target="_blank" class="btn btn-outline-copper">Área do Aluno</a>
+        <button onclick="openQuizModal()" class="btn btn-copper">Ver qual G2F é para mim</button>
+        <button class="mobile-toggle" onclick="toggleMobileDrawer()">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <!-- 2. Sticky Header -->
-    <header class="header">
-        <div class="container header-content">
-            <a href="#" class="logo">G2F AI</a>
-            
-            <nav class="desktop-nav">
-                <a href="#pilares">Pilares</a>
-                <a href="#autoridade">Método</a>
-                <a href="#solucoes">Soluções</a>
-                <a href="#faq">FAQ</a>
-            </nav>
-            
-            <button class="btn btn-primary header-cta" onclick="openQuiz()">Avaliar minha empresa</button>
-            <button class="menu-btn material-symbols-outlined">menu</button>
+  <!-- MOBILE DRAWER -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleMobileDrawer()"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <div class="brand-name">Grupo G2F AI</div>
+        <button class="mobile-toggle" onclick="toggleMobileDrawer()">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem;">
+        <li><a href="#solucoes" class="nav-link" onclick="toggleMobileDrawer()">Programas & Soluções</a></li>
+        <li><a href="#ecossistema" class="nav-link" onclick="toggleMobileDrawer()">Ecossistema G2F</a></li>
+        <li><a href="#autoridade" class="nav-link" onclick="toggleMobileDrawer()">Gabriel Alexandre & Autoridade</a></li>
+        <li><a href="#conteudos" class="nav-link" onclick="toggleMobileDrawer()">Centro de Conteúdos</a></li>
+        <li><a href="#faq" class="nav-link" onclick="toggleMobileDrawer()">Dúvidas Frequentes</a></li>
+      </ul>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;">
+      <button onclick="toggleMobileDrawer(); openQuizModal();" class="btn btn-copper" style="width: 100%;">Fazer Quiz de Diagnóstico</button>
+      <a href="https://wa.me/5531990000000" target="_blank" class="btn btn-outline-copper" style="width: 100%;">Falar com Consultor</a>
+    </div>
+  </div>
+
+  <!-- 3. HERO CAROUSEL MULTINÍVEL -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-slider" id="heroSlider">
+        
+        <!-- SLIDE 1 -->
+        <div class="hero-slide active">
+          <span class="badge-copper">
+            <span class="material-symbols-outlined">verified</span> Aceleração & Inteligência Artificial
+          </span>
+          <h1 class="hero-title">
+            Existe um <em>G2F AI</em> para cada fase de crescimento da sua empresa
+          </h1>
+          <p class="hero-subtitle">
+            Da atração de novos clientes locais via Google Maps até a automação total de processos com Agentes de IA e gestão centralizada.
+          </p>
+          <div class="hero-ctas">
+            <button onclick="openQuizModal()" class="btn btn-copper">
+              Descubra seu Diagnóstico em 30s <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+            <a href="#solucoes" class="btn btn-outline-copper">Explorar Catálogo de Soluções</a>
+          </div>
         </div>
-    </header>
 
-    <!-- 3. Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Existe um <span class="font-serif italic text-copper">G2F AI</span> para cada fase da sua empresa</h1>
-            <p>Inteligência artificial, automação e engenharia de crescimento para PMEs que querem escalar com método, resultado em 30 dias e garantia contratual.</p>
-            <div class="hero-btns">
-                <button class="btn btn-primary" onclick="openQuiz()">Ver qual G2F é para mim</button>
-                <a href="#solucoes" class="btn btn-outline">Conhecer soluções</a>
+        <!-- SLIDE 2 -->
+        <div class="hero-slide">
+          <span class="badge-copper">
+            <span class="material-symbols-outlined">insights</span> Diagnóstico de Tração
+          </span>
+          <h1 class="hero-title">
+            Sua empresa parou de crescer <em>e você não sabe exatamente por quê?</em>
+          </h1>
+          <p class="hero-subtitle">
+            Conheça o G2F Business OS: o sistema integrado de inteligência e processos para PMEs que buscam margens acima de 70%.
+          </p>
+          <div class="hero-ctas">
+            <a href="#solucoes" class="btn btn-copper">
+              Conhecer G2F Business OS <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="hero-slide">
+          <span class="badge-copper">
+            <span class="material-symbols-outlined">smart_toy</span> Automação 24/7
+          </span>
+          <h1 class="hero-title">
+            Agentes de IA e SEO Local <em>trabalhando ininterruptamente para você</em>
+          </h1>
+          <p class="hero-subtitle">
+            Converta leads no WhatsApp enquanto dorme e conquiste as primeiras posições do Google na sua cidade.
+          </p>
+          <div class="hero-ctas">
+            <a href="https://wa.me/5531990000000?text=Quero%20conhecer%20os%20Agentes%20de%20IA%20do%20G2F" target="_blank" class="btn btn-copper">
+              Falar no WhatsApp Agora <span class="material-symbols-outlined">chat</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- HERO CAROUSEL DOTS -->
+      <div class="hero-nav-dots">
+        <button class="hero-dot active" onclick="setHeroSlide(0)"></button>
+        <button class="hero-dot" onclick="setHeroSlide(1)"></button>
+        <button class="hero-dot" onclick="setHeroSlide(2)"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ECOSSISTEMA G2F EM 4 PILARES -->
+  <section class="section-padding" id="ecossistema">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-copper">Metodologia G4 Inspired</span>
+        <h2 class="section-title">O Ecossistema G2F AI em 4 Pilares Fundamentais</h2>
+        <p class="text-muted" style="margin-top: 0.5rem;">Desenvolvido para cobrir todas as frentes de crescimento de uma PME moderna.</p>
+      </div>
+
+      <div class="pilares-grid">
+        <!-- PILAR 1 -->
+        <div class="pilar-card">
+          <span class="pilar-tag">PILAR 01 / LEARNING</span>
+          <div class="pilar-icon">
+            <span class="material-symbols-outlined">school</span>
+          </div>
+          <h3 class="pilar-title">G2F Academy</h3>
+          <p class="pilar-desc">Formação prática em Inteligência Artificial aplicada, processos operacionais e vendas aceleradas para PMEs.</p>
+          <a href="#solucoes" class="pilar-link">Saber mais <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+
+        <!-- PILAR 2 -->
+        <div class="pilar-card">
+          <span class="pilar-tag">PILAR 02 / SCALE</span>
+          <div class="pilar-icon">
+            <span class="material-symbols-outlined">trending_up</span>
+          </div>
+          <h3 class="pilar-title">Tração Rápida</h3>
+          <p class="pilar-desc">Execução cirúrgica de SEO Local no Google Maps e campanhas de tráfego pago com foco em ROI iminente.</p>
+          <a href="#solucoes" class="pilar-link">Saber mais <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+
+        <!-- PILAR 3 -->
+        <div class="pilar-card">
+          <span class="pilar-tag">PILAR 03 / CLUB</span>
+          <div class="pilar-icon">
+            <span class="material-symbols-outlined">workspace_premium</span>
+          </div>
+          <h3 class="pilar-title">Partner Program</h3>
+          <p class="pilar-desc">Comunidade fechada de parceiros de negócios. Indique nossas soluções e receba 20% de comissão recorrente.</p>
+          <a href="https://wa.me/5531990000000?text=Quero%20ser%20um%20parceiro%20G2F" target="_blank" class="pilar-link">Seja um Parceiro <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+
+        <!-- PILAR 4 -->
+        <div class="pilar-card">
+          <span class="pilar-tag">PILAR 04 / TOOLS</span>
+          <div class="pilar-icon">
+            <span class="material-symbols-outlined">memory</span>
+          </div>
+          <h3 class="pilar-title">Tecnologia & IA</h3>
+          <p class="pilar-desc">Implementação de Agentes Autônomos no WhatsApp e a plataforma G2F Business OS para gestão completa.</p>
+          <a href="#solucoes" class="pilar-link">Saber mais <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SEÇÃO DE AUTORIDADE & GABRIEL ALEXANDRE -->
+  <section class="section-padding" id="autoridade">
+    <div class="container">
+      <div class="authority-box">
+        <div class="authority-grid">
+          <div>
+            <div class="quote-mark">“</div>
+            <p class="authority-quote">
+              A inteligência não é apenas a capacidade de processar dados, mas a disciplina de extrair significado do caos com precisão cirúrgica.
+            </p>
+            <div class="author-name">Gabriel Alexandre</div>
+            <div class="author-role">Founder & CEO do Grupo G2F AI</div>
+          </div>
+
+          <div class="achievements-grid">
+            <div class="achievement-card">
+              <div class="achieve-num">R$ 42M+</div>
+              <div class="achieve-label">Em Receita Gerada</div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            Role para descobrir
-            <span class="material-symbols-outlined">arrow_downward</span>
-        </div>
-    </section>
-
-    <!-- 4. Pilares (G4 Structure) -->
-    <section id="pilares" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Engenharia de Crescimento</h2>
-                <p class="section-subtitle">Os quatro pilares fundamentais que sustentam a escala previsível e lucrativa do seu negócio.</p>
+            <div class="achievement-card">
+              <div class="achieve-num">150+</div>
+              <div class="achieve-label">PMEs Escaladas</div>
             </div>
-            
-            <div class="pilares-grid">
-                <div class="pilar-card">
-                    <span class="material-symbols-outlined pilar-icon">school</span>
-                    <h3 class="pilar-title">LEARNING</h3>
-                    <p class="pilar-desc">Metodologia proprietária aplicada. Treinamento executivo para implementação de IA e cultura de dados na gestão.</p>
-                </div>
-                <div class="pilar-card">
-                    <span class="material-symbols-outlined pilar-icon">trending_up</span>
-                    <h3 class="pilar-title">SCALE</h3>
-                    <p class="pilar-desc">Máquina de vendas automatizada. Estratégias de aquisição previsível e conversão otimizada via algoritmos.</p>
-                </div>
-                <div class="pilar-card">
-                    <span class="material-symbols-outlined pilar-icon">groups</span>
-                    <h3 class="pilar-title">CLUB</h3>
-                    <p class="pilar-desc">Ecossistema de networking e board de conselheiros. Conexão direta com empreendedores que já faturam milhões.</p>
-                </div>
-                <div class="pilar-card">
-                    <span class="material-symbols-outlined pilar-icon">construction</span>
-                    <h3 class="pilar-title">TOOLS</h3>
-                    <p class="pilar-desc">Software e infraestrutura. Agentes de IA, CRMs personalizados e dashboards em tempo real para tomada de decisão.</p>
-                </div>
+            <div class="achievement-card">
+              <div class="achieve-num">100%</div>
+              <div class="achieve-label">Operação Digital</div>
             </div>
+            <div class="achievement-card">
+              <div class="achieve-num">> 70%</div>
+              <div class="achieve-label">Margem Bruta</div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 5. Autoridade -->
-    <section id="autoridade" class="section autoridade">
-        <div class="container autoridade-content">
+  <!-- 6. CARROSSEL DE DEPOIMENTOS -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-copper">Resultados Reais</span>
+        <h2 class="section-title">O que dizem os líderes que utilizam G2F AI</h2>
+      </div>
+
+      <div class="testimonial-carousel-container">
+        <div class="testimonial-track" id="testimonialTrack">
+          <!-- CARD 1 -->
+          <div class="testimonial-card">
             <div>
-                <h2 class="autoridade-quote font-serif italic">"O crescimento não é um evento de sorte, é um processo de engenharia desenhado para escalar."</h2>
+              <div class="stars">
+                <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+              </div>
+              <p class="testimonial-text">"O G2F SEO Local colocou nossa clínica nas 3 primeiras posições em apenas 18 dias. A quantidade de chamadas diárias quadruplicou."</p>
             </div>
-            <div class="autoridade-info">
-                <h4>Gabriel Alexandre</h4>
-                <p>Founder & CEO, G2F AI</p>
-                <ul class="credentials-list">
-                    <li><span class="material-symbols-outlined">check_circle</span> +R$ 42 Milhões gerenciados em funis de venda</li>
-                    <li><span class="material-symbols-outlined">check_circle</span> Criador do G2F Business OS</li>
-                    <li><span class="material-symbols-outlined">check_circle</span> Especialista em Automação e Inteligência Artificial para PMEs</li>
-                </ul>
+            <div class="client-info">
+              <div class="client-avatar">DR</div>
+              <div class="client-details">
+                <h5>Dr. Roberto Mendes</h5>
+                <p>Diretor — Clínica OdontoMaster</p>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- 6. Depoimentos Carousel -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Resultados Comprovados</h2>
-                <p class="section-subtitle">O que dizem os empresários que implementaram as soluções da G2F AI em seus negócios.</p>
+          <!-- CARD 2 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="stars">
+                <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+              </div>
+              <p class="testimonial-text">"Implementar o Agente WhatsApp IA reduziu nosso custo de atendimento em 60% e zerou o tempo de resposta aos clientes."</p>
             </div>
-            
-            <div class="carousel-wrapper">
-                <div class="carousel-track" id="depoimentos-track">
-                    <!-- Card 1 -->
-                    <div class="depoimento-card">
-                        <div class="stars">
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                        </div>
-                        <p class="depoimento-text italic">"O Agente WhatsApp da G2F reduziu nosso tempo de resposta para zero. Aumentamos as vendas em 40% já no primeiro mês sem contratar mais atendentes."</p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">CM</div>
-                            <div class="author-info">
-                                <h5>Carlos Mendes</h5>
-                                <p>CEO, VarejoTech</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="depoimento-card">
-                        <div class="stars">
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                        </div>
-                        <p class="depoimento-text italic">"Implementar o G2F Business OS foi um divisor de águas. Finalmente tenho clareza total dos meus números e previsibilidade de caixa."</p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">RF</div>
-                            <div class="author-info">
-                                <h5>Roberta Ferraz</h5>
-                                <p>Diretora, Clínica Ferraz</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="depoimento-card">
-                        <div class="stars">
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                        </div>
-                        <p class="depoimento-text italic">"Com o SEO Local, dominamos as buscas na nossa região em 3 semanas. O fluxo de clientes qualificados na loja física triplicou."</p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">AS</div>
-                            <div class="author-info">
-                                <h5>André Silva</h5>
-                                <p>Fundador, AutoPrime</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="depoimento-card">
-                        <div class="stars">
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                        </div>
-                        <p class="depoimento-text italic">"O G2F Launch estruturou nosso funil do zero. Em 30 dias tivemos nosso primeiro lançamento de 6 dígitos com alto ROI."</p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">JL</div>
-                            <div class="author-info">
-                                <h5>Juliana Lima</h5>
-                                <p>Infoprodutora</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 5 -->
-                    <div class="depoimento-card">
-                        <div class="stars">
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                        </div>
-                        <p class="depoimento-text italic">"A mentoria com Gabriel abriu minha mente para o verdadeiro potencial da IA. Economizamos dezenas de milhares automatizando processos internos."</p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">MT</div>
-                            <div class="author-info">
-                                <h5>Marcos Teixeira</h5>
-                                <p>Sócio, B2B Logistics</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="client-info">
+              <div class="client-avatar">CS</div>
+              <div class="client-details">
+                <h5>Carla Silveira</h5>
+                <p>COO — SolarTech Energia</p>
+              </div>
             </div>
-            
-            <div class="carousel-controls">
-                <button class="carousel-btn" id="prev-btn"><span class="material-symbols-outlined">arrow_back</span></button>
-                <div class="carousel-dots" id="carousel-dots">
-                    <!-- Dots generated by JS -->
-                </div>
-                <button class="carousel-btn" id="next-btn"><span class="material-symbols-outlined">arrow_forward</span></button>
-            </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- 7. G2F em Números -->
-    <section class="numeros">
-        <div class="container">
-            <div class="numeros-grid">
-                <div class="numero-item">
-                    <div class="valor" data-target="42">0</div>
-                    <div class="label">Milhões Gerados</div>
-                </div>
-                <div class="numero-item">
-                    <div class="valor" data-target="150">0</div>
-                    <div class="label">Empresas Aceleradas</div>
-                </div>
-                <div class="numero-item">
-                    <div class="valor" data-target="3.5">0</div>
-                    <div class="label">ROI Médio (x)</div>
-                </div>
-                <div class="numero-item">
-                    <div class="valor" data-target="500">0</div>
-                    <div class="label">Automações Criadas</div>
-                </div>
+          <!-- CARD 3 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="stars">
+                <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+              </div>
+              <p class="testimonial-text">"O G2F Business OS nos deu clareza total das métricas da empresa. Pela primeira vez conseguimos prever a receita do mês seguinte."</p>
             </div>
-        </div>
-    </section>
+            <div class="client-info">
+              <div class="client-avatar">MA</div>
+              <div class="client-details">
+                <h5>Marcelo Andrade</h5>
+                <p>Founder — Andrade Logística</p>
+              </div>
+            </div>
+          </div>
 
-    <!-- 8. Soluções de Maior Destaque -->
-    <section id="solucoes" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Soluções de Maior Destaque</h2>
-                <p class="section-subtitle">Escolha a engenharia exata para o momento atual do seu negócio. Todas as soluções possuem garantia de 30 dias.</p>
+          <!-- CARD 4 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="stars">
+                <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+              </div>
+              <p class="testimonial-text">"Fizemos o G2F Launch e recuperamos o investimento em menos de duas semanas. A metodologia do Gabriel é extremamente direta."</p>
             </div>
-            
-            <div class="pricing-grid">
-                <!-- Solução 1 -->
-                <div class="pricing-card">
-                    <h3 class="pricing-title">G2F SEO Local</h3>
-                    <p class="pricing-desc">Domine as buscas da sua região e atraia clientes qualificados todos os dias.</p>
-                    <div class="pricing-price">R$ 357<span>/único</span></div>
-                    <div class="pricing-guarantee"><span class="material-symbols-outlined">shield</span> Garantia 30 dias</div>
-                    <ul class="pricing-features">
-                        <li><span class="material-symbols-outlined">done</span> Otimização Google Meu Negócio</li>
-                        <li><span class="material-symbols-outlined">done</span> Setup de palavras-chave locais</li>
-                        <li><span class="material-symbols-outlined">done</span> Estratégia de reviews automatizada</li>
-                        <li><span class="material-symbols-outlined">done</span> Posicionamento no Maps</li>
-                    </ul>
-                    <button class="btn btn-outline" onclick="openQuiz()">Tenho interesse</button>
-                </div>
-                
-                <!-- Solução 2 -->
-                <div class="pricing-card highlight">
-                    <h3 class="pricing-title">Agente WhatsApp</h3>
-                    <p class="pricing-desc">Atendimento e vendas automáticas 24/7 guiadas por Inteligência Artificial.</p>
-                    <div class="pricing-price">R$ 1.347<span>/setup</span></div>
-                    <div class="pricing-guarantee"><span class="material-symbols-outlined">shield</span> Garantia 30 dias</div>
-                    <ul class="pricing-features">
-                        <li><span class="material-symbols-outlined">done</span> Agente treinado com seus dados</li>
-                        <li><span class="material-symbols-outlined">done</span> Qualificação de leads 24/7</li>
-                        <li><span class="material-symbols-outlined">done</span> Agendamento automático</li>
-                        <li><span class="material-symbols-outlined">done</span> Integração com seu CRM atual</li>
-                    </ul>
-                    <button class="btn btn-primary" onclick="openQuiz()">Quero automatizar</button>
-                </div>
-                
-                <!-- Solução 3 -->
-                <div class="pricing-card">
-                    <h3 class="pricing-title">G2F Launch</h3>
-                    <p class="pricing-desc">Estruturação de funil e tráfego pago para lançamentos e produtos perpétuos.</p>
-                    <div class="pricing-price">R$ 2.247<span>/projeto</span></div>
-                    <div class="pricing-guarantee"><span class="material-symbols-outlined">shield</span> Garantia 30 dias</div>
-                    <ul class="pricing-features">
-                        <li><span class="material-symbols-outlined">done</span> Design de Landing Pages</li>
-                        <li><span class="material-symbols-outlined">done</span> Gestão de Tráfego (Meta/Google)</li>
-                        <li><span class="material-symbols-outlined">done</span> Copywriting neuro-focado</li>
-                        <li><span class="material-symbols-outlined">done</span> Dashboards de acompanhamento</li>
-                    </ul>
-                    <button class="btn btn-outline" onclick="openQuiz()">Tenho interesse</button>
-                </div>
-                
-                <!-- Solução 4 -->
-                <div class="pricing-card">
-                    <h3 class="pricing-title">Business OS</h3>
-                    <p class="pricing-desc">O sistema operacional completo da G2F operando dentro da sua empresa.</p>
-                    <div class="pricing-price">R$ 5.000<span>/mês</span></div>
-                    <div class="pricing-guarantee"><span class="material-symbols-outlined">shield</span> Contrato de performance</div>
-                    <ul class="pricing-features">
-                        <li><span class="material-symbols-outlined">done</span> Consultoria de processos e IA</li>
-                        <li><span class="material-symbols-outlined">done</span> Implementação de CRM robusto</li>
-                        <li><span class="material-symbols-outlined">done</span> Automação de backoffice</li>
-                        <li><span class="material-symbols-outlined">done</span> Reuniões quinzenais de board</li>
-                    </ul>
-                    <button class="btn btn-outline" onclick="openQuiz()">Falar com Gabriel</button>
-                </div>
+            <div class="client-info">
+              <div class="client-avatar">PF</div>
+              <div class="client-details">
+                <h5>Patricia Fonseca</h5>
+                <p>CEO — Fonseca Distribuidora</p>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- 9. Conteúdos / Blog -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Insights & Engenharia</h2>
-                <p class="section-subtitle">Acesso aos nossos bastidores e estudos de caso em IA e automação.</p>
+          <!-- CARD 5 -->
+          <div class="testimonial-card">
+            <div>
+              <div class="stars">
+                <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+              </div>
+              <p class="testimonial-text">"Como parceiro do G2F Partner Program, já recebo comissões recorrentes todo mês ajudando outros empresários da minha região."</p>
             </div>
-            
-            <div class="filter-tabs">
-                <button class="filter-btn active">Todos</button>
-                <button class="filter-btn">Atração & SEO</button>
-                <button class="filter-btn">Automação & IA</button>
-                <button class="filter-btn">Business OS & Gestão</button>
+            <div class="client-info">
+              <div class="client-avatar">LN</div>
+              <div class="client-details">
+                <h5>Lucas Nogueira</h5>
+                <p>Consultor de Negócios</p>
+              </div>
             </div>
-            
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-img">Imagem do Artigo</div>
-                    <div class="blog-content">
-                        <span class="blog-category">Automação & IA</span>
-                        <h4 class="blog-title">Como o ChatGPT reduziu o CAC de uma clínica em 60% em 2 semanas</h4>
-                        <a href="#" class="blog-link">Ler estudo de caso <span class="material-symbols-outlined">arrow_right_alt</span></a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-img">Imagem do Artigo</div>
-                    <div class="blog-content">
-                        <span class="blog-category">Business OS & Gestão</span>
-                        <h4 class="blog-title">Os 3 erros que impedem empresas de 1 milhão de chegarem a 10 milhões</h4>
-                        <a href="#" class="blog-link">Ler artigo <span class="material-symbols-outlined">arrow_right_alt</span></a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-img">Imagem do Artigo</div>
-                    <div class="blog-content">
-                        <span class="blog-category">Atração & SEO</span>
-                        <h4 class="blog-title">O guia definitivo do SEO Local para negócios físicos dominarem sua região</h4>
-                        <a href="#" class="blog-link">Ler guia completo <span class="material-symbols-outlined">arrow_right_alt</span></a>
-                    </div>
-                </article>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 10. FAQ Accordion -->
-    <section id="faq" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Perguntas Frequentes</h2>
-                <p class="section-subtitle">Tudo o que você precisa saber antes de dar o próximo passo.</p>
-            </div>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Como funciona a garantia de 30 dias?
-                        <span class="material-symbols-outlined faq-icon">add</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Se em 30 dias após a implementação das nossas soluções você seguir o método e não obtiver resultados mensuráveis ou não estiver satisfeito com a tecnologia entregue, devolvemos 100% do seu investimento. Sem burocracia.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        O Agente WhatsApp funciona no meu número atual?
-                        <span class="material-symbols-outlined faq-icon">add</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sim. Conectamos nossa inteligência artificial diretamente à sua API do WhatsApp (oficial ou via QR code) sem necessidade de mudar seu número de contato comercial.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Qualquer tipo de negócio pode usar o Business OS?
-                        <span class="material-symbols-outlined faq-icon">add</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>O Business OS é indicado para empresas que já validaram seu modelo de negócio, faturam de forma recorrente e precisam de processos, dados e automação para escalar a operação e a equipe comercial sem perder margem.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Preciso saber programar para usar as soluções da G2F?
-                        <span class="material-symbols-outlined faq-icon">add</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Não. A G2F entra como seu parceiro de engenharia. Nós construímos, configuramos e mantemos a infraestrutura. Você recebe o painel de controle e foca apenas na gestão estratégica.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Quanto tempo demora a implementação?
-                        <span class="material-symbols-outlined faq-icon">add</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>O SEO Local é ativado em até 48h. O Agente WhatsApp leva de 3 a 7 dias para mapeamento e treinamento da IA. Lançamentos e o Business OS possuem cronogramas personalizados a partir de 15 dias.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Vocês atendem todo o Brasil?
-                        <span class="material-symbols-outlined faq-icon">add</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sim. Nossa operação é 100% remota e digital, atendendo clientes em todo o território nacional com excelência e comunicação ágil via Slack e reuniões online.</p>
-                    </div>
-                </div>
-            </div>
+  <!-- 7. CONTADORES NUMÉRICOS ANIMADOS -->
+  <section class="counters-section">
+    <div class="container">
+      <div class="counters-grid">
+        <div>
+          <div class="counter-value" data-target="42">R$ 0 Mi+</div>
+          <div class="counter-label">Receita Gerada</div>
         </div>
-    </section>
-
-    <!-- 11. Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-logo font-serif italic text-copper">G2F AI</div>
-                    <p class="footer-desc">Engenharia de crescimento, IA e automação para empresas que buscam escala previsível e lucratividade máxima.</p>
-                </div>
-                <div>
-                    <h4 class="footer-heading">Soluções</h4>
-                    <ul class="footer-links">
-                        <li><a href="#solucoes">SEO Local</a></li>
-                        <li><a href="#solucoes">Agente WhatsApp IA</a></li>
-                        <li><a href="#solucoes">G2F Launch</a></li>
-                        <li><a href="#solucoes">G2F Business OS</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-heading">Empresa</h4>
-                    <ul class="footer-links">
-                        <li><a href="#autoridade">Sobre nós</a></li>
-                        <li><a href="#pilares">Metodologia</a></li>
-                        <li><a href="#">Blog & Casos</a></li>
-                        <li><a href="#faq">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 G2F AI. Todos os direitos reservados.</p>
-                <div class="footer-links" style="display: flex; gap: 24px;">
-                    <a href="#">Termos de Uso</a>
-                    <a href="#">Política de Privacidade</a>
-                </div>
-            </div>
+        <div>
+          <div class="counter-value" data-target="150">0+</div>
+          <div class="counter-label">Empresas Impactadas</div>
         </div>
-    </footer>
+        <div>
+          <div class="counter-value" data-target="3.5">0x</div>
+          <div class="counter-label">ROI Médio</div>
+        </div>
+        <div>
+          <div class="counter-value" data-target="500">0+</div>
+          <div class="counter-label">Agentes Ativos</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- 12. Floating Components & Modals -->
-    
-    <!-- WhatsApp Float -->
-    <a href="#" class="whatsapp-float">
-        <!-- SVG for standard WhatsApp icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-        </svg>
+  <!-- 8. CATÁLOGO COMPLETO DE SOLUÇÕES (BENTO GRID) -->
+  <section class="section-padding" id="solucoes">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-copper">Portfólio Oficial</span>
+        <h2 class="section-title">Catálogo Completo de Soluções G2F AI</h2>
+        <p class="text-muted" style="margin-top: 0.5rem;">Preços transparentes, implementação guiada e garantia incondicional.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- SOLUÇÃO 1: G2F SEO LOCAL -->
+        <div class="bento-card col-span-6">
+          <span class="bento-badge-guarantee">30 dias de garantia</span>
+          <div>
+            <span class="badge-copper" style="margin-bottom: 1rem;">Tração Imediata</span>
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">G2F SEO Local</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">Otimização completa da sua presença no Google Maps para dominar a busca local na sua região.</p>
+            <div class="solucao-price">
+              <span class="price-value">R$ 357</span>
+              <span class="price-period">Pix / pagamento único</span>
+            </div>
+            <ul class="feature-list">
+              <li><span class="material-symbols-outlined">check_circle</span> Otimização de Perfil da Empresa no Google</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Pesquisa de palavras-chave locais de alta conversão</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Estratégia de avaliações de 5 estrelas</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5531990000000?text=Quero%20contratar%20o%20G2F%20SEO%20Local%20por%20R$%20357" target="_blank" class="btn btn-copper" style="width: 100%;">Garantir Minha Vaga no WhatsApp</a>
+        </div>
+
+        <!-- SOLUÇÃO 2: AGENTE WHATSAPP IA -->
+        <div class="bento-card col-span-6">
+          <span class="bento-badge-guarantee">30 dias de garantia</span>
+          <div>
+            <span class="badge-copper" style="margin-bottom: 1rem;">Automação 24/7</span>
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">G2F Agente WhatsApp IA</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">Agente autônomo treinado com o conhecimento da sua empresa para atender, qualificar e vender.</p>
+            <div class="solucao-price">
+              <span class="price-value">R$ 1.347</span>
+              <span class="price-period">Pix / taxa de setup</span>
+            </div>
+            <ul class="feature-list">
+              <li><span class="material-symbols-outlined">check_circle</span> Integração direta com seu número do WhatsApp</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Treinamento customizado com FAQ do seu negócio</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Agendamento automático e captura de leads</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5531990000000?text=Quero%20implementar%20o%20Agente%20WhatsApp%20IA" target="_blank" class="btn btn-copper" style="width: 100%;">Implementar Agente Agora</a>
+        </div>
+
+        <!-- SOLUÇÃO 3: G2F LAUNCH -->
+        <div class="bento-card col-span-6">
+          <span class="bento-badge-guarantee">30 dias de garantia</span>
+          <div>
+            <span class="badge-copper" style="margin-bottom: 1rem;">Aceleração de Vendas</span>
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">G2F Launch</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">Campanha intensiva de tráfego pago + landing page de alta conversão para pico imediato de receita.</p>
+            <div class="solucao-price">
+              <span class="price-value">R$ 2.247</span>
+              <span class="price-period">Pix / projeto</span>
+            </div>
+            <ul class="feature-list">
+              <li><span class="material-symbols-outlined">check_circle</span> Criação de Landing Page com Copywriting Neuro-orientado</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Setup de campanhas no Meta Ads e Google Ads</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Acompanhamento por 30 dias com otimização diária</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5531990000000?text=Quero%20contratar%20o%20G2F%20Launch" target="_blank" class="btn btn-copper" style="width: 100%;">Quero Lançar Minha Oferta</a>
+        </div>
+
+        <!-- SOLUÇÃO 4: G2F BUSINESS OS -->
+        <div class="bento-card col-span-6" style="background: linear-gradient(135deg, #0f1726, #1a1528); border-color: rgba(229, 114, 82, 0.5);">
+          <span class="bento-badge-guarantee">Exclusivo PMEs</span>
+          <div>
+            <span class="badge-copper" style="margin-bottom: 1rem; background: var(--copper-primary); color: #fff;">Sistema de Gestão & IA</span>
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">G2F Business OS</h3>
+            <p class="text-muted" style="font-size: 0.9rem;">Plataforma completa de inteligência operacional, dashboards em tempo real e mentoria continuada.</p>
+            <div class="solucao-price">
+              <span class="price-period">A partir de</span>
+              <span class="price-value">R$ 5.000</span>
+              <span class="price-period">/mês</span>
+            </div>
+            <ul class="feature-list">
+              <li><span class="material-symbols-outlined">check_circle</span> Diagnóstico e reestruturação de processos</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Dashboard centralizado de KPIs e financeiro</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Reunião semanal de alinhamento estratégico com time G2F</li>
+            </ul>
+          </div>
+          <button onclick="openQuizModal()" class="btn btn-copper" style="width: 100%;">Aplicar para o Business OS</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CENTRO DE CONTEÚDOS & BLOG PREVIEWS -->
+  <section class="section-padding" id="conteudos">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-copper">Conhecimento Prático</span>
+        <h2 class="section-title">Centro de Conteúdos & Artigos</h2>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filterBlog('todos', this)">Todos</button>
+        <button class="tab-btn" onclick="filterBlog('seo', this)">Atração & SEO</button>
+        <button class="tab-btn" onclick="filterBlog('ia', this)">Automação & IA</button>
+        <button class="tab-btn" onclick="filterBlog('gestao', this)">Business OS & Gestão</button>
+      </div>
+
+      <!-- BLOG CARDS GRID -->
+      <div class="blog-grid" id="blogGrid">
+        <a href="artigos/seo-local-2026.html" class="blog-card" data-cat="seo">
+          <div class="blog-thumb"><span class="material-symbols-outlined" style="font-size: 3rem;">travel_explore</span></div>
+          <div class="blog-content">
+            <div>
+              <span class="blog-category">Atração & SEO</span>
+              <h4 class="blog-title">Como Dominar as Primeiras Posições do Google Maps em 2026</h4>
+            </div>
+            <span class="blog-date">12 de Julho, 2026</span>
+          </div>
+        </a>
+
+        <a href="artigos/agentes-ia-whatsapp.html" class="blog-card" data-cat="ia">
+          <div class="blog-thumb"><span class="material-symbols-outlined" style="font-size: 3rem;">smart_toy</span></div>
+          <div class="blog-content">
+            <div>
+              <span class="blog-category">Automação & IA</span>
+              <h4 class="blog-title">O Guia Definitivo dos Agentes de IA no WhatsApp para PMEs</h4>
+            </div>
+            <span class="blog-date">08 de Julho, 2026</span>
+          </div>
+        </a>
+
+        <a href="artigos/margem-bruta-pme.html" class="blog-card" data-cat="gestao">
+          <div class="blog-thumb"><span class="material-symbols-outlined" style="font-size: 3rem;">query_stats</span></div>
+          <div class="blog-content">
+            <div>
+              <span class="blog-category">Business OS & Gestão</span>
+              <h4 class="blog-title">Como Manter a Margem Bruta Acima de 70% em Operações Digitais</h4>
+            </div>
+            <span class="blog-date">01 de Julho, 2026</span>
+          </div>
+        </a>
+
+        <a href="artigos/funil-de-vendas-local.html" class="blog-card" data-cat="seo">
+          <div class="blog-thumb"><span class="material-symbols-outlined" style="font-size: 3rem;">filter_alt</span></div>
+          <div class="blog-content">
+            <div>
+              <span class="blog-category">Atração & SEO</span>
+              <h4 class="blog-title">Estruturando um Funil de Vendas Imbatível para Comércio Local</h4>
+            </div>
+            <span class="blog-date">24 de Junho, 2026</span>
+          </div>
+        </a>
+
+        <a href="artigos/prompt-engineering-negocios.html" class="blog-card" data-cat="ia">
+          <div class="blog-thumb"><span class="material-symbols-outlined" style="font-size: 3rem;">terminal</span></div>
+          <div class="blog-content">
+            <div>
+              <span class="blog-category">Automação & IA</span>
+              <h4 class="blog-title">Engenharia de Prompts para Empresários: Da Teoria à Prática</h4>
+            </div>
+            <span class="blog-date">15 de Junho, 2026</span>
+          </div>
+        </a>
+
+        <a href="artigos/kpis-fundamentais.html" class="blog-card" data-cat="gestao">
+          <div class="blog-thumb"><span class="material-symbols-outlined" style="font-size: 3rem;">speed</span></div>
+          <div class="blog-content">
+            <div>
+              <span class="blog-category">Business OS & Gestão</span>
+              <h4 class="blog-title">Os 5 KPIs que Todo Dono de PME Deveria Acompanhar Diariamente</h4>
+            </div>
+            <span class="blog-date">09 de Junho, 2026</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ ACCORDION -->
+  <section class="section-padding" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge-copper">Tire Suas Dúvidas</span>
+        <h2 class="section-title">Perguntas Frequentes (FAQ)</h2>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-header" onclick="toggleFaq(this)">
+            <span>Qual a diferença entre o G2F SEO Local e o Agente WhatsApp?</span>
+            <span class="material-symbols-outlined faq-icon">expand_more</span>
+          </div>
+          <div class="faq-body">
+            O G2F SEO Local foca no pilar de Atração, garantindo que novos clientes encontrem sua empresa no Google Maps. Já o Agente WhatsApp foca no Atendimento e Conversão, respondendo automaticamente 24 horas por dia.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="toggleFaq(this)">
+            <span>Quanto tempo leva para ver resultados com o G2F SEO Local?</span>
+            <span class="material-symbols-outlined faq-icon">expand_more</span>
+          </div>
+          <div class="faq-body">
+            Geralmente os primeiros resultados de aumento de chamadas e visitas aparecem entre 14 e 30 dias após a conclusão das otimizações na sua ficha do Google.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="toggleFaq(this)">
+            <span>Como funciona a garantia incondicional de 30 dias?</span>
+            <span class="material-symbols-outlined faq-icon">expand_more</span>
+          </div>
+          <div class="faq-body">
+            Se dentro de 30 dias você entender que a solução contratada não atendeu às suas expectativas, basta enviar uma única mensagem no WhatsApp e devolvemos 100% do seu dinheiro sem letras miúdas.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="toggleFaq(this)">
+            <span>O Agente de IA precisa de um número de WhatsApp exclusivo?</span>
+            <span class="material-symbols-outlined faq-icon">expand_more</span>
+          </div>
+          <div class="faq-body">
+            Recomendamos o uso de um número dedicado para a automação, mas ele pode ser integrado perfeitamente ao seu atendimento humano atual.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="toggleFaq(this)">
+            <span>O que é o Partner Program do Grupo G2F AI?</span>
+            <span class="material-symbols-outlined faq-icon">expand_more</span>
+          </div>
+          <div class="faq-body">
+            É o nosso programa oficial de parceiros onde você pode indicar nossos produtos e serviços para outros empresários da sua rede e receber 20% de comissão recorrente sobre cada contrato fechado.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-header" onclick="toggleFaq(this)">
+            <span>Quem é Gabriel Alexandre?</span>
+            <span class="material-symbols-outlined faq-icon">expand_more</span>
+          </div>
+          <div class="faq-body">
+            Gabriel Alexandre é o founder e CEO do Grupo G2F AI, estrategista de negócios responsável por mais de R$ 42M em receita gerada para empresas com operações 100% digitais.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FOOTER PORTAL MULTI-COLUNAS -->
+  <footer class="footer-portal">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-badge">G2F</div>
+            <div class="brand-text">
+              <span class="brand-name">Grupo G2F AI</span>
+              <span class="brand-tagline">Para quem quer mais</span>
+            </div>
+          </div>
+          <p>Potencializando pequenas e médias empresas através de Inteligência Artificial aplicada, SEO local de alta performance e sistemas de gestão moderna.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Soluções</h4>
+          <ul class="footer-links">
+            <li><a href="#solucoes">G2F SEO Local</a></li>
+            <li><a href="#solucoes">Agente WhatsApp IA</a></li>
+            <li><a href="#solucoes">G2F Launch</a></li>
+            <li><a href="#solucoes">G2F Business OS</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Comunidades & Tools</h4>
+          <ul class="footer-links">
+            <li><a href="#ecossistema">G2F Club</a></li>
+            <li><a href="#ecossistema">Partner Program (20%)</a></li>
+            <li><a href="#solucoes">Dashboard Business OS</a></li>
+            <li><a href="https://wa.me/5531990000000" target="_blank">Área do Aluno</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Conteúdos</h4>
+          <ul class="footer-links">
+            <li><a href="#conteudos">Blog & Artigos</a></li>
+            <li><a href="#conteudos">Atração & SEO</a></li>
+            <li><a href="#conteudos">Automação & IA</a></li>
+            <li><a href="#faq">Central de Ajuda (FAQ)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sobre Nós</h4>
+          <ul class="footer-links">
+            <li><a href="#autoridade">Gabriel Alexandre</a></li>
+            <li><a href="#autoridade">Manifesto G2F</a></li>
+            <li><a href="#autoridade">Princípios Inegociáveis</a></li>
+            <li><a href="https://wa.me/5531990000000" target="_blank">Contato Comercial</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Grupo G2F AI LTDA © 2026. Todos os direitos reservados.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#" style="color: var(--text-muted); text-decoration: none;">Termos de Uso</a>
+          <a href="#" style="color: var(--text-muted); text-decoration: none;">Política de Privacidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 12. FLOATING & MODAL ELEMENTS -->
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5531990000000?text=Ol%C3%A1!%20Vim%20pelo%20site%20institucional%20do%20Grupo%20G2F%20AI." target="_blank" class="whatsapp-float">
+    <div class="whatsapp-pulse"></div>
+    <span class="material-symbols-outlined" style="font-size: 2.2rem;">chat</span>
+  </a>
+
+  <!-- MOBILE BOTTOM NAV BAR -->
+  <div class="mobile-bottom-nav">
+    <a href="#" class="bottom-nav-item active">
+      <span class="material-symbols-outlined">home</span>
+      Início
     </a>
+    <a href="#solucoes" class="bottom-nav-item">
+      <span class="material-symbols-outlined">grid_view</span>
+      Soluções
+    </a>
+    <a href="#conteudos" class="bottom-nav-item">
+      <span class="material-symbols-outlined">article</span>
+      Conteúdos
+    </a>
+    <a href="javascript:void(0)" onclick="openQuizModal()" class="bottom-nav-item">
+      <span class="material-symbols-outlined">quiz</span>
+      Quiz 30s
+    </a>
+  </div>
 
-    <!-- Mobile Bottom Bar -->
-    <div class="mobile-bottom-bar">
-        <button class="btn btn-primary" onclick="openQuiz()">Falar com Especialista</button>
-    </div>
+  <!-- QUIZ MODAL -->
+  <div class="modal-overlay" id="quizModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeQuizModal()">&times;</button>
+      
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quizProgress"></div>
+      </div>
 
-    <!-- Quiz Modal -->
-    <div class="modal-overlay" id="quizModal">
-        <div class="modal-content">
-            <button class="modal-close material-symbols-outlined" onclick="closeQuiz()">close</button>
-            
-            <div class="progress-bar">
-                <div class="progress-fill" id="quizProgress"></div>
-            </div>
-
-            <!-- Step 1 -->
-            <div class="quiz-step active" id="step1">
-                <h3>Qual o principal desafio da sua empresa hoje?</h3>
-                <div class="quiz-options">
-                    <button class="quiz-option" onclick="nextStep()">Atrair clientes qualificados (Tráfego/SEO)</button>
-                    <button class="quiz-option" onclick="nextStep()">Atender e converter leads (Automação/WhatsApp)</button>
-                    <button class="quiz-option" onclick="nextStep()">Lançar um novo produto/serviço</button>
-                    <button class="quiz-option" onclick="nextStep()">Organizar processos e escalar (Business OS)</button>
-                </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="quiz-step" id="step2">
-                <h3>Qual o faturamento médio mensal atual?</h3>
-                <div class="quiz-options">
-                    <button class="quiz-option" onclick="nextStep()">Até R$ 50.000</button>
-                    <button class="quiz-option" onclick="nextStep()">R$ 50.000 a R$ 150.000</button>
-                    <button class="quiz-option" onclick="nextStep()">R$ 150.000 a R$ 500.000</button>
-                    <button class="quiz-option" onclick="submitQuiz()">Acima de R$ 500.000</button>
-                </div>
-            </div>
-            
-            <!-- Step 3 -->
-            <div class="quiz-step" id="step3">
-                <h3>Analisando seu perfil...</h3>
-                <p style="margin-bottom: 24px; color: var(--text-subtitle);">Temos a engenharia perfeita para o seu negócio escalar.</p>
-                <button class="btn btn-primary" style="width: 100%" onclick="window.location.href='#'">Receber Diagnóstico no WhatsApp</button>
-            </div>
+      <!-- STEP 1 -->
+      <div class="quiz-step active" id="quizStep1">
+        <span class="badge-copper">Passo 1 de 3</span>
+        <h3 style="font-size: 1.35rem; font-weight: 800; margin-top: 0.5rem;">Qual o principal objetivo da sua empresa hoje?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option-btn" onclick="selectQuizOption(1, 'Atrair clientes locais pelo Google Maps')">
+            <span>Atrair mais clientes na minha cidade</span>
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+          <button class="quiz-option-btn" onclick="selectQuizOption(1, 'Automatizar atendimento no WhatsApp com IA')">
+            <span>Automatizar atendimento no WhatsApp</span>
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+          <button class="quiz-option-btn" onclick="selectQuizOption(1, 'Acelerar vendas e campanhas de tráfego pago')">
+            <span>Acelerar vendas com tráfego pago</span>
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+          <button class="quiz-option-btn" onclick="selectQuizOption(1, 'Organizar processos e indicadores com Business OS')">
+            <span>Organizar gestão e indicadores da PME</span>
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
         </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="quiz-step" id="quizStep2">
+        <span class="badge-copper">Passo 2 de 3</span>
+        <h3 style="font-size: 1.35rem; font-weight: 800; margin-top: 0.5rem;">Qual o faturamento mensal aproximado?</h3>
+        <div class="quiz-options">
+          <button class="quiz-option-btn" onclick="selectQuizOption(2, 'Até R$ 30 mil/mês')">
+            <span>Até R$ 30.000 /mês</span>
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+          <button class="quiz-option-btn" onclick="selectQuizOption(2, 'De R$ 30 mil a R$ 100 mil/mês')">
+            <span>De R$ 30.000 a R$ 100.000 /mês</span>
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+          <button class="quiz-option-btn" onclick="selectQuizOption(2, 'Acima de R$ 100 mil/mês')">
+            <span>Acima de R$ 100.000 /mês</span>
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="quiz-step" id="quizStep3">
+        <span class="badge-copper">Passo 3 de 3</span>
+        <h3 style="font-size: 1.35rem; font-weight: 800; margin-top: 0.5rem;">Seu diagnóstico está pronto!</h3>
+        <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.95rem;">Clique no botão abaixo para receber o resultado personalizado diretamente no WhatsApp com um consultor da G2F AI.</p>
+        <div style="margin-top: 2rem;">
+          <button onclick="finishQuiz()" class="btn btn-copper" style="width: 100%; font-size: 1.05rem;">
+            Ver Meu Diagnóstico no WhatsApp <span class="material-symbols-outlined">chat</span>
+          </button>
+        </div>
+      </div>
+
     </div>
+  </div>
 
-    <!-- Javascript -->
-    <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                
-                // Close all others
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    if (item !== faqItem) item.classList.remove('active');
-                });
-                
-                // Toggle current
-                faqItem.classList.toggle('active');
-            });
-        });
+  <!-- JAVASCRIPT FOR INTERACTIVITY -->
+  <script>
+    // HERO SLIDER LOGIC
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
 
-        // Carousel Logic
-        const track = document.getElementById('depoimentos-track');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const dotsContainer = document.getElementById('carousel-dots');
-        const cards = document.querySelectorAll('.depoimento-card');
-        
-        let currentIndex = 0;
-        let isDragging = false;
-        let startPos = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
-        let animationID;
+    function setHeroSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
 
-        // Create dots based on visible items
-        function updateDots() {
-            dotsContainer.innerHTML = '';
-            let cardsPerView = 1;
-            if (window.innerWidth >= 768) cardsPerView = 2;
-            if (window.innerWidth >= 1024) cardsPerView = 3;
-            
-            const maxIndex = cards.length - cardsPerView;
-            
-            for (let i = 0; i <= maxIndex; i++) {
-                const dot = document.createElement('div');
-                dot.classList.add('dot');
-                if (i === currentIndex) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(i));
-                dotsContainer.appendChild(dot);
+    setInterval(() => {
+      let next = (currentSlide + 1) % slides.length;
+      setHeroSlide(next);
+    }, 6000);
+
+    // MOBILE DRAWER
+    function toggleMobileDrawer() {
+      const drawer = document.getElementById('mobileDrawer');
+      const overlay = document.getElementById('drawerOverlay');
+      drawer.classList.toggle('open');
+      overlay.classList.toggle('open');
+    }
+
+    // FAQ ACCORDION TOGGLE
+    function toggleFaq(element) {
+      const parent = element.parentElement;
+      parent.classList.toggle('active');
+    }
+
+    // BLOG FILTER TABS
+    function filterBlog(cat, btn) {
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.blog-card');
+      cards.forEach(card => {
+        if (cat === 'todos' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // ANIMATED COUNTERS VIA INTERSECTION OBSERVER
+    let countersAnimated = false;
+    const counters = document.querySelectorAll('.counter-value');
+    const countersSection = document.querySelector('.counters-section');
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !countersAnimated) {
+        countersAnimated = true;
+        counters.forEach(counter => {
+          const target = parseFloat(counter.getAttribute('data-target'));
+          let count = 0;
+          const speed = target / 40;
+          const timer = setInterval(() => {
+            count += speed;
+            if (count >= target) {
+              count = target;
+              clearInterval(timer);
             }
-        }
-
-        function goToSlide(index) {
-            let cardsPerView = 1;
-            if (window.innerWidth >= 768) cardsPerView = 2;
-            if (window.innerWidth >= 1024) cardsPerView = 3;
-            const maxIndex = cards.length - cardsPerView;
-            
-            if (index < 0) index = 0;
-            if (index > maxIndex) index = maxIndex;
-            
-            currentIndex = index;
-            const cardWidth = cards[0].offsetWidth + 24; // width + gap
-            currentTranslate = currentIndex * -cardWidth;
-            prevTranslate = currentTranslate;
-            
-            track.style.transform = `translateX(${currentTranslate}px)`;
-            
-            document.querySelectorAll('.dot').forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentIndex);
-            });
-        }
-
-        prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-        nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-
-        window.addEventListener('resize', () => {
-            updateDots();
-            goToSlide(currentIndex); // Recalculate positions
+            if (target === 42) counter.innerText = 'R$ ' + Math.floor(count) + ' Mi+';
+            else if (target === 3.5) counter.innerText = count.toFixed(1) + 'x';
+            else counter.innerText = Math.floor(count) + '+';
+          }, 30);
         });
+      }
+    }, { threshold: 0.3 });
 
-        // Initialize Carousel
-        updateDots();
-        
-        // Autoplay
-        setInterval(() => {
-            let cardsPerView = 1;
-            if (window.innerWidth >= 768) cardsPerView = 2;
-            if (window.innerWidth >= 1024) cardsPerView = 3;
-            const maxIndex = cards.length - cardsPerView;
-            
-            if (currentIndex >= maxIndex) {
-                goToSlide(0);
-            } else {
-                goToSlide(currentIndex + 1);
-            }
-        }, 5000);
+    if (countersSection) observer.observe(countersSection);
 
-        // Number Counters Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseFloat(el.getAttribute('data-target'));
-                    const duration = 2000;
-                    const steps = 60;
-                    const stepValue = target / steps;
-                    let current = 0;
-                    
-                    const interval = setInterval(() => {
-                        current += stepValue;
-                        if (current >= target) {
-                            el.innerText = target % 1 !== 0 ? target.toFixed(1) : target;
-                            clearInterval(interval);
-                        } else {
-                            el.innerText = target % 1 !== 0 ? current.toFixed(1) : Math.floor(current);
-                        }
-                    }, duration / steps);
-                    
-                    observer.unobserve(el);
-                }
-            });
-        });
+    // QUIZ MODAL LOGIC
+    let quizAnswers = {};
 
-        document.querySelectorAll('.valor').forEach(counter => {
-            observer.observe(counter);
-        });
+    function openQuizModal() {
+      document.getElementById('quizModal').classList.add('active');
+    }
 
-        // Quiz Modal Logic
-        const modal = document.getElementById('quizModal');
-        const progressFill = document.getElementById('quizProgress');
-        let currentStep = 1;
+    function closeQuizModal() {
+      document.getElementById('quizModal').classList.remove('active');
+    }
 
-        function openQuiz() {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            resetQuiz();
-        }
+    function selectQuizOption(step, answer) {
+      quizAnswers['step' + step] = answer;
+      if (step === 1) {
+        document.getElementById('quizStep1').classList.remove('active');
+        document.getElementById('quizStep2').classList.add('active');
+        document.getElementById('quizProgress').style.width = '66%';
+      } else if (step === 2) {
+        document.getElementById('quizStep2').classList.remove('active');
+        document.getElementById('quizStep3').classList.add('active');
+        document.getElementById('quizProgress').style.width = '100%';
+      }
+    }
 
-        function closeQuiz() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function resetQuiz() {
-            currentStep = 1;
-            updateQuizView();
-        }
-
-        function nextStep() {
-            if (currentStep < 3) {
-                currentStep++;
-                updateQuizView();
-            }
-        }
-        
-        function submitQuiz() {
-            currentStep = 3;
-            updateQuizView();
-        }
-
-        function updateQuizView() {
-            document.querySelectorAll('.quiz-step').forEach((step, index) => {
-                step.classList.toggle('active', index + 1 === currentStep);
-            });
-            progressFill.style.width = `${(currentStep / 3) * 100}%`;
-        }
-
-        // Close modal on outside click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeQuiz();
-        });
-        
-    </script>
+    function finishQuiz() {
+      const msg = `Ol%C3%A1!%20Fiz%20o%20Quiz%20de%20Diagn%C3%B3stico%20no%20site%20G2F:%0A-%20Objetivo:%20${encodeURIComponent(quizAnswers.step1 || '')}%0A-%20Faturamento:%20${encodeURIComponent(quizAnswers.step2 || '')}`;
+      window.open(`https://wa.me/5531990000000?text=${msg}`, '_blank');
+      closeQuizModal();
+    }
+  </script>
 </body>
 </html>
