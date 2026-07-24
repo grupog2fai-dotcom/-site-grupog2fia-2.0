@@ -1,1445 +1,496 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soluções & Produtos — Grupo G2F AI | Inteligência & Escala para PMEs</title>
-  <meta name="description" content="Catálogo completo de soluções do Grupo G2F AI: G2F SEO Local, Agente WhatsApp IA, G2F Launch e Business OS. Preços transparentes e garantia de 30 dias.">
-  
-  <!-- Google Fonts & Material Symbols -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-
-  <style>
-    /* CSS RESET & VARIABLES - FABLE 5 DARK OBSIDIAN SYSTEM */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    :root {
-      --bg-obsidian: #050811;
-      --surface-dark: #0f1726;
-      --surface-elevated: #131d2e;
-      --border-copper: rgba(196, 98, 68, 0.28);
-      --border-copper-hover: rgba(229, 114, 82, 0.6);
-      --copper-primary: #c46244;
-      --copper-light: #d46a4c;
-      --copper-hover: #e57252;
-      --copper-glow: rgba(196, 98, 68, 0.22);
-      --text-white: #ffffff;
-      --text-secondary: #e2e9f5;
-      --text-muted: #bac6d9;
-      --font-main: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    body {
-      background-color: var(--bg-obsidian);
-      color: var(--text-white);
-      font-family: var(--font-main);
-      overflow-x: hidden;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* TYPOGRAPHY UTILITIES */
-    .font-serif { font-family: var(--font-serif); }
-    .font-italic { font-style: italic; }
-    .text-copper { color: var(--copper-light); }
-    .text-muted { color: var(--text-muted); }
-    .text-secondary { color: var(--text-secondary); }
-
-    /* LAYOUT CONTAINERS */
-    .container {
-      width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* BUTTONS & BADGES */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.85rem 1.75rem;
-      border-radius: 9999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: var(--transition-fast);
-      cursor: pointer;
-      border: 1px solid transparent;
-    }
-    
-    .btn-copper {
-      background: linear-gradient(135deg, var(--copper-primary), var(--copper-light));
-      color: #ffffff;
-      box-shadow: 0 4px 20px var(--copper-glow);
-    }
-    .btn-copper:hover {
-      background: linear-gradient(135deg, var(--copper-light), var(--copper-hover));
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(229, 114, 82, 0.4);
-    }
-
-    .btn-outline-copper {
-      background: transparent;
-      border-color: var(--copper-primary);
-      color: var(--text-white);
-    }
-    .btn-outline-copper:hover {
-      background: rgba(196, 98, 68, 0.12);
-      border-color: var(--copper-hover);
-      color: var(--copper-hover);
-    }
-
-    .badge-copper {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.3rem 0.85rem;
-      border-radius: 9999px;
-      background: rgba(196, 98, 68, 0.15);
-      border: 1px solid var(--border-copper);
-      color: var(--copper-light);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    /* 1. TOP ANNOUNCEMENT BAR */
-    .top-bar {
-      background: linear-gradient(90deg, #b05035, #c46244, #d46a4c);
-      color: #ffffff;
-      text-align: center;
-      padding: 0.45rem 1rem;
-      font-size: 0.875rem;
-      font-weight: 600;
-      position: relative;
-      z-index: 1010;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .top-bar:hover {
-      background: linear-gradient(90deg, #c46244, #d46a4c, #e57252);
-    }
-    .top-bar .material-symbols-outlined { font-size: 1.1rem; }
-
-    /* 2. STICKY HEADER & MEGA MENU */
-    .header-sticky {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(5, 8, 17, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      transition: var(--transition-fast);
-    }
-    .nav-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 76px;
-    }
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--text-white);
-    }
-    .logo-badge {
-      background: linear-gradient(135deg, var(--copper-primary), #e57252);
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1.1rem;
-      box-shadow: 0 0 15px var(--copper-glow);
-    }
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-    .brand-name {
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-    }
-    .brand-tagline {
-      font-size: 0.7rem;
-      color: var(--copper-light);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 600;
-    }
-
-    /* NAV MENU & DROPDOWNS */
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-      list-style: none;
-    }
-    .nav-item {
-      position: relative;
-    }
-    .nav-link {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 1.5rem 0;
-      transition: var(--transition-fast);
-      cursor: pointer;
-    }
-    .nav-link:hover, .nav-item:hover > .nav-link, .nav-link.active {
-      color: var(--copper-light);
-    }
-
-    /* MEGA DROPDOWN BOX */
-    .mega-dropdown {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%) translateY(10px);
-      width: 620px;
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-copper);
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 1020;
-    }
-    .nav-item:hover .mega-dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    .dropdown-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-    .dropdown-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.85rem;
-      padding: 0.85rem;
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--text-white);
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid transparent;
-      transition: var(--transition-fast);
-    }
-    .dropdown-card:hover {
-      background: rgba(196, 98, 68, 0.1);
-      border-color: var(--border-copper);
-      transform: translateY(-2px);
-    }
-    .dropdown-icon {
-      background: rgba(196, 98, 68, 0.2);
-      color: var(--copper-light);
-      padding: 0.5rem;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .dropdown-info h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 0.15rem;
-    }
-    .dropdown-info p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.3;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    /* MOBILE HAMBURGER & DRAWER */
-    .mobile-toggle {
-      display: none;
-      background: transparent;
-      border: none;
-      color: var(--text-white);
-      cursor: pointer;
-    }
-    .mobile-drawer {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 85%;
-      max-width: 360px;
-      height: 100vh;
-      background: var(--surface-dark);
-      border-left: 1px solid var(--border-copper);
-      z-index: 2000;
-      padding: 2rem 1.5rem;
-      transition: right 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow-y: auto;
-    }
-    .mobile-drawer.open {
-      right: 0;
-    }
-    .drawer-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.8);
-      z-index: 1999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .drawer-overlay.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* HERO SECTION PAGE */
-    .page-hero {
-      padding: 4.5rem 0 3.5rem;
-      text-align: center;
-      background: radial-gradient(circle at 50% 20%, var(--copper-glow) 0%, rgba(5, 8, 17, 0) 70%);
-      position: relative;
-    }
-    .page-title {
-      font-size: 3rem;
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin: 1rem 0;
-    }
-    .page-title em {
-      font-family: var(--font-serif);
-      font-style: italic;
-      color: var(--copper-light);
-      font-weight: 600;
-    }
-    .page-subtitle {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      max-width: 760px;
-      margin: 0 auto 2rem;
-    }
-
-    /* QUICK FILTER / ANCHOR NAV */
-    .filter-bar {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 4rem;
-    }
-    .filter-chip {
-      padding: 0.65rem 1.4rem;
-      border-radius: 9999px;
-      background: var(--surface-dark);
-      border: 1px solid var(--border-copper);
-      color: var(--text-secondary);
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: var(--transition-fast);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .filter-chip:hover, .filter-chip.active {
-      background: var(--copper-primary);
-      color: #ffffff;
-      border-color: var(--copper-light);
-      box-shadow: 0 4px 15px var(--copper-glow);
-    }
-
-    /* SECTION PADDING & GRID */
-    .section-padding { padding: 4.5rem 0; }
-    .section-header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 3.5rem;
-    }
-    .section-title {
-      font-size: 2.25rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-top: 0.5rem;
-      line-height: 1.2;
-    }
-
-    /* DETAILED SOLUTION CARDS */
-    .solution-detail-card {
-      background: var(--surface-dark);
-      border: 1px solid var(--border-copper);
-      border-radius: 24px;
-      padding: 3rem;
-      margin-bottom: 3.5rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-      transition: var(--transition-smooth);
-    }
-    .solution-detail-card:hover {
-      border-color: var(--border-copper-hover);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-    }
-    .solution-detail-card.featured {
-      background: linear-gradient(135deg, #0f1726, #161a2b);
-      border: 1px solid rgba(229, 114, 82, 0.45);
-    }
-
-    .solution-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    @media (max-width: 992px) {
-      .solution-grid { grid-template-columns: 1fr; gap: 2rem; }
-    }
-
-    .sol-badge-wrap {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .guarantee-tag {
-      background: rgba(34, 197, 94, 0.15);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      color: #4ade80;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.3rem 0.75rem;
-      border-radius: 9999px;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .sol-title {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-    .sol-desc {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 1.75rem;
-      line-height: 1.6;
-    }
-
-    .deliverables-title {
-      font-size: 0.85rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--copper-light);
-      margin-bottom: 1rem;
-    }
-
-    .deliverables-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.85rem;
-      margin-bottom: 2rem;
-    }
-    @media (max-width: 600px) {
-      .deliverables-grid { grid-template-columns: 1fr; }
-    }
-    .deliverable-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-    }
-    .deliverable-item .material-symbols-outlined {
-      color: var(--copper-light);
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-
-    /* PRICE CARD SIDE */
-    .price-box {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-copper);
-      border-radius: 20px;
-      padding: 2.25rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .price-anchor-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .price-amount {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--text-white);
-      font-family: var(--font-serif);
-      line-height: 1;
-      margin-bottom: 0.3rem;
-    }
-    .price-amount span {
-      font-size: 1rem;
-      font-family: var(--font-main);
-      color: var(--copper-light);
-      font-weight: 600;
-    }
-    .price-terms {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 1.75rem;
-    }
-
-    /* COMPARISON MATRIX TABLE */
-    .table-container {
-      overflow-x: auto;
-      background: var(--surface-dark);
-      border: 1px solid var(--border-copper);
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-      margin-top: 2rem;
-    }
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      min-width: 720px;
-    }
-    .comparison-table th, .comparison-table td {
-      padding: 1.25rem 1.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-    .comparison-table th {
-      background: var(--surface-elevated);
-      color: var(--copper-light);
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .comparison-table tr:last-child td {
-      border-bottom: none;
-    }
-    .comparison-table td:first-child {
-      font-weight: 700;
-      color: var(--text-white);
-    }
-    .check-yes {
-      color: #4ade80;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-weight: 600;
-    }
-    .check-no {
-      color: var(--text-muted);
-      opacity: 0.5;
-    }
-
-    /* GUARANTEE BANNER */
-    .guarantee-banner {
-      background: radial-gradient(circle at 50% 50%, rgba(196, 98, 68, 0.15) 0%, rgba(15, 23, 38, 0.9) 100%);
-      border: 1px solid var(--border-copper);
-      border-radius: 24px;
-      padding: 3.5rem 2.5rem;
-      text-align: center;
-      margin: 4rem 0;
-    }
-    .guarantee-shield {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: rgba(196, 98, 68, 0.2);
-      border: 1px solid var(--copper-primary);
-      color: var(--copper-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.25rem;
-    }
-    .guarantee-shield .material-symbols-outlined { font-size: 2.2rem; }
-
-    /* FOOTER PORTAL MULTI-COLUNAS */
-    .footer-portal {
-      background: var(--surface-dark);
-      border-top: 1px solid var(--border-copper);
-      padding: 5rem 0 2.5rem;
-      margin-top: 4rem;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr repeat(4, 1fr);
-      gap: 2.5rem;
-      margin-bottom: 4rem;
-    }
-    .footer-brand p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-top: 1rem;
-      max-width: 320px;
-    }
-    .footer-col h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-white);
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.01em;
-    }
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: var(--transition-fast);
-    }
-    .footer-links a:hover {
-      color: var(--copper-light);
-    }
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    /* FLOATING WHATSAPP BUTTON */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 60px;
-      height: 60px;
-      border-radius: 9999px;
-      background: #25d366;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-      z-index: 1000;
-      text-decoration: none;
-      transition: var(--transition-fast);
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.08);
-      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
-    }
-    .whatsapp-pulse {
-      position: absolute;
-      inset: -4px;
-      border-radius: 9999px;
-      border: 2px solid #25d366;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      100% { transform: scale(1.4); opacity: 0; }
-    }
-
-    /* QUIZ MODAL */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 3000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .modal-box {
-      background: var(--surface-dark);
-      border: 1px solid var(--border-copper);
-      border-radius: 24px;
-      width: 100%;
-      max-width: 540px;
-      padding: 2.5rem;
-      position: relative;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.8);
-    }
-    .modal-close {
-      position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-size: 1.5rem;
-    }
-    .quiz-progress-bar {
-      height: 6px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 9999px;
-      margin-bottom: 2rem;
-      overflow: hidden;
-    }
-    .quiz-progress-fill {
-      height: 100%;
-      width: 33%;
-      background: var(--copper-primary);
-      transition: width 0.3s ease;
-    }
-    .quiz-step { display: none; }
-    .quiz-step.active { display: block; }
-    .quiz-options {
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-      margin-top: 1.5rem;
-    }
-    .quiz-option-btn {
-      background: var(--surface-dark);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 1rem 1.25rem;
-      color: var(--text-white);
-      text-align: left;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition-fast);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .quiz-option-btn:hover {
-      background: rgba(196, 98, 68, 0.15);
-      border-color: var(--copper-primary);
-    }
-
-    /* MOBILE BOTTOM NAV */
-    .mobile-bottom-nav {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 64px;
-      background: rgba(15, 23, 38, 0.95);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid var(--border-copper);
-      z-index: 999;
-      justify-content: space-around;
-      align-items: center;
-    }
-    .bottom-nav-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.2rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.7rem;
-      font-weight: 600;
-    }
-    .bottom-nav-item.active, .bottom-nav-item:hover {
-      color: var(--copper-light);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .page-title { font-size: 2.4rem; }
-    }
-    @media (max-width: 768px) {
-      .nav-menu, .header-actions .btn { display: none; }
-      .mobile-toggle { display: block; }
-      .mobile-bottom-nav { display: flex; }
-      .whatsapp-float { bottom: 5rem; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .modal-box { padding: 1.5rem; }
-      .page-title { font-size: 2rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluções | Grupo G2F AI</title>
+    <meta name="description" content="Soluções que geram resultado em 30 dias ou dinheiro de volta. Catálogo de serviços G2F AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-void:       #08080A;
+            --bg-surface:    #111114;
+            --bg-lifted:     #1A1A1F;
+            --gold-deep:     #9A7B2E;
+            --gold-warm:     #B8952A;
+            --gold-glow:     rgba(184,149,42,0.14);
+            --gold-border:   rgba(184,149,42,0.20);
+            --gold-hover:    rgba(184,149,42,0.45);
+            --ink-primary:   #F4EFE4;
+            --ink-secondary: #C4BBA8;
+            --ink-muted:     #72695D;
+            --ink-gold:      #B8952A;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-void);
+            color: var(--ink-primary);
+            font-family: var(--font-sans);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 114px;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        
+        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 500; line-height: 1.1; }
+        
+        /* Header / Nav */
+        .top-bar { background-color: var(--gold-warm); color: var(--bg-void); text-align: center; padding: 0.5rem; font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 500; position: fixed; top: 0; width: 100%; z-index: 1001; }
+        .header { position: fixed; top: 34px; left: 0; width: 100%; background-color: rgba(8, 8, 10, 0.9); border-bottom: 1px solid var(--gold-border); z-index: 1000; backdrop-filter: blur(12px); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--ink-primary); }
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-link { font-family: var(--font-sans); font-size: 0.875rem; color: var(--ink-secondary); transition: color 0.3s ease; cursor: pointer; }
+        .nav-link:hover { color: var(--gold-warm); }
+        .nav-item { position: relative; display: flex; align-items: center; height: 80px; }
+        
+        .dropdown { position: fixed; top: 114px; left: 0; width: 100%; background: var(--bg-surface); border-bottom: 1px solid var(--gold-border); opacity: 0; visibility: hidden; transition: all 0.3s ease; transform: translateY(-10px); padding: 3rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .dropdown-col h4 { font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600; color: var(--ink-primary); margin-bottom: 1rem; }
+        .dropdown-col ul { display: flex; flex-direction: column; gap: 0.75rem; }
+        .dropdown-col a { font-size: 0.875rem; color: var(--ink-muted); transition: color 0.3s ease; }
+        .dropdown-col a:hover { color: var(--ink-secondary); }
+        
+        /* Hero */
+        .hero { padding: 120px 0 80px; text-align: left; }
+        .hero h1 { font-family: var(--font-heading); font-style: italic; font-size: clamp(3rem, 5vw, 5.5rem); color: var(--ink-primary); line-height: 1.05; margin-bottom: 1.5rem; max-width: 900px; }
+        .hero p { font-family: var(--font-sans); font-weight: 400; font-size: 1.125rem; color: var(--ink-secondary); max-width: 600px; }
+        
+        /* Solucoes Grid Bento */
+        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; margin-bottom: 5rem; }
+        .bento-card { background: var(--bg-surface); border: 1px solid var(--gold-border); padding: 3rem; display: flex; flex-direction: column; position: relative; }
+        .bento-card .label { font-family: var(--font-sans); font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-gold); margin-bottom: 1.5rem; }
+        .bento-card h3 { font-family: var(--font-heading); font-size: 2.5rem; color: var(--ink-primary); margin-bottom: 1rem; }
+        .bento-card .desc { font-family: var(--font-sans); font-weight: 400; font-size: 1rem; color: var(--ink-secondary); margin-bottom: 2rem; }
+        .bento-card .deliverables { margin-bottom: 2.5rem; flex-grow: 1; }
+        .bento-card .deliverables li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9375rem; color: var(--ink-muted); margin-bottom: 0.75rem; }
+        .bento-card .deliverables li::before { content: "—"; color: var(--ink-gold); }
+        
+        .bento-card .price-block { margin-top: auto; }
+        .bento-card .price { font-family: var(--font-mono); font-weight: 500; font-size: 2.25rem; color: var(--ink-primary); display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.25rem; }
+        .bento-card .price span { font-family: var(--font-sans); font-weight: 400; font-size: 0.875rem; color: var(--ink-muted); }
+        .bento-card .strike { font-family: var(--font-sans); font-size: 0.8125rem; color: var(--ink-muted); text-decoration: line-through; margin-bottom: 1.5rem; display: block; }
+        
+        .bento-card .badge { display: inline-block; border: 1px solid var(--gold-warm); color: var(--ink-gold); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.25rem 0.75rem; margin-bottom: 2rem; align-self: flex-start; }
+        .bento-card .cta-btn { display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(184,149,42,0.4); padding: 0.6rem 1.5rem; color: var(--ink-primary); font-family: var(--font-sans); font-size: 0.9375rem; transition: background 0.3s ease; cursor: pointer; background: transparent; text-align: center; }
+        .bento-card .cta-btn:hover { background: var(--gold-hover); }
+        
+        /* Grid placements */
+        .card-seo { grid-column: span 8; }
+        .card-wa { grid-column: span 4; background: var(--bg-lifted); border-color: rgba(184,149,42,0.3); }
+        .card-launch { grid-column: span 5; }
+        .card-os { grid-column: span 7; background: #16161A; }
+        .card-os h3 { font-style: italic; }
+        .card-os .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; flex-grow: 1; }
+        .card-os .features-grid div { font-size: 0.9375rem; color: var(--ink-secondary); border-left: 1px solid var(--gold-border); padding-left: 1rem; }
+        .card-os .price { font-size: 1.5rem; margin-bottom: 1.5rem; }
+        
+        @media (max-width: 1024px) {
+            .card-seo, .card-wa, .card-launch, .card-os { grid-column: span 12; }
+            .card-os .features-grid { grid-template-columns: 1fr; }
+        }
+        
+        /* Tabela Comparativa */
+        .comparison-section { padding: 6rem 0; }
+        .comparison-section h2 { font-family: var(--font-heading); font-style: italic; font-size: 2.5rem; color: var(--ink-primary); margin-bottom: 3rem; text-align: center; }
+        .comparison-table-wrapper { overflow-x: auto; }
+        .comparison-table { width: 100%; border-collapse: collapse; min-width: 800px; text-align: left; }
+        .comparison-table th { background: #1A1A1F; padding: 1.5rem; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500; color: var(--ink-secondary); border-bottom: 1px solid var(--gold-border); }
+        .comparison-table td { padding: 1.5rem; border-bottom: 1px solid rgba(184,149,42,0.10); font-family: var(--font-sans); font-size: 0.9375rem; color: var(--ink-primary); }
+        .comparison-table .check { color: var(--ink-gold); font-size: 1.2rem; }
+        .comparison-table .cross { color: var(--ink-muted); font-size: 1.2rem; }
+        
+        /* Garantia Institucional */
+        .guarantee-section { background: #0C0C0F; padding: 6rem 0; border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); }
+        .guarantee-content { max-width: 800px; margin: 0 auto; }
+        .guarantee-content h2 { font-family: var(--font-heading); font-style: italic; font-size: 2.5rem; color: var(--ink-primary); margin-bottom: 1.5rem; }
+        .guarantee-content p { font-size: 1.125rem; color: var(--ink-secondary); margin-bottom: 2rem; }
+        .guarantee-content ul li { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; color: var(--ink-muted); font-size: 1rem; }
+        .guarantee-content ul li::before { content: "—"; color: var(--ink-gold); }
+        
+        /* Footer */
+        .footer { background-color: var(--bg-surface); padding: 5rem 0 3rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
+        .footer-col h4 { font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600; color: var(--ink-primary); margin-bottom: 1.5rem; }
+        .footer-col ul { display: flex; flex-direction: column; gap: 0.75rem; }
+        .footer-col a { font-size: 0.875rem; color: var(--ink-muted); transition: color 0.3s ease; }
+        .footer-col a:hover { color: var(--ink-secondary); }
+        .footer-bottom { border-top: 1px solid var(--gold-border); padding-top: 2rem; display: flex; justify-content: space-between; color: var(--ink-muted); font-size: 0.75rem; }
+        
+        /* Overlays & Utilities */
+        .fab-wa { position: fixed; bottom: 30px; right: 30px; width: 56px; height: 56px; background-color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; color: #fff; font-size: 24px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: transform 0.3s ease; }
+        .fab-wa:hover { transform: translateY(-4px); }
+        .fab-wa svg { width: 28px; height: 28px; fill: currentColor; }
+        
+        .quiz-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(8, 8, 10, 0.8); backdrop-filter: blur(10px); z-index: 2000; display: none; align-items: center; justify-content: center; }
+        .quiz-modal.active { display: flex; }
+        .quiz-content { background: var(--bg-surface); border: 1px solid var(--gold-border); padding: 3rem; max-width: 500px; width: 100%; position: relative; }
+        .quiz-close { position: absolute; top: 1rem; right: 1.5rem; cursor: pointer; color: var(--ink-muted); font-size: 1.5rem; background: none; border: none; }
+        .quiz-step { display: none; }
+        .quiz-step.active { display: block; }
+        .quiz-step h3 { font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1rem; }
+        .quiz-btn { display: block; width: 100%; text-align: left; background: var(--bg-lifted); border: 1px solid var(--gold-border); color: var(--ink-secondary); padding: 1rem; margin-bottom: 0.5rem; cursor: pointer; transition: background 0.3s; }
+        .quiz-btn:hover { background: rgba(184,149,42,0.1); color: var(--ink-primary); }
+        
+        .mobile-nav { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-surface); border-top: 1px solid var(--gold-border); z-index: 998; padding: 1rem; justify-content: space-around; }
+        .mobile-nav a { color: var(--ink-muted); font-size: 0.75rem; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+        
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .header .nav-links { display: none; }
+            .mobile-nav { display: flex; }
+            .top-bar { display: none; }
+            .header { top: 0; }
+            body { padding-top: 80px; }
+            .hero { padding: 60px 0 40px; }
+        }
+        
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        @media (prefers-reduced-motion: reduce) { .fade-up { transition: none; opacity: 1; transform: none; } }
+    </style>
 </head>
 <body>
 
-  <!-- 1. TOP ANNOUNCEMENT BAR -->
-  <div class="top-bar" onclick="openQuizModal()">
-    <span>🚀 Descubra em 30 segundos qual G2F AI é ideal para o momento da sua empresa</span>
-    <span class="material-symbols-outlined">arrow_forward</span>
-  </div>
-
-  <!-- 2. STICKY HEADER WITH MEGA MENU -->
-  <header class="header-sticky">
-    <div class="container nav-wrapper">
-      <a href="index.html" class="brand-logo">
-        <div class="logo-badge">G2F</div>
-        <div class="brand-text">
-          <span class="brand-name">Grupo G2F AI</span>
-          <span class="brand-tagline">Para quem quer mais</span>
-        </div>
-      </a>
-
-      <!-- DESKTOP NAV MENU -->
-      <nav>
-        <ul class="nav-menu">
-          <!-- PROGRAMAS DROPDOWN -->
-          <li class="nav-item">
-            <a class="nav-link active">
-              Programas <span class="material-symbols-outlined">expand_more</span>
-            </a>
-            <div class="mega-dropdown">
-              <div class="dropdown-grid">
-                <a href="#seo-local" class="dropdown-card">
-                  <div class="dropdown-icon"><span class="material-symbols-outlined">map</span></div>
-                  <div class="dropdown-info">
-                    <h4>G2F SEO Local</h4>
-                    <p>Dominância no Google Maps e busca local para atrair clientes diariamente.</p>
-                  </div>
-                </a>
-                <a href="#agente-wa" class="dropdown-card">
-                  <div class="dropdown-icon"><span class="material-symbols-outlined">smart_toy</span></div>
-                  <div class="dropdown-info">
-                    <h4>Agente WhatsApp IA</h4>
-                    <p>Atendimento 24/7, agendamento e qualificação automática de leads.</p>
-                  </div>
-                </a>
-                <a href="#launch" class="dropdown-card">
-                  <div class="dropdown-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-                  <div class="dropdown-info">
-                    <h4>G2F Launch</h4>
-                    <p>Aceleração de vendas com tráfego pago de altíssima conversão.</p>
-                  </div>
-                </a>
-                <a href="#business-os" class="dropdown-card">
-                  <div class="dropdown-icon"><span class="material-symbols-outlined">display_settings</span></div>
-                  <div class="dropdown-info">
-                    <h4>G2F Business OS</h4>
-                    <p>Sistema completo de gestão, CRM e inteligência operacional.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </li>
-
-          <!-- COMUNIDADES -->
-          <li class="nav-item">
-            <a class="nav-link">
-              Comunidades <span class="material-symbols-outlined">expand_more</span>
-            </a>
-            <div class="mega-dropdown">
-              <div class="dropdown-grid">
-                <a href="index.html#ecossistema" class="dropdown-card">
-                  <div class="dropdown-icon"><span class="material-symbols-outlined">groups</span></div>
-                  <div class="dropdown-info">
-                    <h4>G2F Club</h4>
-                    <p>Rede exclusiva de empresários e mentoria continuada.</p>
-                  </div>
-                </a>
-                <a href="index.html#ecossistema" class="dropdown-card">
-                  <div class="dropdown-icon"><span class="material-symbols-outlined">handshake</span></div>
-                  <div class="dropdown-info">
-                    <h4>Partner Program</h4>
-                    <p>Ganhe 20% de comissão recorrente indicando nossas soluções.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </li>
-
-          <!-- TOOLS -->
-          <li class="nav-item">
-            <a href="solucoes.html" class="nav-link active">G2F Tools</a>
-          </li>
-
-          <!-- MENTORES -->
-          <li class="nav-item">
-            <a href="sobre.html#mentores" class="nav-link">Mentores</a>
-          </li>
-
-          <!-- CONTEÚDOS -->
-          <li class="nav-item">
-            <a href="blog.html" class="nav-link">Conteúdos</a>
-          </li>
-
-          <!-- SOBRE NÓS -->
-          <li class="nav-item">
-            <a href="sobre.html" class="nav-link">Sobre Nós</a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- HEADER ACTION CTAS -->
-      <div class="header-actions">
-        <a href="https://wa.me/5531990000000?text=Ol%C3%A1!%20Gostaria%20de%20acessar%20a%20%C3%81rea%20do%20Aluno." target="_blank" class="btn btn-outline-copper">Área do Aluno</a>
-        <button onclick="openQuizModal()" class="btn btn-copper">Ver qual G2F é para mim</button>
-        <button class="mobile-toggle" onclick="toggleMobileDrawer()">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-      </div>
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        Aplicações abertas para a Imersão G2F AI em Belo Horizonte. Vagas limitadas.
     </div>
-  </header>
 
-  <!-- MOBILE DRAWER -->
-  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleMobileDrawer()"></div>
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div>
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-        <div class="brand-name">Grupo G2F AI</div>
-        <button class="mobile-toggle" onclick="toggleMobileDrawer()">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </div>
-      <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem;">
-        <li><a href="solucoes.html" class="nav-link active" onclick="toggleMobileDrawer()">Programas & Soluções</a></li>
-        <li><a href="academy.html" class="nav-link" onclick="toggleMobileDrawer()">Academy & Formações</a></li>
-        <li><a href="sobre.html" class="nav-link" onclick="toggleMobileDrawer()">Gabriel Alexandre & Autoridade</a></li>
-        <li><a href="blog.html" class="nav-link" onclick="toggleMobileDrawer()">Centro de Conteúdos</a></li>
-        <li><a href="index.html#faq" class="nav-link" onclick="toggleMobileDrawer()">Dúvidas Frequentes</a></li>
-      </ul>
-    </div>
-    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;">
-      <button onclick="toggleMobileDrawer(); openQuizModal();" class="btn btn-copper" style="width: 100%;">Fazer Quiz de Diagnóstico</button>
-      <a href="https://wa.me/5531990000000" target="_blank" class="btn btn-outline-copper" style="width: 100%;">Falar com Consultor</a>
-    </div>
-  </div>
-
-  <!-- HERO SOLUÇÕES -->
-  <section class="page-hero">
-    <div class="container">
-      <span class="badge-copper">
-        <span class="material-symbols-outlined">grid_view</span> Engenharia Comercial & Automação
-      </span>
-      <h1 class="page-title">
-        Catálogo Completo de <em>Soluções G2F AI</em>
-      </h1>
-      <p class="page-subtitle">
-        Sistemas modulares e integrados projetados para gerar demanda previsível, atendimento automático 24/7 e controle operacional total para PMEs.
-      </p>
-
-      <!-- FILTER CHIPS -->
-      <div class="filter-bar">
-        <a href="#seo-local" class="filter-chip active"><span class="material-symbols-outlined">map</span> G2F SEO Local</a>
-        <a href="#agente-wa" class="filter-chip"><span class="material-symbols-outlined">smart_toy</span> Agente WhatsApp IA</a>
-        <a href="#launch" class="filter-chip"><span class="material-symbols-outlined">rocket_launch</span> G2F Launch</a>
-        <a href="#business-os" class="filter-chip"><span class="material-symbols-outlined">display_settings</span> G2F Business OS</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATÁLOGO DETALHADO DE SOLUÇÕES -->
-  <section class="section-padding" style="padding-top: 1rem;">
-    <div class="container">
-
-      <!-- SOLUÇÃO 1: G2F SEO LOCAL -->
-      <div class="solution-detail-card" id="seo-local">
-        <div class="solution-grid">
-          <div>
-            <div class="sol-badge-wrap">
-              <span class="badge-copper">Pilar Atração</span>
-              <span class="guarantee-tag"><span class="material-symbols-outlined">verified</span> 30 dias de garantia</span>
-            </div>
-            <h2 class="sol-title">G2F SEO Local</h2>
-            <p class="sol-desc">
-              Domine as primeiras posições do Google Maps na sua cidade. Otimizamos 100% da sua ficha institucional, categorias e paletização de palavras-chave locais para transformar buscas orgânicas em ligações e rotas diárias.
-            </p>
-
-            <div class="deliverables-title">O que está incluso no projeto:</div>
-            <div class="deliverables-grid">
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Otimização técnica de Perfil no Google</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Mapeamento de Palavras-chave locais</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Sistema automatizado de avaliações 5 estrelas</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Geolocalização estratégica de fotos & serviços</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Relatório mensal de chamadas & cliques</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Suporte direto via WhatsApp</div>
-            </div>
-          </div>
-
-          <div class="price-box">
-            <div>
-              <div class="price-anchor-label">Investimento Único</div>
-              <div class="price-amount">R$ 357 <span>/ pix</span></div>
-              <div class="price-terms">Pagamento único • Sem mensalidades ocultas</div>
-            </div>
-            <a href="https://wa.me/5531990000000?text=Quero%20contratar%20o%20G2F%20SEO%20Local%20por%20R$%20357" target="_blank" class="btn btn-copper" style="width: 100%;">
-              Garantir SEO Local Agora <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-          </div>
+    <!-- Sticky Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">Grupo G2F AI</a>
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <a href="solucoes.html" class="nav-link" style="color: var(--ink-primary);">Soluções</a>
+                    <div class="dropdown">
+                        <div class="container dropdown-grid">
+                            <div class="dropdown-col">
+                                <h4>Atração & Vendas</h4>
+                                <ul>
+                                    <li><a href="#">G2F SEO Local</a></li>
+                                    <li><a href="#">G2F Agente WhatsApp</a></li>
+                                    <li><a href="#">G2F Launch</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-col">
+                                <h4>Gestão</h4>
+                                <ul>
+                                    <li><a href="#">G2F Business OS</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-col">
+                                <h4>Educação</h4>
+                                <ul>
+                                    <li><a href="#">Imersão VIP</a></li>
+                                    <li><a href="#">Cursos Online</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-col">
+                                <h4>Conteúdo</h4>
+                                <ul>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Casos de Sucesso</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="academy.html" class="nav-link">Academy</a></div>
+                <div class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></div>
+                <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <!-- SOLUÇÃO 2: AGENTE WHATSAPP IA -->
-      <div class="solution-detail-card" id="agente-wa">
-        <div class="solution-grid">
-          <div>
-            <div class="sol-badge-wrap">
-              <span class="badge-copper">Pilar Automação</span>
-              <span class="guarantee-tag"><span class="material-symbols-outlined">verified</span> 30 dias de garantia</span>
-            </div>
-            <h2 class="sol-title">G2F Agente WhatsApp IA</h2>
-            <p class="sol-desc">
-              Agente autônomo treinado com o conhecimento completo da sua empresa. Atende, tira dúvidas, qualifica potenciais clientes e realiza agendamentos 24 horas por dia, 7 dias por semana no seu WhatsApp.
-            </p>
+    <main>
+        <!-- Hero -->
+        <section class="hero container fade-up">
+            <h1>Soluções que geram resultado em 30 dias ou dinheiro de volta</h1>
+            <p>Não vendemos serviços, vendemos infraestrutura de crescimento. Escolha a solução ideal para o seu momento ou fale com nossos especialistas para um diagnóstico.</p>
+        </section>
 
-            <div class="deliverables-title">O que está incluso no projeto:</div>
-            <div class="deliverables-grid">
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Engenharia de Prompt customizada para PME</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Treinamento com catálogo & FAQ institucional</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Integração nativa no número oficial WhatsApp</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Fluxo de transição transparente para humano</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Captura automática de dados de leads</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> 30 dias de acompanhamento técnico pós-setup</div>
-            </div>
-          </div>
+        <!-- Solucoes Grid Bento -->
+        <section class="container fade-up">
+            <div class="bento-grid">
+                
+                <!-- SEO Local -->
+                <div class="bento-card card-seo">
+                    <span class="label">POSICIONAMENTO LOCAL</span>
+                    <h3>G2F SEO Local</h3>
+                    <p class="desc">Top 3 no Google Maps da sua região em 30 dias. Done-For-You.</p>
+                    <ul class="deliverables">
+                        <li>Perfil Google Business completo</li>
+                        <li>Otimização de categorias e fotos</li>
+                        <li>Respostas a avaliações em IA</li>
+                        <li>Relatório mensal de posicionamento</li>
+                    </ul>
+                    <div class="price-block">
+                        <div class="badge">GARANTIA 30 DIAS</div>
+                        <span class="strike">De ~R$ 1.500/mês em agências</span>
+                        <div class="price">R$ 357 <span>/único pagamento via Pix</span></div>
+                        <a href="https://wa.me/5531990000000" class="cta-btn" style="margin-top: 1rem;">Contratar via WhatsApp &rarr;</a>
+                    </div>
+                </div>
 
-          <div class="price-box">
-            <div>
-              <div class="price-anchor-label">Setup & Implementação</div>
-              <div class="price-amount">R$ 1.347 <span>/ setup</span></div>
-              <div class="price-terms">Implantação completa em até 7 dias úteis</div>
+                <!-- Agente WhatsApp -->
+                <div class="bento-card card-wa">
+                    <span class="label">AUTOMAÇÃO & IA</span>
+                    <h3>G2F Agente WhatsApp</h3>
+                    <p class="desc">Agente de vendas por IA que atende, qualifica leads e agenda no seu WhatsApp 24/7.</p>
+                    <ul class="deliverables">
+                        <li>Agente personalizado com sua voz</li>
+                        <li>Integração com calendário</li>
+                        <li>Qualificação automática de leads</li>
+                        <li>Dashboard de conversas e métricas</li>
+                    </ul>
+                    <div class="price-block">
+                        <div class="badge">GARANTIA 30 DIAS</div>
+                        <div class="price" style="font-size: 1.8rem; margin-bottom:1.5rem;">R$ 1.347 <span>Pix (sem mensalidade)</span></div>
+                        <a href="https://wa.me/5531990000000" class="cta-btn">Contratar via WhatsApp &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- G2F Launch -->
+                <div class="bento-card card-launch">
+                    <span class="label">TRÁFEGO & CONVERSÃO</span>
+                    <h3 style="font-family: 'Cormorant Garamond', serif;">G2F Launch</h3>
+                    <p class="desc">Landing page profissional + campanha de tráfego pago entregues em 15 dias.</p>
+                    <ul class="deliverables">
+                        <li>LP de alta conversão</li>
+                        <li>Setup de campanhas Meta/Google</li>
+                        <li>Pixel e rastreamento</li>
+                        <li>Relatório de leads em 30 dias</li>
+                    </ul>
+                    <div class="price-block">
+                        <div class="badge">GARANTIA: 20 leads em 30 dias</div>
+                        <div class="price" style="font-size: 2rem; margin-bottom:1.5rem;">R$ 2.247 <span>Pix</span></div>
+                        <a href="https://wa.me/5531990000000" class="cta-btn">Contratar via WhatsApp &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Business OS -->
+                <div class="bento-card card-os">
+                    <span class="label">GESTÃO & MÉTRICAS</span>
+                    <h3>G2F Business OS</h3>
+                    <p class="desc">Painel unificado de MRR, Churn, CAC e LTV com relatórios automáticos semanais e alertas inteligentes.</p>
+                    <div class="features-grid">
+                        <div>MRR em tempo real</div>
+                        <div>Análise de Churn</div>
+                        <div>CAC por canal</div>
+                        <div>Previsibilidade de receita</div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price" style="font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; color: var(--ink-secondary);">A partir de R$ 5.000/mês</div>
+                        <a href="https://wa.me/5531990000000" class="cta-btn" style="border-color: var(--gold-warm);">Solicitar proposta personalizada &rarr;</a>
+                    </div>
+                </div>
+
             </div>
-            <a href="https://wa.me/5531990000000?text=Quero%20implementar%20o%20Agente%20WhatsApp%20IA" target="_blank" class="btn btn-copper" style="width: 100%;">
-              Implementar Agente IA <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-          </div>
+        </section>
+
+        <!-- Tabela Comparativa -->
+        <section class="comparison-section fade-up">
+            <div class="container">
+                <h2>Compare e escolha o que é para você</h2>
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Recurso</th>
+                                <th>SEO Local</th>
+                                <th>Agente WhatsApp</th>
+                                <th>Launch</th>
+                                <th>Business OS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Atração de tráfego orgânico</td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="cross">&#10007;</span></td>
+                                <td><span class="cross">&#10007;</span></td>
+                                <td><span class="cross">&#10007;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Tráfego pago e captação ativa</td>
+                                <td><span class="cross">&#10007;</span></td>
+                                <td><span class="cross">&#10007;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="cross">&#10007;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Qualificação e atendimento 24/7</td>
+                                <td><span class="cross">&#10007;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="cross">&#10007;</span></td>
+                                <td><span class="cross">&#10007;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dashboards executivos de C-Level</td>
+                                <td><span class="cross">&#10007;</span></td>
+                                <td><span class="cross">&#10007;</span></td>
+                                <td><span class="cross">&#10007;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                            </tr>
+                            <tr>
+                                <td>Configuração Done-For-You</td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                                <td><span class="check">&#10003;</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Garantia Institucional -->
+        <section class="guarantee-section fade-up">
+            <div class="container guarantee-content">
+                <h2>Garantia de 30 dias. Sem letra pequena.</h2>
+                <p>Nós assumimos o risco da operação. Se em 30 dias não entregarmos exatamente o que foi acordado em contrato, devolvemos 100% do seu dinheiro, sem burocracia e sem ressentimentos. Nosso modelo de negócios depende do seu sucesso.</p>
+                <ul>
+                    <li>Resultados mensuráveis definidos no dia 1.</li>
+                    <li>Transparência total nos processos executados.</li>
+                    <li>Você só paga se a infraestrutura funcionar.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">Grupo G2F AI</div>
+                    <p style="color: var(--ink-muted); font-size: 0.875rem; margin-bottom: 1.5rem;">Inteligência para quem constrói o futuro dos negócios.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#">IN</a>
+                        <a href="#">IG</a>
+                        <a href="#">YT</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Soluções</h4>
+                    <ul>
+                        <li><a href="#">G2F SEO Local</a></li>
+                        <li><a href="#">G2F Agente WhatsApp</a></li>
+                        <li><a href="#">G2F Launch</a></li>
+                        <li><a href="#">G2F Business OS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Comunidade</h4>
+                    <ul>
+                        <li><a href="#">G2F Academy</a></li>
+                        <li><a href="#">Imersão VIP</a></li>
+                        <li><a href="#">Partner Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Conteúdos</h4>
+                    <ul>
+                        <li><a href="#">Blog Oficial</a></li>
+                        <li><a href="#">Casos de Estudo</a></li>
+                        <li><a href="#">Playbooks Gratuitos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sobre</h4>
+                    <ul>
+                        <li><a href="#">Manifesto</a></li>
+                        <li><a href="#">Gabriel Alexandre</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Grupo G2F AI. Todos os direitos reservados.</span>
+                <span style="display: flex; gap: 1rem;">
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos</a>
+                </span>
+            </div>
         </div>
-      </div>
+    </footer>
 
-      <!-- SOLUÇÃO 3: G2F LAUNCH -->
-      <div class="solution-detail-card" id="launch">
-        <div class="solution-grid">
-          <div>
-            <div class="sol-badge-wrap">
-              <span class="badge-copper">Pilar Performance</span>
-              <span class="guarantee-tag"><span class="material-symbols-outlined">verified</span> 30 dias de garantia</span>
-            </div>
-            <h2 class="sol-title">G2F Launch</h2>
-            <p class="sol-desc">
-              Aceleração intensiva de vendas. Combinamos a criação de uma Landing Page de altíssima conversão com copywriting neuro-orientado e campanhas otimizadas de tráfego pago (Meta Ads & Google Ads).
-            </p>
-
-            <div class="deliverables-title">O que está incluso no projeto:</div>
-            <div class="deliverables-grid">
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Landing Page de alta conversão (Design Premium)</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Redação publicitária Neuro-Copywriting</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Estruturação de campanhas Meta Ads & Google</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Instalação de Píxeis e rastreamento de conversão</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Otimização diária de anúncios durante 30 dias</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Dashboard de métricas em tempo real</div>
-            </div>
-          </div>
-
-          <div class="price-box">
-            <div>
-              <div class="price-anchor-label">Projeto Completo</div>
-              <div class="price-amount">R$ 2.247 <span>/ projeto</span></div>
-              <div class="price-terms">Landing Page + Gestão de Anúncios por 30 dias</div>
-            </div>
-            <a href="https://wa.me/5531990000000?text=Quero%20contratar%20o%20G2F%20Launch" target="_blank" class="btn btn-copper" style="width: 100%;">
-              Lançar Minha Oferta <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- SOLUÇÃO 4: G2F BUSINESS OS -->
-      <div class="solution-detail-card featured" id="business-os">
-        <div class="solution-grid">
-          <div>
-            <div class="sol-badge-wrap">
-              <span class="badge-copper" style="background: var(--copper-primary); color: #fff;">Exclusivo PMEs</span>
-              <span class="badge-copper">Sistema de Gestão & IA</span>
-            </div>
-            <h2 class="sol-title">G2F Business OS</h2>
-            <p class="sol-desc">
-              O sistema operacional definitivo para a sua empresa. Unificamos inteligência comercial, gestão financeira, dashboards de KPIs e acompanhamento estratégico continuado com os mentores do Grupo G2F AI.
-            </p>
-
-            <div class="deliverables-title">O que está incluso no programa:</div>
-            <div class="deliverables-grid">
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Diagnóstico e reestruturação operacional 360°</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Implantação da plataforma G2F Business OS</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Dashboard centralizado de DRE & Vendas</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Agentes de IA dedicados para rotinas internas</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Encontros semanais de alinhamento estratégico</div>
-              <div class="deliverable-item"><span class="material-symbols-outlined">check_circle</span> Acesso direto aos mentores da G2F</div>
-            </div>
-          </div>
-
-          <div class="price-box" style="background: rgba(15, 23, 38, 0.85); border-color: rgba(229, 114, 82, 0.4);">
-            <div>
-              <div class="price-anchor-label">Contrato Anual / Mentoria</div>
-              <div class="price-amount">R$ 5.000 <span>/mês</span></div>
-              <div class="price-terms">Sujeito a aplicação prévia e avaliação de perfil</div>
-            </div>
-            <button onclick="openQuizModal()" class="btn btn-copper" style="width: 100%;">
-              Aplicar para o Business OS <span class="material-symbols-outlined">arrow_forward</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- MATRIZ DE COMPARAÇÃO DE SOLUÇÕES -->
-  <section class="section-padding" style="background: var(--surface-dark); border-y: 1px solid var(--border-copper);">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge-copper">Matriz Comparativa</span>
-        <h2 class="section-title">Compare os Recursos de Cada Solução</h2>
-        <p class="text-muted" style="margin-top: 0.5rem;">Identifique a solução exata para o estágio atual da sua empresa.</p>
-      </div>
-
-      <div class="table-container">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Recursos & Entregáveis</th>
-              <th>SEO Local</th>
-              <th>Agente WA IA</th>
-              <th>G2F Launch</th>
-              <th>Business OS</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Foco Principal</td>
-              <td>Atração Google Maps</td>
-              <td>Atendimento 24/7</td>
-              <td>Pico de Vendas Ads</td>
-              <td>Gestão & IA 360°</td>
-            </tr>
-            <tr>
-              <td>Prazo de Implementação</td>
-              <td>5 a 7 dias</td>
-              <td>7 dias úteis</td>
-              <td>10 a 14 dias</td>
-              <td>Contínuo / Anual</td>
-            </tr>
-            <tr>
-              <td>Otimização Google Maps</td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Completa</span></td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Incluído</span></td>
-            </tr>
-            <tr>
-              <td>Agente de IA no WhatsApp</td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Customizado</span></td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Avançado</span></td>
-            </tr>
-            <tr>
-              <td>Landing Page Premium</td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Inclusa</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Inclusa</span></td>
-            </tr>
-            <tr>
-              <td>Gestão de Tráfego Pago</td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> 30 dias</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Recorrente</span></td>
-            </tr>
-            <tr>
-              <td>Mentoria Estratégica Semanal</td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-no">—</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Sim</span></td>
-            </tr>
-            <tr>
-              <td>Garantia de 30 Dias</td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Incondicional</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Incondicional</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Incondicional</span></td>
-              <td><span class="check-yes"><span class="material-symbols-outlined">check</span> Contratual</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- GUARANTEE BANNER -->
-  <section class="container">
-    <div class="guarantee-banner">
-      <div class="guarantee-shield">
-        <span class="material-symbols-outlined">verified_user</span>
-      </div>
-      <span class="badge-copper" style="margin-bottom: 1rem;">Compromisso de Risco Zero</span>
-      <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 1rem;">Garantia Incondicional de 30 Dias</h2>
-      <p class="text-muted" style="max-width: 680px; margin: 0 auto 2rem; font-size: 1.05rem;">
-        Confiamos plenamente na engenharia das nossas soluções. Se dentro de 30 dias após a contratação você entender que o serviço não atendeu às suas expectativas, devolvemos 100% do seu investimento sem letrinhas miúdas.
-      </p>
-      <button onclick="openQuizModal()" class="btn btn-copper">Fazer Diagnóstico Sem Compromisso</button>
-    </div>
-  </section>
-
-  <!-- FOOTER PORTAL MULTI-COLUNAS -->
-  <footer class="footer-portal">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand-logo" style="margin-bottom: 1rem;">
-            <div class="logo-badge">G2F</div>
-            <div class="brand-text">
-              <span class="brand-name">Grupo G2F AI</span>
-              <span class="brand-tagline">Para quem quer mais</span>
-            </div>
-          </div>
-          <p>Potencializando pequenas e médias empresas através de Inteligência Artificial aplicada, SEO local de alta performance e sistemas de gestão moderna.</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Soluções</h4>
-          <ul class="footer-links">
-            <li><a href="#seo-local">G2F SEO Local</a></li>
-            <li><a href="#agente-wa">Agente WhatsApp IA</a></li>
-            <li><a href="#launch">G2F Launch</a></li>
-            <li><a href="#business-os">G2F Business OS</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Comunidades & Tools</h4>
-          <ul class="footer-links">
-            <li><a href="index.html#ecossistema">G2F Club</a></li>
-            <li><a href="index.html#ecossistema">Partner Program (20%)</a></li>
-            <li><a href="solucoes.html">Dashboard Business OS</a></li>
-            <li><a href="https://wa.me/5531990000000" target="_blank">Área do Aluno</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Conteúdos</h4>
-          <ul class="footer-links">
-            <li><a href="blog.html">Blog & Artigos</a></li>
-            <li><a href="blog.html">Atração & SEO</a></li>
-            <li><a href="blog.html">Automação & IA</a></li>
-            <li><a href="index.html#faq">Central de Ajuda (FAQ)</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Sobre Nós</h4>
-          <ul class="footer-links">
-            <li><a href="sobre.html">Gabriel Alexandre</a></li>
-            <li><a href="sobre.html">Manifesto G2F</a></li>
-            <li><a href="sobre.html#principios">Princípios Inegociáveis</a></li>
-            <li><a href="https://wa.me/5531990000000" target="_blank">Contato Comercial</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>Grupo G2F AI LTDA © 2026. Todos os direitos reservados.</div>
-        <div style="display: flex; gap: 1.5rem;">
-          <a href="#" style="color: var(--text-muted); text-decoration: none;">Termos de Uso</a>
-          <a href="#" style="color: var(--text-muted); text-decoration: none;">Política de Privacidade</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/5531990000000?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Solu%C3%A7%C3%B5es%20do%20Grupo%20G2F%20AI." target="_blank" class="whatsapp-float">
-    <div class="whatsapp-pulse"></div>
-    <span class="material-symbols-outlined" style="font-size: 2.2rem;">chat</span>
-  </a>
-
-  <!-- MOBILE BOTTOM NAV BAR -->
-  <div class="mobile-bottom-nav">
-    <a href="index.html" class="bottom-nav-item">
-      <span class="material-symbols-outlined">home</span>
-      Início
+    <!-- FAB WhatsApp -->
+    <a href="https://wa.me/5531990000000" class="fab-wa" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M12.031 0C5.383 0 0 5.383 0 12.031c0 2.124.553 4.195 1.604 6.012L.15 23.364l5.46-1.43c1.761 1.002 3.754 1.53 5.82 1.53 6.649 0 12.032-5.383 12.032-12.032S18.68 0 12.031 0zm0 21.492c-1.847 0-3.66-.496-5.253-1.438l-.377-.223-3.9.102 1.04-3.803-.245-.39c-1.034-1.644-1.58-3.535-1.58-5.485 0-5.703 4.64-10.343 10.343-10.343 5.703 0 10.342 4.64 10.342 10.343 0 5.702-4.64 10.342-10.342 10.342zm5.666-7.75c-.31-.155-1.838-.908-2.122-1.013-.284-.103-.491-.155-.698.155-.207.31-.8 1.013-.981 1.22-.181.206-.362.232-.672.077-1.745-.87-3.04-1.956-4.225-3.667-.18-.258-.024-.396.131-.55.14-.14.31-.362.465-.543.155-.181.207-.31.31-.517.103-.207.052-.388-.026-.543-.077-.155-.698-1.683-.956-2.304-.252-.607-.508-.524-.698-.534-.181-.008-.388-.01-.595-.01-.207 0-.543.078-.827.388-.284.31-1.085 1.06-1.085 2.585 0 1.525 1.11 3 1.265 3.207.155.207 2.185 3.336 5.295 4.68.74.319 1.316.51 1.765.652.742.235 1.417.202 1.95.122.597-.089 1.838-.75 2.097-1.474.258-.724.258-1.344.181-1.474-.077-.129-.284-.207-.594-.362z"/></svg>
     </a>
-    <a href="solucoes.html" class="bottom-nav-item active">
-      <span class="material-symbols-outlined">grid_view</span>
-      Soluções
-    </a>
-    <a href="blog.html" class="bottom-nav-item">
-      <span class="material-symbols-outlined">article</span>
-      Conteúdos
-    </a>
-    <a href="javascript:void(0)" onclick="openQuizModal()" class="bottom-nav-item">
-      <span class="material-symbols-outlined">quiz</span>
-      Quiz 30s
-    </a>
-  </div>
 
-  <!-- QUIZ MODAL -->
-  <div class="modal-overlay" id="quizModal">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeQuizModal()">&times;</button>
-      
-      <div class="quiz-progress-bar">
-        <div class="quiz-progress-fill" id="quizProgress"></div>
-      </div>
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav">
+        <a href="index.html">Início</a>
+        <a href="solucoes.html" style="color: var(--ink-primary);">Soluções</a>
+        <a href="academy.html">Academy</a>
+        <a href="blog.html">Blog</a>
+    </nav>
 
-      <!-- STEP 1 -->
-      <div class="quiz-step active" id="quizStep1">
-        <span class="badge-copper">Passo 1 de 3</span>
-        <h3 style="font-size: 1.35rem; font-weight: 800; margin-top: 0.5rem;">Qual o principal objetivo da sua empresa hoje?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option-btn" onclick="selectQuizOption(1, 'Atrair clientes locais pelo Google Maps')">
-            <span>Atrair mais clientes na minha cidade</span>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
-          <button class="quiz-option-btn" onclick="selectQuizOption(1, 'Automatizar atendimento no WhatsApp com IA')">
-            <span>Automatizar atendimento no WhatsApp</span>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
-          <button class="quiz-option-btn" onclick="selectQuizOption(1, 'Acelerar vendas e campanhas de tráfego pago')">
-            <span>Acelerar vendas com tráfego pago</span>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
-          <button class="quiz-option-btn" onclick="selectQuizOption(1, 'Organizar processos e indicadores com Business OS')">
-            <span>Organizar gestão e indicadores da PME</span>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
+    <!-- Quiz Modal (Structure provided but triggered by JS in real app) -->
+    <div class="quiz-modal" id="quizModal">
+        <div class="quiz-content">
+            <button class="quiz-close" onclick="document.getElementById('quizModal').classList.remove('active')">&times;</button>
+            <div class="quiz-step active" id="step1">
+                <h3>Qual seu maior desafio hoje?</h3>
+                <button class="quiz-btn" onclick="nextStep(2)">Atrair mais clientes na minha região</button>
+                <button class="quiz-btn" onclick="nextStep(2)">Atender leads rápido no WhatsApp</button>
+                <button class="quiz-btn" onclick="nextStep(2)">Ter métricas claras da operação</button>
+            </div>
+            <div class="quiz-step" id="step2">
+                <h3>Qual o faturamento mensal aproximado?</h3>
+                <button class="quiz-btn" onclick="nextStep(3)">Até R$ 50.000</button>
+                <button class="quiz-btn" onclick="nextStep(3)">R$ 50.000 a R$ 200.000</button>
+                <button class="quiz-btn" onclick="nextStep(3)">Acima de R$ 200.000</button>
+            </div>
+            <div class="quiz-step" id="step3">
+                <h3>Pronto para escalar!</h3>
+                <p style="color: var(--ink-secondary); margin-bottom: 1.5rem;">Com base nas suas respostas, temos a solução ideal. Fale com nosso especialista agora.</p>
+                <a href="https://wa.me/5531990000000" class="bento-card cta-btn" style="padding: 1rem; width:100%;">Falar com Especialista &rarr;</a>
+            </div>
         </div>
-      </div>
-
-      <!-- STEP 2 -->
-      <div class="quiz-step" id="quizStep2">
-        <span class="badge-copper">Passo 2 de 3</span>
-        <h3 style="font-size: 1.35rem; font-weight: 800; margin-top: 0.5rem;">Qual o faturamento mensal aproximado?</h3>
-        <div class="quiz-options">
-          <button class="quiz-option-btn" onclick="selectQuizOption(2, 'Até R$ 30 mil/mês')">
-            <span>Até R$ 30.000 /mês</span>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
-          <button class="quiz-option-btn" onclick="selectQuizOption(2, 'De R$ 30 mil a R$ 100 mil/mês')">
-            <span>De R$ 30.000 a R$ 100.000 /mês</span>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
-          <button class="quiz-option-btn" onclick="selectQuizOption(2, 'Acima de R$ 100 mil/mês')">
-            <span>Acima de R$ 100.000 /mês</span>
-            <span class="material-symbols-outlined">chevron_right</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- STEP 3 -->
-      <div class="quiz-step" id="quizStep3">
-        <span class="badge-copper">Passo 3 de 3</span>
-        <h3 style="font-size: 1.35rem; font-weight: 800; margin-top: 0.5rem;">Seu diagnóstico está pronto!</h3>
-        <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.95rem;">Clique no botão abaixo para receber o resultado personalizado diretamente no WhatsApp com um consultor da G2F AI.</p>
-        <div style="margin-top: 2rem;">
-          <button onclick="finishQuiz()" class="btn btn-copper" style="width: 100%; font-size: 1.05rem;">
-            Ver Meu Diagnóstico no WhatsApp <span class="material-symbols-outlined">chat</span>
-          </button>
-        </div>
-      </div>
-
     </div>
-  </div>
 
-  <!-- JAVASCRIPT -->
-  <script>
-    // MOBILE DRAWER
-    function toggleMobileDrawer() {
-      const drawer = document.getElementById('mobileDrawer');
-      const overlay = document.getElementById('drawerOverlay');
-      drawer.classList.toggle('open');
-      overlay.classList.toggle('open');
-    }
+    <script>
+        // Intersection Observer for fade-up animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-    // QUIZ MODAL LOGIC
-    let quizAnswers = {};
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-    function openQuizModal() {
-      document.getElementById('quizModal').classList.add('active');
-    }
+        document.querySelectorAll('.fade-up').forEach(element => {
+            observer.observe(element);
+        });
 
-    function closeQuizModal() {
-      document.getElementById('quizModal').classList.remove('active');
-    }
-
-    function selectQuizOption(step, answer) {
-      quizAnswers['step' + step] = answer;
-      if (step === 1) {
-        document.getElementById('quizStep1').classList.remove('active');
-        document.getElementById('quizStep2').classList.add('active');
-        document.getElementById('quizProgress').style.width = '66%';
-      } else if (step === 2) {
-        document.getElementById('quizStep2').classList.remove('active');
-        document.getElementById('quizStep3').classList.add('active');
-        document.getElementById('quizProgress').style.width = '100%';
-      }
-    }
-
-    function finishQuiz() {
-      const msg = `Ol%C3%A1!%20Fiz%20o%20Quiz%20de%20Diagn%C3%B3stico%20na%20p%C3%A1gina%20de%20Solu%C3%A7%C3%B5es:%0A-%20Objetivo:%20${encodeURIComponent(quizAnswers.step1 || '')}%0A-%20Faturamento:%20${encodeURIComponent(quizAnswers.step2 || '')}`;
-      window.open(`https://wa.me/5531990000000?text=${msg}`, '_blank');
-      closeQuizModal();
-    }
-  </script>
+        // Quiz Logic
+        function nextStep(step) {
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+        }
+    </script>
 </body>
 </html>
