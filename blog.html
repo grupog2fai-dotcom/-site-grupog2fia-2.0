@@ -5,284 +5,257 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog G2F AI: Inteligência, Automação e Growth para PMEs</title>
     <meta name="description" content="Aprenda sobre SEO Local, Automação de WhatsApp e métricas de negócios no blog oficial da G2F AI.">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c46244",
+                        "primary-hover": "#b6553a",
+                        "surface": "#ffffff",
+                        "surface-container-high": "#f2efe9",
+                        "surface-container-low": "#f8f6f0",
+                        "surface-container": "#ffffff",
+                        "on-surface": "#1a1816",
+                        "on-surface-variant": "#756e65",
+                        "outline-variant": "rgba(196, 98, 68, 0.18)"
+                    },
+                    fontFamily: {
+                        "sans": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --bg-base: #080e18;
-            --bg-surface: #0f1726;
-            --bg-elevated: #131d2e;
-            --gold: #c9a227;
-            --gold-hover: #b08d22;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Manrope', sans-serif;
-            --transition: all 0.3s ease;
+        body { background-color: #f8f6f0; color: #1a1816; font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .copper-hairline { border: 1px solid rgba(196, 98, 68, 0.18); }
+        .whatsapp-float {
+            position: fixed; right: 24px; bottom: 24px; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; background-color: #25D366;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 9999; transition: all 0.3s ease;
         }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128C7E; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg-base);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        a { text-decoration: none; color: inherit; }
-
-        header {
-            background-color: rgba(8, 14, 24, 0.9);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(201, 162, 39, 0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--gold); }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
-        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-
-        .hero {
-            padding: 12rem 2rem 6rem;
-            text-align: center;
-            background: linear-gradient(to bottom, rgba(15, 23, 38, 0.5), var(--bg-base));
-        }
-
-        h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 1rem; color: var(--text-main); }
-        .hero p { color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem; }
-
-        .search-container { max-width: 500px; margin: 0 auto; position: relative; }
-        .search-container input {
-            width: 100%; padding: 1rem 1.5rem; border-radius: 50px;
-            border: 1px solid rgba(201, 162, 39, 0.3); background: var(--bg-surface);
-            color: var(--text-main); font-family: var(--font-body); font-size: 1rem;
-        }
-        .search-container input:focus { outline: none; border-color: var(--gold); }
-
-        .featured { max-width: 1200px; margin: 0 auto 4rem; padding: 0 2rem; }
-        .featured-card {
-            background: var(--bg-surface); border: 1px solid rgba(201, 162, 39, 0.1);
-            border-radius: 16px; padding: 3rem; display: grid; grid-template-columns: 1fr 1fr;
-            gap: 3rem; align-items: center; transition: var(--transition);
-        }
-        .featured-card:hover { border-color: rgba(201, 162, 39, 0.4); transform: translateY(-5px); }
-        .featured-tag {
-            background: rgba(201, 162, 39, 0.1); color: var(--gold); padding: 0.5rem 1rem;
-            border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 1rem;
-        }
-        .featured-title { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
-        .featured-excerpt { color: var(--text-muted); margin-bottom: 2rem; }
-        .btn {
-            display: inline-block; background: var(--gold); color: var(--bg-base);
-            padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; transition: var(--transition);
-        }
-        .btn:hover { background: var(--gold-hover); }
-        .featured-image { width: 100%; height: 350px; background: var(--bg-elevated); border-radius: 12px; object-fit: cover; }
-
-        .tabs {
-            max-width: 1200px; margin: 0 auto 3rem; padding: 0 2rem;
-            display: flex; gap: 1rem; overflow-x: auto;
-        }
-        .tab {
-            background: var(--bg-surface); border: 1px solid rgba(201, 162, 39, 0.1);
-            color: var(--text-muted); padding: 0.6rem 1.2rem; border-radius: 20px;
-            cursor: pointer; transition: var(--transition); white-space: nowrap;
-        }
-        .tab.active, .tab:hover { background: rgba(201, 162, 39, 0.1); color: var(--gold); border-color: var(--gold); }
-
-        .grid {
-            max-width: 1200px; margin: 0 auto 6rem; padding: 0 2rem;
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem;
-        }
-        .card {
-            background: var(--bg-surface); border: 1px solid rgba(201, 162, 39, 0.1);
-            border-radius: 12px; overflow: hidden; transition: var(--transition);
-            display: flex; flex-direction: column;
-        }
-        .card:hover { transform: translateY(-5px); border-color: rgba(201, 162, 39, 0.3); }
-        .card-image { width: 100%; height: 200px; background: var(--bg-elevated); object-fit: cover; }
-        .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-tag { color: var(--gold); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .card-title { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; }
-        .card-link { margin-top: auto; color: var(--gold); font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; }
-
-        .newsletter {
-            background: var(--bg-surface); padding: 5rem 2rem; text-align: center;
-            border-top: 1px solid rgba(201, 162, 39, 0.1); border-bottom: 1px solid rgba(201, 162, 39, 0.1);
-        }
-        .newsletter-inner { max-width: 600px; margin: 0 auto; }
-        .newsletter h2 { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; }
-        .newsletter p { color: var(--text-muted); margin-bottom: 2rem; }
-        .newsletter-form { display: flex; gap: 1rem; }
-        .newsletter-form input {
-            flex-grow: 1; padding: 1rem 1.5rem; border-radius: 8px;
-            border: 1px solid rgba(201, 162, 39, 0.3); background: var(--bg-base); color: var(--text-main); font-family: var(--font-body);
-        }
-        .newsletter-form button { border: none; cursor: pointer; }
-
-        footer { padding: 3rem 2rem; text-align: center; color: var(--text-muted); }
-
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: var(--transition);
-        }
-        .floating-whatsapp:hover {
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            .featured-card { grid-template-columns: 1fr; }
-            h1 { font-size: 2.5rem; }
-            .newsletter-form { flex-direction: column; }
-            .nav-links { display: none; }
-        }
+        .tabs::-webkit-scrollbar { display: none; }
+        .tabs { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">G2F AI</div>
-            <div class="nav-links">
-                <a href="index.html">Início</a>
-                <a href="solucoes.html">Soluções</a>
-                <a href="academy.html">Academy</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="sobre.html">Sobre Nós</a>
+<body class="overflow-x-hidden selection:bg-primary/30 selection:text-primary">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center">
+                    <span class="font-serif text-primary text-xl font-bold">G2F</span>
+                </div>
+                <div>
+                    <span class="font-bold text-xl tracking-tight text-on-surface block leading-none">GRUPO G2F <span class="text-primary font-serif italic">AI</span></span>
+                    <span class="text-[10px] tracking-widest text-on-surface-variant uppercase block">Para quem quer mais</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="text-on-surface hover:text-primary transition-colors">Início</a>
+                <a href="solucoes.html" class="text-on-surface hover:text-primary transition-colors">Soluções & Programas</a>
+                <a href="academy.html" class="text-on-surface hover:text-primary transition-colors">Academy</a>
+                <a href="academy.html#parceiros" class="text-on-surface hover:text-primary transition-colors">Comunidade & Parceiros</a>
+                <a href="sobre.html" class="text-on-surface hover:text-primary transition-colors">Sobre Nós</a>
+                <a href="blog.html" class="text-primary font-bold border-b-2 border-primary pb-1">Blog</a>
+            </nav>
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="solucoes.html" class="bg-primary text-white hover:bg-primary-hover px-6 py-2.5 text-xs uppercase tracking-widest font-bold transition-all">
+                    Ver Soluções
+                </a>
             </div>
-        </nav>
+            <button aria-label="Abrir Menu Mobile" class="lg:hidden text-on-surface" onclick="toggleMobileMenu()">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-surface-container-high border-b border-outline-variant px-6 py-4">
+            <nav class="flex flex-col gap-4 text-sm font-medium">
+                <a href="index.html" class="text-on-surface hover:text-primary transition-colors">Início</a>
+                <a href="solucoes.html" class="text-on-surface hover:text-primary transition-colors">Soluções & Programas</a>
+                <a href="academy.html" class="text-on-surface hover:text-primary transition-colors">Academy</a>
+                <a href="academy.html#parceiros" class="text-on-surface hover:text-primary transition-colors">Comunidade & Parceiros</a>
+                <a href="sobre.html" class="text-on-surface hover:text-primary transition-colors">Sobre Nós</a>
+                <a href="blog.html" class="text-primary font-bold">Blog</a>
+                <a href="solucoes.html" class="bg-primary text-white hover:bg-primary-hover px-6 py-2.5 text-xs uppercase tracking-widest font-bold transition-all w-full mt-2 text-center">
+                    Ver Soluções
+                </a>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Blog G2F AI</h1>
-        <p>Inteligência, Automação e Growth para PMEs</p>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Pesquisar artigos...">
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 bg-surface-container-low border-b border-outline-variant text-center">
+            <div class="max-w-[800px] mx-auto px-6">
+                <h1 class="font-serif text-4xl md:text-5xl font-bold text-on-surface mb-6">Blog G2F AI</h1>
+                <p class="text-on-surface-variant text-lg md:text-xl mb-10">Inteligência, Automação e Growth para PMEs</p>
+                <div class="relative max-w-[500px] mx-auto">
+                    <input type="text" id="searchInput" placeholder="Pesquisar artigos..." class="w-full pl-6 pr-12 py-4 rounded-full border border-outline-variant bg-surface text-on-surface font-sans text-sm focus:outline-none focus:border-primary shadow-sm transition-all"/>
+                    <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Post -->
+        <section class="py-20 bg-surface">
+            <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+                <div class="bg-surface-container-low border border-outline-variant shadow-sm flex flex-col md:flex-row gap-8 md:gap-12 p-6 md:p-10 transition-transform hover:-translate-y-1">
+                    <div class="flex-1 flex flex-col justify-center">
+                        <span class="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest w-fit mb-6">Atração & SEO</span>
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-on-surface mb-4 leading-tight">Como colocar seu negócio no Top 3 do Google Maps em 30 dias</h2>
+                        <p class="text-on-surface-variant text-base mb-8 leading-relaxed">Descubra o guia definitivo para dominar as buscas locais em 2026. Entenda por que 82% dos clientes escolhem as três primeiras empresas e como você pode aplicar a engenharia de SEO da G2F AI no seu negócio.</p>
+                        <a href="artigos/seo-local-google-maps.html" class="inline-flex items-center gap-2 bg-primary text-white hover:bg-primary-hover px-6 py-3 font-bold text-xs uppercase tracking-widest transition-all w-fit shadow-sm">
+                            Ler artigo completo <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="flex-1">
+                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Google Maps SEO" class="w-full h-full min-h-[300px] object-cover border border-outline-variant grayscale opacity-90"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="py-12 bg-surface-container-low">
+            <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+                
+                <!-- Filters -->
+                <div class="tabs flex gap-4 overflow-x-auto mb-12 pb-2" id="filterTabs">
+                    <button class="tab active whitespace-nowrap px-5 py-2 rounded-full border border-primary bg-primary/10 text-primary font-bold text-sm transition-all" data-filter="all">Todos</button>
+                    <button class="tab whitespace-nowrap px-5 py-2 rounded-full border border-outline-variant bg-surface text-on-surface-variant hover:border-primary hover:text-primary font-bold text-sm transition-all" data-filter="seo">Atração & SEO</button>
+                    <button class="tab whitespace-nowrap px-5 py-2 rounded-full border border-outline-variant bg-surface text-on-surface-variant hover:border-primary hover:text-primary font-bold text-sm transition-all" data-filter="ia">Automação & IA</button>
+                    <button class="tab whitespace-nowrap px-5 py-2 rounded-full border border-outline-variant bg-surface text-on-surface-variant hover:border-primary hover:text-primary font-bold text-sm transition-all" data-filter="business">Business OS & Gestão</button>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articlesGrid">
+                    
+                    <a href="artigos/seo-local-google-maps.html" class="card group flex flex-col bg-surface border border-outline-variant shadow-sm hover:border-primary/50 transition-all hover:-translate-y-1" data-category="seo">
+                        <div class="h-48 overflow-hidden border-b border-outline-variant">
+                            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SEO Local" class="w-full h-full object-cover grayscale opacity-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-3">Atração & SEO</span>
+                            <h3 class="font-serif text-xl font-bold text-on-surface mb-4 line-clamp-3">Como colocar seu negócio no Top 3 do Google Maps em 30 dias</h3>
+                            <span class="mt-auto inline-flex items-center gap-1 text-primary font-bold text-xs">Ler artigo <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                        </div>
+                    </a>
+
+                    <a href="artigos/agente-whatsapp-ia.html" class="card group flex flex-col bg-surface border border-outline-variant shadow-sm hover:border-primary/50 transition-all hover:-translate-y-1" data-category="ia">
+                        <div class="h-48 overflow-hidden border-b border-outline-variant">
+                            <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="WhatsApp AI" class="w-full h-full object-cover grayscale opacity-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-3">Automação & IA</span>
+                            <h3 class="font-serif text-xl font-bold text-on-surface mb-4 line-clamp-3">Agentes de Vendas por IA no WhatsApp: Como automatizar 80% do atendimento</h3>
+                            <span class="mt-auto inline-flex items-center gap-1 text-primary font-bold text-xs">Ler artigo <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                        </div>
+                    </a>
+
+                    <a href="artigos/metricas-mrr-cac-ltv.html" class="card group flex flex-col bg-surface border border-outline-variant shadow-sm hover:border-primary/50 transition-all hover:-translate-y-1" data-category="business">
+                        <div class="h-48 overflow-hidden border-b border-outline-variant">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Métricas" class="w-full h-full object-cover grayscale opacity-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-3">Business OS & Gestão</span>
+                            <h3 class="font-serif text-xl font-bold text-on-surface mb-4 line-clamp-3">MRR, Churn, CAC e LTV: O guia de métricas que separa PMEs estagnadas de empresas escaláveis</h3>
+                            <span class="mt-auto inline-flex items-center gap-1 text-primary font-bold text-xs">Ler artigo <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="card group flex flex-col bg-surface border border-outline-variant shadow-sm hover:border-primary/50 transition-all hover:-translate-y-1" data-category="seo">
+                        <div class="h-48 overflow-hidden border-b border-outline-variant">
+                            <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Clínicas SEO" class="w-full h-full object-cover grayscale opacity-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-3">Atração & SEO</span>
+                            <h3 class="font-serif text-xl font-bold text-on-surface mb-4 line-clamp-3">SEO Local para Clínicas: Guia Completo 2026</h3>
+                            <span class="mt-auto inline-flex items-center gap-1 text-primary font-bold text-xs">Ler artigo <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="card group flex flex-col bg-surface border border-outline-variant shadow-sm hover:border-primary/50 transition-all hover:-translate-y-1" data-category="ia">
+                        <div class="h-48 overflow-hidden border-b border-outline-variant">
+                            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Automação WhatsApp" class="w-full h-full object-cover grayscale opacity-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-3">Automação & IA</span>
+                            <h3 class="font-serif text-xl font-bold text-on-surface mb-4 line-clamp-3">Como automatizar 80% do atendimento no WhatsApp</h3>
+                            <span class="mt-auto inline-flex items-center gap-1 text-primary font-bold text-xs">Ler artigo <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="card group flex flex-col bg-surface border border-outline-variant shadow-sm hover:border-primary/50 transition-all hover:-translate-y-1" data-category="ia">
+                        <div class="h-48 overflow-hidden border-b border-outline-variant">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="N8N Gemini" class="w-full h-full object-cover grayscale opacity-90 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <span class="text-primary text-[10px] font-bold uppercase tracking-widest mb-3">Automação & IA</span>
+                            <h3 class="font-serif text-xl font-bold text-on-surface mb-4 line-clamp-3">N8N + Gemini: Agentes de Vendas na Prática</h3>
+                            <span class="mt-auto inline-flex items-center gap-1 text-primary font-bold text-xs">Ler artigo <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-24 bg-surface border-y border-outline-variant text-center">
+            <div class="max-w-[600px] mx-auto px-6">
+                <h2 class="font-serif text-3xl font-bold text-on-surface mb-4">Receba relatórios semanais de inteligência artificial aplicada a PMEs</h2>
+                <p class="text-on-surface-variant text-base mb-8">Junte-se a milhares de empresários recebendo insights práticos toda semana.</p>
+                <form class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Seu melhor e-mail" required class="flex-1 bg-surface-container-low border border-outline-variant text-on-surface px-6 py-4 text-sm focus:border-primary focus:outline-none"/>
+                    <button type="submit" class="bg-primary text-white hover:bg-primary-hover px-8 py-4 font-bold text-xs uppercase tracking-widest transition-all shadow-sm">
+                        Inscrever-se
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full pt-16 pb-12 bg-surface-container-low border-t border-outline-variant text-xs text-on-surface-variant">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
+            <p>Grupo G2F AI LTDA © 2026. Todos os direitos reservados.</p>
+            <a href="index.html" class="text-primary font-bold hover:underline">Voltar para Início</a>
         </div>
-    </section>
-
-    <section class="featured">
-        <div class="featured-card">
-            <div>
-                <span class="featured-tag">Atração & SEO</span>
-                <h2 class="featured-title">Como colocar seu negócio no Top 3 do Google Maps em 30 dias</h2>
-                <p class="featured-excerpt">Descubra o guia definitivo para dominar as buscas locais em 2026. Entenda por que 82% dos clientes escolhem as três primeiras empresas e como você pode aplicar a engenharia de SEO da G2F AI no seu negócio.</p>
-                <a href="artigos/seo-local-google-maps.html" class="btn">Ler artigo completo →</a>
-            </div>
-            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Google Maps SEO" class="featured-image">
-        </div>
-    </section>
-
-    <div class="tabs" id="filterTabs">
-        <div class="tab active" data-filter="all">Todos</div>
-        <div class="tab" data-filter="seo">Atração & SEO</div>
-        <div class="tab" data-filter="ia">Automação & IA</div>
-        <div class="tab" data-filter="business">Business OS & Gestão</div>
-    </div>
-
-    <section class="grid" id="articlesGrid">
-        <a href="artigos/seo-local-google-maps.html" class="card" data-category="seo">
-            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SEO Local" class="card-image">
-            <div class="card-content">
-                <span class="card-tag">Atração & SEO</span>
-                <h3 class="card-title">Como colocar seu negócio no Top 3 do Google Maps em 30 dias</h3>
-                <span class="card-link">Ler artigo →</span>
-            </div>
-        </a>
-        <a href="artigos/agente-whatsapp-ia.html" class="card" data-category="ia">
-            <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="WhatsApp AI" class="card-image">
-            <div class="card-content">
-                <span class="card-tag">Automação & IA</span>
-                <h3 class="card-title">Agentes de Vendas por IA no WhatsApp: Como automatizar 80% do atendimento sem parecer um robô chato</h3>
-                <span class="card-link">Ler artigo →</span>
-            </div>
-        </a>
-        <a href="artigos/metricas-mrr-cac-ltv.html" class="card" data-category="business">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Métricas" class="card-image">
-            <div class="card-content">
-                <span class="card-tag">Business OS & Gestão</span>
-                <h3 class="card-title">MRR, Churn, CAC e LTV: O guia de métricas que separa PMEs estagnadas de empresas escaláveis</h3>
-                <span class="card-link">Ler artigo →</span>
-            </div>
-        </a>
-        <a href="#" class="card" data-category="seo">
-            <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Clínicas SEO" class="card-image">
-            <div class="card-content">
-                <span class="card-tag">Atração & SEO</span>
-                <h3 class="card-title">SEO Local para Clínicas: Guia Completo 2026</h3>
-                <span class="card-link">Ler artigo →</span>
-            </div>
-        </a>
-        <a href="#" class="card" data-category="ia">
-            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Automação WhatsApp" class="card-image">
-            <div class="card-content">
-                <span class="card-tag">Automação & IA</span>
-                <h3 class="card-title">Como automatizar 80% do atendimento no WhatsApp</h3>
-                <span class="card-link">Ler artigo →</span>
-            </div>
-        </a>
-        <a href="#" class="card" data-category="ia">
-            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="N8N Gemini" class="card-image">
-            <div class="card-content">
-                <span class="card-tag">Automação & IA</span>
-                <h3 class="card-title">N8N + Gemini: Agentes de Vendas na Prática</h3>
-                <span class="card-link">Ler artigo →</span>
-            </div>
-        </a>
-    </section>
-
-    <section class="newsletter">
-        <div class="newsletter-inner">
-            <h2>Receba relatórios semanais de inteligência artificial aplicada a PMEs</h2>
-            <p>Junte-se a milhares de empresários recebendo insights práticos toda semana.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Seu melhor e-mail" required>
-                <button type="submit" class="btn">Inscrever-se</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Grupo G2F AI. Todos os direitos reservados.</p>
     </footer>
 
-    <a href="#" class="floating-whatsapp" title="Fale com a G2F">
-        💬
+    <!-- Floating WhatsApp -->
+    <a aria-label="Falar conosco pelo WhatsApp" href="https://wa.me/5531990000000?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20solu%C3%A7%C3%B5es%20do%20Grupo%20G2F%20AI." target="_blank" class="whatsapp-float">
+        <span class="whatsapp-icon"><svg viewBox="0 0 32 32"><path d="M16 2a13 13 0 0 0-11.2 19.6L3 29l7.6-1.7A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.5 1 1-4.4-.3-.5A11 11 0 1 1 16 26zm6-8.3c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7 0a9 9 0 0 1-2.6-1.6 10 10 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5a.4.4 0 0 0 0-.4c0-.2-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.2 2.7 6.4 6.4 0 0 0 1.4 3.4c1.5 2.1 3.6 3.7 6.1 4.7.7.3 1.3.5 1.8.6.8.2 1.5.2 2.1.1.7-.1 2.2-.9 2.5-1.8s.3-1.6.2-1.8c-.1-.1-.3-.2-.6-.4z" fill="#FFF"/></svg></span>
     </a>
 
     <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
         const tabs = document.querySelectorAll('.tab');
         const cards = document.querySelectorAll('.card');
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
+                tabs.forEach(t => {
+                    t.classList.remove('active', 'border-primary', 'bg-primary/10', 'text-primary');
+                    t.classList.add('border-outline-variant', 'bg-surface', 'text-on-surface-variant');
+                });
+                tab.classList.remove('border-outline-variant', 'bg-surface', 'text-on-surface-variant');
+                tab.classList.add('active', 'border-primary', 'bg-primary/10', 'text-primary');
 
                 const filter = tab.dataset.filter;
                 cards.forEach(card => {
@@ -298,10 +271,11 @@
         const searchInput = document.getElementById('searchInput');
         searchInput.addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
-            const activeFilter = document.querySelector('.tab.active').dataset.filter;
+            const activeTab = document.querySelector('.tab.active');
+            const activeFilter = activeTab ? activeTab.dataset.filter : 'all';
             
             cards.forEach(card => {
-                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const title = card.querySelector('h3').textContent.toLowerCase();
                 const category = card.dataset.category;
                 const matchesSearch = title.includes(term);
                 const matchesFilter = activeFilter === 'all' || category === activeFilter;

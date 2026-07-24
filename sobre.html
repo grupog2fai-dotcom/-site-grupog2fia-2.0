@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="pt-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -30,20 +30,18 @@
 
     <script id="tailwind-config">
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#c9a227",
-                        "primary-hover": "#e5b82e",
-                        "surface": "#080e18",
-                        "surface-container-high": "#192436",
-                        "surface-container-low": "#0f1726",
-                        "surface-container-lowest": "#040810",
-                        "surface-container": "#131d2e",
-                        "on-surface": "#e2e9f5",
-                        "on-surface-variant": "#bac6d9",
-                        "outline-variant": "#2a364a"
+                        "primary": "#c46244",
+                        "primary-hover": "#b6553a",
+                        "surface": "#ffffff",
+                        "surface-container-high": "#f2efe9",
+                        "surface-container-low": "#f8f6f0",
+                        "surface-container": "#ffffff",
+                        "on-surface": "#1a1816",
+                        "on-surface-variant": "#756e65",
+                        "outline-variant": "rgba(196, 98, 68, 0.18)"
                     },
                     fontFamily: {
                         "sans": ["Manrope", "sans-serif"],
@@ -54,9 +52,9 @@
         }
     </script>
     <style>
-        body { background-color: #080e18; color: #e2e9f5; font-family: 'Manrope', sans-serif; }
+        body { background-color: #f8f6f0; color: #1a1816; font-family: 'Manrope', sans-serif; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        .gold-hairline { border: 1px solid rgba(201, 162, 39, 0.25); }
+        .copper-hairline { border: 1px solid rgba(196, 98, 68, 0.18); }
         .whatsapp-float {
             position: fixed; right: 24px; bottom: 24px; width: 60px; height: 60px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; background-color: #25D366;
@@ -68,10 +66,10 @@
 <body class="overflow-x-hidden selection:bg-primary/30 selection:text-primary">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/40">
+    <header class="sticky top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant">
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center h-20">
             <a href="index.html" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/40 flex items-center justify-center">
+                <div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center">
                     <span class="font-serif text-primary text-xl font-bold">G2F</span>
                 </div>
                 <div>
@@ -88,7 +86,7 @@
                 <a href="blog.html" class="text-on-surface hover:text-primary transition-colors">Blog</a>
             </nav>
             <div class="hidden lg:flex items-center gap-4">
-                <button aria-label="Falar com Consultor" onclick="openLeadModal('Geral')" class="bg-primary text-on-primary hover:bg-primary-hover px-6 py-2.5 min-h-[44px] min-w-[44px] text-xs uppercase tracking-widest font-bold transition-all">
+                <button aria-label="Falar com Consultor" onclick="openLeadModal('Geral')" class="bg-primary text-white hover:bg-primary-hover px-6 py-2.5 min-h-[44px] min-w-[44px] text-xs uppercase tracking-widest font-bold transition-all">
                     Falar com Consultor
                 </button>
             </div>
@@ -97,7 +95,7 @@
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-surface-container-high border-b border-outline-variant/40 px-6 py-4">
+        <div id="mobileMenu" class="hidden lg:hidden bg-surface-container-high border-b border-outline-variant px-6 py-4">
             <nav class="flex flex-col gap-4 text-sm font-medium">
                 <a href="index.html" class="text-on-surface hover:text-primary transition-colors">Início</a>
                 <a href="solucoes.html" class="text-on-surface hover:text-primary transition-colors">Soluções & Programas</a>
@@ -105,7 +103,7 @@
                 <a href="academy.html#parceiros" class="text-on-surface hover:text-primary transition-colors">Comunidade & Parceiros</a>
                 <a href="sobre.html" class="text-primary font-bold">Sobre Nós</a>
                 <a href="blog.html" class="text-on-surface hover:text-primary transition-colors">Blog</a>
-                <button aria-label="Falar com Consultor Mobile" onclick="openLeadModal('Geral')" class="bg-primary text-on-primary hover:bg-primary-hover px-6 py-2.5 min-h-[44px] min-w-[44px] text-xs uppercase tracking-widest font-bold transition-all w-full mt-2">
+                <button aria-label="Falar com Consultor Mobile" onclick="openLeadModal('Geral')" class="bg-primary text-white hover:bg-primary-hover px-6 py-2.5 min-h-[44px] min-w-[44px] text-xs uppercase tracking-widest font-bold transition-all w-full mt-2">
                     Falar com Consultor
                 </button>
             </nav>
@@ -114,7 +112,7 @@
 
     <main>
         <!-- Manifesto Header -->
-        <section class="py-24 md:py-32 bg-surface-container border-b border-outline-variant/30 text-center">
+        <section class="py-24 md:py-32 bg-surface border-b border-outline-variant text-center">
             <div class="max-w-[1000px] mx-auto px-6 md:px-12">
                 <h1 class="font-serif text-4xl md:text-6xl font-bold text-primary italic leading-tight mb-8">
                     "A inteligência não é apenas a capacidade de processar dados, mas a disciplina de extrair significado do caos com precisão cirúrgica, parando de perder dinheiro para concorrentes."
@@ -124,7 +122,7 @@
         </section>
 
         <!-- Story Section -->
-        <section class="py-20">
+        <section class="py-20 bg-surface-container-low">
             <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 class="font-serif text-3xl md:text-5xl font-bold text-on-surface mb-6">A História do Grupo G2F AI</h2>
@@ -132,17 +130,17 @@
                         Fundado por Gabriel Alexandre, a empresa surgiu da crença de que as PMEs merecem as mesmas ferramentas de Inteligência Artificial e engenharia de crescimento que as grandes corporações globais.
                     </p>
                     <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
-                        Nossa operação é 100% digital, com sede em Belo Horizonte, atendendo clientes e parceiros em todo o Brasil. Entregamos soluções baseadas em tecnologia de ponta, sem complexidade desnecessária.
+                        Nossa sede está em Belo Horizonte, atendendo clientes e parceiros em todo o Brasil. Entregamos soluções baseadas em tecnologia de ponta, sem complexidade desnecessária.
                     </p>
                 </div>
-                <div class="gold-hairline p-4 bg-surface-container-low h-full flex items-center justify-center min-h-[300px]">
+                <div class="copper-hairline p-4 bg-surface h-full flex items-center justify-center min-h-[300px] shadow-sm">
                     <span class="font-serif text-primary text-6xl opacity-30">G2F</span>
                 </div>
             </div>
         </section>
 
         <!-- Princípios Section -->
-        <section class="py-20 bg-surface-container-low border-y border-outline-variant/30">
+        <section class="py-20 bg-surface border-y border-outline-variant">
             <div class="max-w-[1440px] mx-auto px-6 md:px-12">
                 <div class="text-center mb-16">
                     <span class="text-xs uppercase tracking-[0.2em] text-primary font-bold block mb-3">Nossos Valores</span>
@@ -150,29 +148,39 @@
                 </div>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-surface p-8 border border-outline-variant/40 gold-hairline">
-                        <span class="material-symbols-outlined text-4xl text-primary mb-4 block" aria-hidden="true">verified</span>
-                        <h3 class="font-bold text-xl text-on-surface mb-4">Resultado em 30 dias ou Garantia de Reembolso</h3>
+                    <div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">verified</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-on-surface mb-4">Resultado em 30 Dias ou Garantia</h3>
                         <p class="text-on-surface-variant text-sm leading-relaxed">Cada entrega tem marco auditável em até 30 dias úteis. Se não atingirmos, devolvemos 100% do valor.</p>
                     </div>
-                    <div class="bg-surface p-8 border border-outline-variant/40 gold-hairline">
-                        <span class="material-symbols-outlined text-4xl text-primary mb-4 block" aria-hidden="true">trending_up</span>
-                        <h3 class="font-bold text-xl text-on-surface mb-4">Margem Bruta > 70%</h3>
+                    <div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">trending_up</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-on-surface mb-4">Margem Bruta > 70%</h3>
                         <p class="text-on-surface-variant text-sm leading-relaxed">Arquiteturas baseadas em IA e automação. Sem custos operacionais inflados.</p>
                     </div>
-                    <div class="bg-surface p-8 border border-outline-variant/40 gold-hairline">
-                        <span class="material-symbols-outlined text-4xl text-primary mb-4 block" aria-hidden="true">public</span>
-                        <h3 class="font-bold text-xl text-on-surface mb-4">Operação 100% Digital</h3>
+                    <div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">public</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-on-surface mb-4">Operação Transparente</h3>
                         <p class="text-on-surface-variant text-sm leading-relaxed">Infraestrutura em nuvem, agentes ativos 24/7, atendimento onde o cliente estiver.</p>
                     </div>
-                    <div class="bg-surface p-8 border border-outline-variant/40 gold-hairline">
-                        <span class="material-symbols-outlined text-4xl text-primary mb-4 block" aria-hidden="true">visibility</span>
-                        <h3 class="font-bold text-xl text-on-surface mb-4">Construção Transparente</h3>
+                    <div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">visibility</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-on-surface mb-4">Construção Aberta</h3>
                         <p class="text-on-surface-variant text-sm leading-relaxed">Métricas, cases e números publicados abertamente para gerar confiança técnica.</p>
                     </div>
-                    <div class="bg-surface p-8 border border-outline-variant/40 gold-hairline">
-                        <span class="material-symbols-outlined text-4xl text-primary mb-4 block" aria-hidden="true">moving</span>
-                        <h3 class="font-bold text-xl text-on-surface mb-4">Upsell Natural</h3>
+                    <div class="bg-surface-container-low p-8 border border-outline-variant shadow-sm flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl text-primary" aria-hidden="true">moving</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-on-surface mb-4">Upsell Natural</h3>
                         <p class="text-on-surface-variant text-sm leading-relaxed">Cada produto é a porta de entrada para o próximo. O cliente cresce conosco.</p>
                     </div>
                 </div>
@@ -180,10 +188,10 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-24 text-center">
+        <section class="py-24 text-center bg-surface-container-low">
             <div class="max-w-[800px] mx-auto px-6 md:px-12">
                 <h2 class="font-serif text-4xl font-bold text-on-surface mb-8">Pronto para transformar seu negócio?</h2>
-                <a aria-label="Falar com o Gabriel" href="https://wa.me/5531990000000" target="_blank" class="inline-block bg-primary text-on-primary hover:bg-primary-hover min-h-[44px] px-10 py-5 font-bold text-sm uppercase tracking-widest transition-all">
+                <a aria-label="Falar com o Gabriel" href="https://wa.me/5531990000000" target="_blank" class="inline-block bg-primary text-white hover:bg-primary-hover min-h-[44px] px-10 py-5 font-bold text-sm uppercase tracking-widest transition-all">
                     Falar com o Gabriel
                 </a>
             </div>
@@ -191,7 +199,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full pt-16 pb-12 bg-surface border-t border-outline-variant/30 text-xs text-on-surface-variant">
+    <footer class="w-full pt-16 pb-12 bg-surface border-t border-outline-variant text-xs text-on-surface-variant">
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
             <p>Grupo G2F AI LTDA © 2026. Todos os direitos reservados.</p>
             <a href="index.html" class="text-primary font-bold hover:underline">Voltar para Início</a>
@@ -199,14 +207,14 @@
     </footer>
 
     <!-- Lead Modal -->
-    <div id="leadModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl hidden flex items-center justify-center p-4">
-        <div class="bg-surface-container-high border border-primary/50 max-w-lg w-full p-8 relative">
+    <div id="leadModal" class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-surface border border-outline-variant max-w-lg w-full p-8 relative shadow-xl">
             <button aria-label="Fechar Modal" onclick="closeLeadModal()" class="absolute top-4 right-4 min-h-[44px] min-w-[44px] flex items-center justify-center text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
             <h3 class="font-serif text-2xl font-bold text-on-surface mb-2">Falar com Consultor</h3>
             <form onsubmit="handleLeadSubmit(event)" class="space-y-4">
-                <input type="text" id="leadName" required placeholder="Seu Nome Completo" class="w-full bg-surface border border-outline-variant/50 text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
-                <input type="tel" id="leadPhone" required placeholder="Seu WhatsApp" class="w-full bg-surface border border-outline-variant/50 text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
-                <button aria-label="Enviar Formulário" type="submit" class="w-full bg-primary text-on-primary py-3.5 font-bold text-xs uppercase tracking-widest hover:bg-primary-hover transition-all">
+                <input type="text" id="leadName" required placeholder="Seu Nome Completo" class="w-full bg-surface-container-low border border-outline-variant text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
+                <input type="tel" id="leadPhone" required placeholder="Seu WhatsApp" class="w-full bg-surface-container-low border border-outline-variant text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
+                <button aria-label="Enviar Formulário" type="submit" class="w-full bg-primary text-white py-3.5 font-bold text-xs uppercase tracking-widest hover:bg-primary-hover transition-all">
                     Iniciar Contato
                 </button>
             </form>

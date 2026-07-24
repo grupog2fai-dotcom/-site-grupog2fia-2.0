@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="pt-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -16,19 +16,18 @@
 
     <script id="tailwind-config">
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#c9a227",
-                        "primary-hover": "#e5b82e",
-                        "surface": "#080e18",
-                        "surface-container-high": "#192436",
-                        "surface-container-low": "#0f1726",
-                        "surface-container": "#131d2e",
-                        "on-surface": "#e2e9f5",
-                        "on-surface-variant": "#bac6d9",
-                        "outline-variant": "#2a364a"
+                        "primary": "#c46244",
+                        "primary-hover": "#b6553a",
+                        "surface": "#ffffff",
+                        "surface-container-high": "#f2efe9",
+                        "surface-container-low": "#f8f6f0",
+                        "surface-container": "#ffffff",
+                        "on-surface": "#1a1816",
+                        "on-surface-variant": "#756e65",
+                        "outline-variant": "rgba(196, 98, 68, 0.18)"
                     },
                     fontFamily: {
                         "sans": ["Manrope", "sans-serif"],
@@ -39,9 +38,9 @@
         }
     </script>
     <style>
-        body { background-color: #080e18; color: #e2e9f5; font-family: 'Manrope', sans-serif; }
+        body { background-color: #f8f6f0; color: #1a1816; font-family: 'Manrope', sans-serif; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        .gold-hairline { border: 1px solid rgba(201, 162, 39, 0.25); }
+        .copper-hairline { border: 1px solid rgba(196, 98, 68, 0.18); }
         .whatsapp-float {
             position: fixed; right: 24px; bottom: 24px; width: 60px; height: 60px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; background-color: #25D366;
@@ -53,10 +52,10 @@
 <body class="overflow-x-hidden selection:bg-primary/30 selection:text-primary">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/40">
+    <header class="sticky top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant">
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center h-20">
             <a href="index.html" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/40 flex items-center justify-center">
+                <div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center">
                     <span class="font-serif text-primary text-xl font-bold">G2F</span>
                 </div>
                 <div>
@@ -73,7 +72,7 @@
                 <a href="blog.html" class="text-on-surface hover:text-primary transition-colors">Blog</a>
             </nav>
             <div class="hidden lg:flex items-center gap-4">
-                <button aria-label="Inscrever na Academy" onclick="openLeadModal('G2F Academy')" class="bg-primary text-on-primary hover:bg-primary-hover px-6 py-2.5 text-xs uppercase tracking-widest font-bold transition-all">
+                <button aria-label="Inscrever na Academy" onclick="openLeadModal('G2F Academy')" class="bg-primary text-white hover:bg-primary-hover px-6 py-2.5 text-xs uppercase tracking-widest font-bold transition-all">
                     Inscrever na Academy
                 </button>
             </div>
@@ -82,7 +81,7 @@
 
     <main>
         <!-- Hero Banner -->
-        <section class="py-16 md:py-24 bg-surface-container-low border-b border-outline-variant/30">
+        <section class="py-16 md:py-24 bg-surface-container-low border-b border-outline-variant">
             <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-7">
                     <span class="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-3 block">PILAR LEARNING & COMUNIDADE</span>
@@ -92,12 +91,12 @@
                     <p class="text-on-surface-variant text-base md:text-lg mb-8 leading-relaxed">
                         <strong>Formação executiva e técnica</strong> para empresários, gestores e consultores que buscam <strong>dominar a implementação de IA</strong>, <strong>automação</strong> e <strong>vendas digitais</strong> na prática.
                     </p>
-                    <button aria-label="Matricular na Academy" onclick="openLeadModal('G2F Academy')" class="bg-primary text-on-primary hover:bg-primary-hover px-8 py-4 font-bold text-xs uppercase tracking-widest transition-all">
+                    <button aria-label="Matricular na Academy" onclick="openLeadModal('G2F Academy')" class="bg-primary text-white hover:bg-primary-hover px-8 py-4 font-bold text-xs uppercase tracking-widest transition-all shadow-sm">
                         Matricular na Academy (R$ 197/mês)
                     </button>
                 </div>
-                <div class="md:col-span-5 gold-hairline p-4 bg-surface">
-                    <img class="w-full h-full object-cover grayscale opacity-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgab4LVhqFtAlSSCbwScP7Fpc7zHE1naPRxBZO44b5grJ06x3GPIqETxwswzwCiYB0OVWEtzmgSrKBgjH0EoqqOFr1IKZf_w4n8OEmkiW_G5rMdTmLfPKagvmaR9E5fXlqnKiRMu5RS0l9JdSUq6ECB2wmHwYoYWKbmdhDqEJ9cWqYJVBGIAeunDAG89d03uVrPjBwKMJERBLyTHXhdxXSnyF-7S0C08TLZhTsiIesbZ9dWR1dMbsxxW2sAkTyBb_K12mOuMH0z0kg"/>
+                <div class="md:col-span-5 copper-hairline p-4 bg-surface shadow-sm">
+                    <img class="w-full h-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgab4LVhqFtAlSSCbwScP7Fpc7zHE1naPRxBZO44b5grJ06x3GPIqETxwswzwCiYB0OVWEtzmgSrKBgjH0EoqqOFr1IKZf_w4n8OEmkiW_G5rMdTmLfPKagvmaR9E5fXlqnKiRMu5RS0l9JdSUq6ECB2wmHwYoYWKbmdhDqEJ9cWqYJVBGIAeunDAG89d03uVrPjBwKMJERBLyTHXhdxXSnyF-7S0C08TLZhTsiIesbZ9dWR1dMbsxxW2sAkTyBb_K12mOuMH0z0kg" alt="Academy Image"/>
                 </div>
             </div>
         </section>
@@ -114,21 +113,21 @@
                     <div class="space-y-3 text-xs font-semibold text-on-surface mb-8">
                         <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Treinamento completo na G2F Academy incluso</p>
                         <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> 20% de comissão direta por venda e mensalidade</p>
-                        <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Entrega e suporte 100% executados pela G2F</p>
+                        <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> Entrega e suporte 100% executados pela G2F (Garantia de 30 Dias)</p>
                     </div>
-                    <button aria-label="Tornar-se Parceiro G2F" onclick="openLeadModal('G2F Partner Program')" class="bg-primary text-on-primary hover:bg-primary-hover px-8 py-4 font-bold text-xs uppercase tracking-widest transition-all">
+                    <button aria-label="Tornar-se Parceiro G2F" onclick="openLeadModal('G2F Partner Program')" class="bg-primary text-white hover:bg-primary-hover px-8 py-4 font-bold text-xs uppercase tracking-widest transition-all shadow-sm">
                         Quero me Tornar um Parceiro G2F
                     </button>
                 </div>
-                <div class="gold-hairline p-4 bg-surface-container-low">
-                    <img class="w-full h-full object-cover grayscale opacity-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaJNmWAM1nZzOU2v_Uw91otHAhnF8T1mpRlcgkpk0QB4csKhNtfWrDuJFJ15DEm1-prQqOuiktPykG2iW8mfaQnpDaLWTOBpy-lZPXENrVDqHR7-ehTILVLLiTJvuSGiEZkcz43RxIGYkd127rhPWH3Eirja9clCLGRxjAGe2tuWBYmpPXsMusfgRGDojbPMnrk4seoI-LCUl_Rk2DYCQ390084gH1_z8XUgzvh_NpGxowo4PvaNOMAuEDw-8nWbIo7ctyDo1iUzQ3"/>
+                <div class="copper-hairline p-4 bg-surface-container-low shadow-sm">
+                    <img class="w-full h-full object-cover grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaJNmWAM1nZzOU2v_Uw91otHAhnF8T1mpRlcgkpk0QB4csKhNtfWrDuJFJ15DEm1-prQqOuiktPykG2iW8mfaQnpDaLWTOBpy-lZPXENrVDqHR7-ehTILVLLiTJvuSGiEZkcz43RxIGYkd127rhPWH3Eirja9clCLGRxjAGe2tuWBYmpPXsMusfgRGDojbPMnrk4seoI-LCUl_Rk2DYCQ390084gH1_z8XUgzvh_NpGxowo4PvaNOMAuEDw-8nWbIo7ctyDo1iUzQ3" alt="Partner Image"/>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="w-full pt-16 pb-12 bg-surface border-t border-outline-variant/30 text-xs text-on-surface-variant">
+    <footer class="w-full pt-16 pb-12 bg-surface-container-low border-t border-outline-variant text-xs text-on-surface-variant">
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
             <p>Grupo G2F AI LTDA © 2026. Todos os direitos reservados.</p>
             <a href="index.html" class="text-primary font-bold hover:underline">Voltar para Início</a>
@@ -136,15 +135,15 @@
     </footer>
 
     <!-- Lead Modal -->
-    <div id="leadModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl hidden flex items-center justify-center p-4">
-        <div class="bg-surface-container-high border border-primary/50 max-w-lg w-full p-8 relative">
+    <div id="leadModal" class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-surface border border-outline-variant max-w-lg w-full p-8 relative shadow-xl">
             <button aria-label="Fechar Modal" onclick="closeLeadModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">close</span></button>
             <h3 class="font-serif text-2xl font-bold text-on-surface mb-2">Inscrição G2F Academy / Parceiro</h3>
             <form onsubmit="handleLeadSubmit(event)" class="space-y-4">
-                <input type="text" id="leadName" required placeholder="Seu Nome Completo" class="w-full bg-surface border border-outline-variant/50 text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
-                <input type="tel" id="leadPhone" required placeholder="Seu WhatsApp" class="w-full bg-surface border border-outline-variant/50 text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
+                <input type="text" id="leadName" required placeholder="Seu Nome Completo" class="w-full bg-surface-container-low border border-outline-variant text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
+                <input type="tel" id="leadPhone" required placeholder="Seu WhatsApp" class="w-full bg-surface-container-low border border-outline-variant text-on-surface p-3 text-xs focus:border-primary focus:outline-none"/>
                 <input type="hidden" id="leadProduct" value="G2F Academy / Partner"/>
-                <button aria-label="Enviar Formulário" type="submit" class="w-full bg-primary text-on-primary py-3.5 font-bold text-xs uppercase tracking-widest hover:bg-primary-hover transition-all">
+                <button aria-label="Enviar Formulário" type="submit" class="w-full bg-primary text-white py-3.5 font-bold text-xs uppercase tracking-widest hover:bg-primary-hover transition-all">
                     Enviar Inscrição via WhatsApp
                 </button>
             </form>
