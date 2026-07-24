@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Design System Editorial | G2F AI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c9a227",
+                        "surface": "#091422",
+                        "surface-container-low": "#111c2b",
+                        "on-surface": "#d8e3f7",
+                        "on-surface-variant": "#d1c5af",
+                        "outline-variant": "#4d4635"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-md": ["Playfair Display", "serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #091422; color: #d8e3f7; font-family: 'Inter', sans-serif; }
+        .gold-hairline { border: 1px solid rgba(201, 162, 39, 0.2); }
+    </style>
+</head>
+<body class="p-8 md:p-16">
+    <div class="max-w-4xl mx-auto space-y-12">
+        <header class="border-b border-outline-variant/30 pb-6 flex justify-between items-center">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-primary font-bold">GUIA DE ESTILO EDITORIAL</span>
+                <h1 class="font-headline-md text-4xl font-bold text-on-surface">G2F AI Design System</h1>
+            </div>
+            <a href="index.html" class="text-xs uppercase tracking-widest text-primary hover:underline">← Voltar ao Site</a>
+        </header>
+
+        <section class="space-y-4">
+            <h2 class="text-xl font-bold text-primary uppercase tracking-widest">1. Paleta de Cores (Obsidian Gold)</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
+                <div class="p-4 bg-[#c9a227] text-black font-bold">Primary Gold<br/>#c9a227</div>
+                <div class="p-4 bg-[#091422] border border-outline-variant/30">Background Dark<br/>#091422</div>
+                <div class="p-4 bg-[#111c2b] border border-outline-variant/30">Surface Low<br/>#111c2b</div>
+                <div class="p-4 bg-[#d8e3f7] text-black font-bold">Text On-Surface<br/>#d8e3f7</div>
+            </div>
+        </section>
+
+        <section class="space-y-4">
+            <h2 class="text-xl font-bold text-primary uppercase tracking-widest">2. Tipografia Editorial</h2>
+            <div class="space-y-4 p-6 bg-surface-container-low border border-outline-variant/30">
+                <p class="font-headline-md text-3xl">Display Title: Playfair Display Serif</p>
+                <p class="font-body-lg text-base text-on-surface-variant">Body Text: Inter Regular 16px (Line-height 24px)</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-primary font-bold">Label Caps: Inter Bold 12px Tracking 0.2em</p>
+            </div>
+        </section>
+
+        <section class="space-y-4">
+            <h2 class="text-xl font-bold text-primary uppercase tracking-widest">3. Componentes & Buttons</h2>
+            <div class="flex flex-wrap gap-4 items-center">
+                <button class="bg-primary text-black px-8 py-3 font-bold text-xs uppercase tracking-widest">Primary Button</button>
+                <button class="border border-primary text-primary px-8 py-3 font-bold text-xs uppercase tracking-widest">Secondary Button</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

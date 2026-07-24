@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo G2F AI - Para quem quer mais</title>
+    <meta name="description" content="Grupo G2F AI: Inteligência artificial, automação e engenharia de crescimento para PMEs. Pare de perder clientes no Google e WhatsApp. Resultado em 30 dias com garantia contratual.">
+    <meta property="og:title" content="Grupo G2F AI - Para quem quer mais">
+    <meta property="og:description" content="Grupo G2F AI: Inteligência artificial, automação e engenharia de crescimento para PMEs. Pare de perder clientes no Google e WhatsApp. Resultado em 30 dias com garantia contratual.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://127.0.0.1:3000/">
+    <meta property="og:image" content="http://127.0.0.1:3000/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="http://127.0.0.1:3000/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Grupo G2F AI",
+      "url": "http://127.0.0.1:3000/",
+      "logo": "http://127.0.0.1:3000/logo.png",
+      "description": "Inteligência artificial, automação e engenharia de crescimento para PMEs.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      }
+    }
+    </script>
+    <!-- Google Fonts: Manrope & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+
+    <style>
+        :root {
+            /* Brand Colors */
+            --color-surface: #080e18;
+            --color-surface-low: #0f1726;
+            --color-surface-container: #131d2e;
+            --color-surface-container-high: #192436;
+            --color-gold: #c9a227;
+            --color-gold-hover: #e5b82e;
+            --color-on-surface: #e2e9f5;
+            --color-on-surface-variant: #bac6d9;
+            --color-outline-variant: #2a364a;
+            --color-gold-hairline: rgba(201,162,39,0.25);
+            --color-whatsapp: #25D366;
+            
+            /* Typography */
+            --font-body: 'Manrope', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+            
+            /* Transitions */
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--color-gold);
+            outline-offset: 2px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-surface);
+            color: var(--color-on-surface);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--color-on-surface);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: var(--font-body);
+            transition: var(--transition-smooth);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-on-surface-variant);
+            font-size: 1.125rem;
+            margin-bottom: 48px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        section {
+            padding: 96px 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            gap: 8px;
+        }
+
+        .btn-gold {
+            background-color: var(--color-gold);
+            color: #000;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--color-gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-gold {
+            background-color: transparent;
+            color: var(--color-gold);
+            border: 1px solid var(--color-gold);
+        }
+
+        .btn-outline-gold:hover {
+            background-color: var(--color-gold-hairline);
+            transform: translateY(-2px);
+        }
+
+        /* 1. Announcement Bar */
+        .announcement-bar {
+            background-color: var(--color-gold);
+            color: #000;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .announcement-bar a {
+            font-weight: 700;
+            margin-left: 8px;
+            text-decoration: underline;
+        }
+
+        /* 2. Sticky Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(8, 14, 24, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-outline-variant);
+            padding: 16px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-surface-container-high);
+            border: 1px solid var(--color-gold-hairline);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            color: var(--color-gold);
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-weight: 700;
+            font-size: 1.125rem;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--color-gold);
+        }
+
+        .desktop-nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .desktop-nav a {
+            color: var(--color-on-surface-variant);
+            font-weight: 500;
+            font-size: 0.9375rem;
+        }
+
+        .desktop-nav a:hover {
+            color: var(--color-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--color-on-surface);
+            font-size: 28px;
+        }
+
+        /* Mobile Drawer */
+        .mobile-drawer {
+            will-change: transform;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100vh;
+            background-color: var(--color-surface-container);
+            z-index: 200;
+            transition: var(--transition-smooth);
+            padding: 24px;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-drawer.open {
+            right: 0;
+        }
+
+        .close-drawer {
+            align-self: flex-end;
+            color: var(--color-on-surface);
+            margin-bottom: 32px;
+        }
+
+        .drawer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .drawer-nav a {
+            font-size: 1.125rem;
+            font-weight: 500;
+            border-bottom: 1px solid var(--color-outline-variant);
+            padding-bottom: 12px;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 199;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .drawer-overlay.open {
+            display: block;
+            opacity: 1;
+        }
+
+        /* 3. Hero Section */
+        .hero {
+            position: relative;
+            padding: 120px 0 160px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--color-surface-container-high) 0%, var(--color-surface) 60%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: rgba(201, 162, 39, 0.1);
+            border: 1px solid rgba(201, 162, 39, 0.2);
+            color: var(--color-gold);
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 100px;
+            margin-bottom: 32px;
+            backdrop-filter: blur(4px);
+        }
+        .hero-badge-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background-color: var(--color-gold);
+            color: var(--color-surface);
+            border-radius: 50%;
+            font-size: 14px;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            max-width: 900px;
+            margin: 0 auto 24px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-on-surface-variant);
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 64px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--color-gold);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-15px) translateX(-50%); }
+            60% { transform: translateY(-7px) translateX(-50%); }
+        }
+
+        /* 4. Four Pillars Section */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .pillar-card {
+            background-color: var(--color-surface-container);
+            border: 1px solid var(--color-outline-variant);
+            border-radius: 12px;
+            padding: 40px;
+            transition: var(--transition-smooth);
+        }
+
+        .pillar-card:hover {
+            border-color: var(--color-gold);
+            transform: translateY(-5px);
+        }
+
+        .pillar-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .pillar-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            background-color: var(--color-surface-container-high);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold);
+        }
+        .pillar-icon .material-symbols-outlined {
+            font-size: 28px;
+        }
+
+        .pillar-title {
+            font-size: 1.5rem;
+            color: var(--color-gold);
+        }
+
+        .pillar-desc {
+            color: var(--color-on-surface-variant);
+        }
+
+        /* 5. Authority Section */
+        .authority {
+            background-color: var(--color-surface-low);
+            border-top: 1px solid var(--color-outline-variant);
+            border-bottom: 1px solid var(--color-outline-variant);
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .quote-block {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--color-on-surface);
+            position: relative;
+            padding-left: 32px;
+            border-left: 4px solid var(--color-gold);
+        }
+
+        .credentials-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--color-surface-container);
+            padding: 16px 24px;
+            border-radius: 8px;
+            border: 1px solid var(--color-outline-variant);
+        }
+
+        .credential-item .material-symbols-outlined {
+            color: var(--color-gold);
+        }
+
+        /* 6. Testimonials Carousel */
+        .testimonials {
+            position: relative;
+        }
+        
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            will-change: transform;
+            transition: transform 0.5s ease-in-out;
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            min-width: calc(33.333% - 16px);
+            background-color: var(--color-surface-container);
+            border: 1px solid var(--color-outline-variant);
+            border-radius: 12px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .stars {
+            color: var(--color-gold);
+            letter-spacing: 2px;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--color-on-surface-variant);
+            flex-grow: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .carousel-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--color-gold);
+            color: var(--color-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-btn:hover {
+            background-color: var(--color-gold-hairline);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--color-outline-variant);
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: var(--color-gold);
+        }
+
+        /* 7. Numbers Section */
+        .numbers-section {
+            background: radial-gradient(circle at center, var(--color-surface-container-high) 0%, var(--color-surface) 70%);
+            text-align: center;
+            border-top: 1px solid var(--color-outline-variant);
+            border-bottom: 1px solid var(--color-outline-variant);
+        }
+
+        .counters-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .counter-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .counter-value {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            color: var(--color-gold);
+            font-weight: 700;
+        }
+
+        .counter-label {
+            color: var(--color-on-surface-variant);
+            font-weight: 500;
+        }
+
+        /* 8. Featured Programs Carousel */
+        .programs-track {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            padding-bottom: 24px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-gold) var(--color-surface-container);
+        }
+
+        .programs-track::-webkit-scrollbar {
+            height: 8px;
+        }
+        .programs-track::-webkit-scrollbar-track {
+            background: var(--color-surface-container);
+            border-radius: 4px;
+        }
+        .programs-track::-webkit-scrollbar-thumb {
+            background-color: var(--color-gold);
+            border-radius: 4px;
+        }
+
+        .program-card {
+            min-width: 350px;
+            background-color: var(--color-surface-container);
+            border: 1px solid var(--color-outline-variant);
+            border-radius: 12px;
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-top {
+            height: 120px;
+            background: linear-gradient(to bottom, rgba(201,162,39,0.1), transparent);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border-bottom: 1px solid var(--color-outline-variant);
+        }
+
+        .program-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex-grow: 1;
+        }
+        
+        .program-rating {
+            color: var(--color-gold);
+            font-size: 0.875rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .program-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            background-color: var(--color-surface-container-high);
+            border-radius: 4px;
+            color: var(--color-on-surface-variant);
+        }
+
+        .program-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            margin-top: auto;
+        }
+
+        .center-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* 9. Content / Filter Tabs Section */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 8px 24px;
+            border-radius: 100px;
+            border: 1px solid var(--color-outline-variant);
+            color: var(--color-on-surface-variant);
+            font-weight: 500;
+        }
+
+        .filter-tab.active, .filter-tab:hover {
+            border-color: var(--color-gold);
+            color: var(--color-gold);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .content-card {
+            background-color: var(--color-surface-container);
+            border: 1px solid var(--color-outline-variant);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: block;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-gold);
+        }
+
+        .content-top {
+            height: 140px;
+            background: linear-gradient(135deg, var(--color-surface-container-high), var(--color-surface-low));
+        }
+
+        .content-body {
+            padding: 24px;
+        }
+
+        .content-cat {
+            font-size: 0.75rem;
+            color: var(--color-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .content-title {
+            font-size: 1.125rem;
+            line-height: 1.4;
+        }
+
+        /* 10. FAQ Accordion */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background-color: var(--color-surface-container);
+            border: 1px solid var(--color-outline-variant);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--color-on-surface);
+            font-weight: 600;
+        }
+
+        .faq-question .material-symbols-outlined {
+            color: var(--color-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--color-on-surface-variant);
+        }
+
+        .faq-item.active .faq-question .material-symbols-outlined {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 24px 24px;
+            max-height: 300px;
+        }
+
+        /* 11. Footer */
+        .footer {
+            background-color: var(--color-surface-low);
+            border-top: 1px solid var(--color-outline-variant);
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 64px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-gold);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--color-on-surface-variant);
+            font-size: 0.875rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .social-icons a {
+            color: var(--color-on-surface-variant);
+        }
+        .social-icons a:hover {
+            color: var(--color-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--color-outline-variant);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--color-on-surface-variant);
+            font-size: 0.875rem;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        /* 12. Overlays */
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-whatsapp);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 90;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile Bottom Bar */
+        .mobile-bottom-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background-color: var(--color-surface-container);
+            border-top: 1px solid var(--color-outline-variant);
+            z-index: 80;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .bottom-bar-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75rem;
+            color: var(--color-on-surface-variant);
+        }
+        .bottom-bar-item.whatsapp {
+            color: var(--color-whatsapp);
+        }
+
+        /* Quiz Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            will-change: transform;
+            background-color: var(--color-surface-container);
+            border: 1px solid var(--color-outline-variant);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            color: var(--color-on-surface-variant);
+        }
+
+        .quiz-step {
+            display: none;
+        }
+        .quiz-step.active {
+            display: block;
+        }
+
+        .quiz-progress {
+            height: 4px;
+            background-color: var(--color-surface-container-high);
+            border-radius: 2px;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+        .quiz-progress-bar {
+            height: 100%;
+            background-color: var(--color-gold);
+            width: 33.33%;
+            transition: width 0.3s ease;
+        }
+
+        .quiz-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-option {
+            padding: 16px;
+            border: 1px solid var(--color-outline-variant);
+            border-radius: 8px;
+            text-align: left;
+            color: var(--color-on-surface);
+            font-weight: 500;
+        }
+        .quiz-option:hover {
+            border-color: var(--color-gold);
+            background-color: var(--color-surface-container-high);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            .authority-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .content-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimonial-card {
+                min-width: calc(50% - 12px);
+            }
+            .counters-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .mobile-bottom-bar {
+                display: flex;
+            }
+            .whatsapp-float {
+                bottom: 94px; /* above bottom bar */
+            }
+            body {
+                padding-bottom: 70px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav, .header .btn {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-card {
+                min-width: 100%;
+            }
+            .counters-grid {
+                grid-template-columns: 1fr;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        🚀 Descubra em 30 segundos qual G2F AI é para você 
+        <a href="#" class="open-quiz">Fazer diagnóstico grátis →</a>
+    </div>
+
+    <!-- 2. STICKY HEADER -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo-area">
+                <div class="logo-circle">G2F</div>
+                <div class="logo-text">
+                    <span class="logo-title">GRUPO G2F AI</span>
+                    <span class="logo-subtitle">Para quem quer mais</span>
+                </div>
+            </a>
+            
+            <nav class="desktop-nav">
+                <a href="#">Início</a>
+                <a href="solucoes.html">Soluções & Programas</a>
+                <a href="academy.html">Academy</a>
+                <a href="academy.html#parceiros">Comunidade & Parceiros</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+
+            <button class="btn btn-gold open-quiz">Ver qual G2F é para mim</button>
+            <button class="mobile-menu-btn material-symbols-outlined" aria-label="Abrir menu">menu</button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay"></div>
+    <div class="mobile-drawer">
+        <button class="close-drawer material-symbols-outlined" aria-label="Fechar menu">close</button>
+        <nav class="drawer-nav">
+            <a href="#">Início</a>
+            <a href="solucoes.html">Soluções & Programas</a>
+            <a href="academy.html">Academy</a>
+            <a href="academy.html#parceiros">Comunidade & Parceiros</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="blog.html">Blog</a>
+            <button class="btn btn-gold open-quiz" style="margin-top: 16px;">Ver qual G2F é para mim</button>
+        </nav>
+    </div>
+
+    <!-- 3. HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="hero-badge-icon material-symbols-outlined">bolt</span>
+                Engenharia de Crescimento para PMEs
+            </div>
+            <h1 class="hero-title">Sua empresa está perdendo clientes todos os dias para concorrentes mais visíveis</h1>
+            <p class="hero-subtitle">Enquanto sua equipe demora para responder no WhatsApp ou seu negócio não aparece no Top 3 do Google Maps, <strong>o dinheiro fica na mesa</strong>. O Grupo G2F AI instala inteligência artificial e engenharia de vendas na sua PME com resultado garantido em <strong>30 dias ou 100% do seu dinheiro de volta</strong>.</p>
+            <div class="hero-ctas">
+                <button class="btn btn-gold open-quiz">Ver qual G2F é para mim</button>
+                <a href="solucoes.html" class="btn btn-outline-gold">Conhecer soluções</a>
+            </div>
+        </div>
+        <div class="scroll-indicator material-symbols-outlined">arrow_downward</div>
+    </section>
+
+    <!-- 4. FOUR PILLARS SECTION -->
+    <section class="pillars" id="pilares">
+        <div class="container">
+            <h2 class="section-title">O ecossistema G2F AI</h2>
+            <p class="section-subtitle">Quatro pilares que sustentam o crescimento da sua empresa</p>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <span class="material-symbols-outlined">school</span>
+                        </div>
+                        <h3 class="pillar-title">LEARNING</h3>
+                    </div>
+                    <p class="pillar-desc"><strong>G2F Academy:</strong> Cursos, imersões e formações práticas em <strong>IA e growth</strong> para empresários que querem dominar as ferramentas que <strong>geram receita</strong>.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <span class="material-symbols-outlined">trending_up</span>
+                        </div>
+                        <h3 class="pillar-title">SCALE</h3>
+                    </div>
+                    <p class="pillar-desc"><strong>Tração Rápida:</strong> G2F SEO Local coloca seu negócio no <strong>Top 3 do Google Maps</strong>. G2F Launch entrega landing page + tráfego pago em <strong>15 dias</strong>. Resultado em <strong>30 dias ou dinheiro de volta</strong>.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <span class="material-symbols-outlined">groups</span>
+                        </div>
+                        <h3 class="pillar-title">CLUB</h3>
+                    </div>
+                    <p class="pillar-desc"><strong>Partner Program:</strong> Rede de parceiros licenciados G2F com <strong>20% de comissão recorrente</strong>. Comunidade, suporte e uma <strong>nova direção</strong> para o seu negócio.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <span class="material-symbols-outlined">build</span>
+                        </div>
+                        <h3 class="pillar-title">TOOLS</h3>
+                    </div>
+                    <p class="pillar-desc"><strong>Tecnologia & IA:</strong> G2F Business OS unifica <strong>MRR, Churn, CAC e LTV</strong> em um dashboard. Agentes de WhatsApp IA atendem seus clientes <strong>24/7 sem perder nenhuma venda</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. AUTHORITY SECTION -->
+    <section class="authority">
+        <div class="container">
+            <h2 class="section-title">No G2F AI, só ensina e executa quem faz</h2>
+            <p class="section-subtitle">Liderado por Gabriel Alexandre — engenheiro de crescimento, founder e CEO do Grupo G2F AI</p>
+
+            <div class="authority-grid">
+                <div class="quote-block">
+                    "A inteligência não é apenas a capacidade de processar dados, mas a disciplina de extrair significado do caos com precisão cirúrgica."
+                </div>
+                <div class="credentials-list">
+                    <div class="credential-item">
+                        <span class="material-symbols-outlined">trending_up</span>
+                        <span>R$ 42M+ em receita gerada para clientes</span>
+                    </div>
+                    <div class="credential-item">
+                        <span class="material-symbols-outlined">rocket_launch</span>
+                        <span>150+ PMEs escaladas com método G2F</span>
+                    </div>
+                    <div class="credential-item">
+                        <span class="material-symbols-outlined">devices</span>
+                        <span>Operação 100% digital, sem equipe inflada</span>
+                    </div>
+                    <div class="credential-item">
+                        <span class="material-symbols-outlined">bar_chart</span>
+                        <span>Building in Public — métricas abertas</span>
+                    </div>
+                    <div class="credential-item">
+                        <span class="material-symbols-outlined">savings</span>
+                        <span>Margem bruta > 70% em todos os produtos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TESTIMONIALS CAROUSEL -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Depoimentos de quem viveu a experiência G2F</h2>
+            <p class="section-subtitle">Empresários contam como transformaram seus negócios</p>
+
+            <div class="carousel-container" id="testimonial-carousel">
+                <div class="carousel-track" id="testimonial-track">
+                    <!-- Slide 1 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-quote">"Em 6 dias já estávamos no Top 3 do Google Maps. Os agendamentos triplicaram."</p>
+                        <p class="testimonial-author">Dra. Mariana Lopes<br><span style="font-weight:400; font-size:0.875rem;">Clínica Odontológica Sorriso</span></p>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-quote">"O agente de WhatsApp responde mais rápido que qualquer atendente humano. Fechamos 40% mais contratos."</p>
+                        <p class="testimonial-author">Ricardo Mendes<br><span style="font-weight:400; font-size:0.875rem;">RM Advocacia</span></p>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-quote">"A landing page + tráfego trouxe 47 leads qualificados nos primeiros 12 dias. ROI absurdo."</p>
+                        <p class="testimonial-author">Fernanda Costa<br><span style="font-weight:400; font-size:0.875rem;">Studio Pilates Vida</span></p>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-quote">"O Business OS me me deu visibilidade que nunca tive. Agora sei exatamente onde está o gargalo."</p>
+                        <p class="testimonial-author">João Paulo Ferreira<br><span style="font-weight:400; font-size:0.875rem;">JP Contabilidade</span></p>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-quote">"Entrei como cliente e virei parceiro. A comissão recorrente já cobre o investimento que fiz."</p>
+                        <p class="testimonial-author">Thiago Oliveira<br><span style="font-weight:400; font-size:0.875rem;">TO Digital</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="carousel-prev" aria-label="Anterior"><span class="material-symbols-outlined">chevron_left</span></button>
+                <div class="carousel-dots" id="carousel-dots"></div>
+                <button class="carousel-btn" id="carousel-next" aria-label="Próximo"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. NUMBERS / COUNTER SECTION -->
+    <section class="numbers-section" id="numeros">
+        <div class="container">
+            <h2 class="section-title">O G2F AI em números</h2>
+            <p class="section-subtitle">Nosso objetivo é transformar a realidade das PMEs brasileiras</p>
+
+            <div class="counters-grid">
+                <div class="counter-item">
+                    <span class="counter-value" data-target="42">0</span>
+                    <span class="counter-label">Receita gerada para clientes (Mi+)</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-value" data-target="150">0</span>
+                    <span class="counter-label">PMEs escaladas</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-value" data-target="3.5" data-float="true">0</span>
+                    <span class="counter-label">ROI médio dos clientes</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-value" data-target="500">0</span>
+                    <span class="counter-label">Agentes IA ativos 24/7</span>
+                </div>
+            </div>
+
+            <button class="btn btn-gold open-quiz">Quero esses resultados</button>
+        </div>
+    </section>
+
+    <!-- 8. FEATURED PROGRAMS CAROUSEL -->
+    <section class="programs">
+        <div class="container">
+            <h2 class="section-title">Soluções de maiores destaques</h2>
+            <p class="section-subtitle">Programas que impulsionam milhares de PMEs no crescimento</p>
+
+            <div class="programs-track">
+                <!-- Card 1 -->
+                <div class="program-card">
+                    <div class="program-top">
+                        <h3 style="font-family: var(--font-heading); font-size:1.5rem;">G2F SEO Local</h3>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-rating">★ 9.4</div>
+                        <div class="program-tags">
+                            <span class="tag">Done-For-You</span>
+                            <span class="tag">Garantia 30 dias</span>
+                        </div>
+                        <p>Top 3 no Google Maps da sua região em 30 dias. Você não faz nada — nós cuidamos de tudo.</p>
+                        <div class="program-price">
+                            <div style="font-size: 0.875rem; color: var(--color-on-surface-variant); font-weight: normal;">De <del>R$ 1.500/mês</del></div>
+                            por apenas R$ 357 Pix <span style="font-size: 0.875rem; font-weight: normal;">(Pagamento Único)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="program-card">
+                    <div class="program-top">
+                        <h3 style="font-family: var(--font-heading); font-size:1.5rem;">G2F Agente WhatsApp</h3>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-rating">★ 9.1</div>
+                        <div class="program-tags">
+                            <span class="tag">Automação IA</span>
+                            <span class="tag">24/7</span>
+                        </div>
+                        <p>Agente de vendas por IA que responde, qualifica e agenda no seu WhatsApp, sem parar nunca.</p>
+                        <div class="program-price">
+                            <div style="font-size: 0.875rem; color: var(--color-on-surface-variant); font-weight: normal;">Substitua até 3 atendentes (R$ 4.500/mês)</div>
+                            por apenas R$ 1.347 Pix <span style="font-size: 0.875rem; font-weight: normal;">(Sem mensalidade de setup)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="program-card">
+                    <div class="program-top">
+                        <h3 style="font-family: var(--font-heading); font-size:1.5rem;">G2F Launch</h3>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-rating">★ 8.8</div>
+                        <div class="program-tags">
+                            <span class="tag">LP + Tráfego</span>
+                            <span class="tag">15 dias</span>
+                        </div>
+                        <p>Landing page profissional + campanha de tráfego pago entregues em 15 dias com garantia de 20 leads.</p>
+                        <div class="program-price">
+                            <div style="font-size: 0.875rem; color: var(--color-on-surface-variant); font-weight: normal;">Consultorias cobram R$ 8.000</div>
+                            entregamos LP + Tráfego por R$ 2.247 Pix
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="program-card">
+                    <div class="program-top">
+                        <h3 style="font-family: var(--font-heading); font-size:1.5rem;">G2F Business OS</h3>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-rating">★ 9.6</div>
+                        <div class="program-tags">
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">MRR/KPI</span>
+                        </div>
+                        <p>Painel unificado de MRR, Churn, CAC e LTV com relatórios automáticos semanais.</p>
+                        <div class="program-price">A partir de R$ 5.000/mês</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-cta">
+                <a href="solucoes.html" class="btn btn-outline-gold">Ver todas as soluções</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CONTENT / FILTER TABS SECTION -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Conteúdos para você não ficar para trás</h2>
+            
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">Todos</button>
+                <button class="filter-tab" data-filter="seo">Atração & SEO</button>
+                <button class="filter-tab" data-filter="automacao">Automação & IA</button>
+                <button class="filter-tab" data-filter="gestao">Business OS & Gestão</button>
+            </div>
+
+            <div class="content-grid" id="content-grid">
+                <a href="artigos/seo-local-google-maps.html" class="content-card" data-category="seo">
+                    <div class="content-top"></div>
+                    <div class="content-body">
+                        <div class="content-cat">Atração & SEO</div>
+                        <h3 class="content-title">Como colocar seu negócio no Top 3 do Google Maps em 30 dias</h3>
+                    </div>
+                </a>
+                
+                <a href="#" class="content-card" data-category="seo">
+                    <div class="content-top"></div>
+                    <div class="content-body">
+                        <div class="content-cat">Atração & SEO</div>
+                        <h3 class="content-title">SEO Local para clínicas: guia completo 2026</h3>
+                    </div>
+                </a>
+
+                <a href="artigos/agente-whatsapp-ia.html" class="content-card" data-category="automacao">
+                    <div class="content-top"></div>
+                    <div class="content-body">
+                        <div class="content-cat">Automação & IA</div>
+                        <h3 class="content-title">Agentes de WhatsApp IA: o futuro do atendimento comercial</h3>
+                    </div>
+                </a>
+                
+                <a href="#" class="content-card" data-category="automacao">
+                    <div class="content-top"></div>
+                    <div class="content-body">
+                        <div class="content-cat">Automação & IA</div>
+                        <h3 class="content-title">Como automatizar 80% do atendimento sem perder personalização</h3>
+                    </div>
+                </a>
+
+                <a href="artigos/metricas-mrr-cac-ltv.html" class="content-card" data-category="gestao">
+                    <div class="content-top"></div>
+                    <div class="content-body">
+                        <div class="content-cat">Gestão</div>
+                        <h3 class="content-title">MRR, Churn, CAC e LTV: as 4 métricas que todo dono de PME precisa dominar</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="content-card" data-category="gestao">
+                    <div class="content-top"></div>
+                    <div class="content-body">
+                        <div class="content-cat">Gestão</div>
+                        <h3 class="content-title">Business OS: por que você precisa de um painel de KPIs em tempo real</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="content-card" data-category="seo">
+                    <div class="content-top"></div>
+                    <div class="content-body">
+                        <div class="content-cat">Atração & SEO</div>
+                        <h3 class="content-title">Google Maps para restaurantes: de invisível a lotado em 30 dias</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="content-card" data-category="automacao">
+                    <div class="content-top"></div>
+                    <div class="content-body">
+                        <div class="content-cat">Automação & IA</div>
+                        <h3 class="content-title">N8N + Gemini: construindo agentes de vendas que convertem</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="center-cta" style="margin-top: 40px; text-align: center;">
+                <a href="blog.html" class="btn btn-outline-gold">Acessar o Blog Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FAQ ACCORDION -->
+    <section class="faq-section" style="background-color: var(--color-surface-low);">
+        <div class="container">
+            <h2 class="section-title">Perguntas frequentes</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>O que é o Grupo G2F AI?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O Grupo G2F AI é um ecossistema de inteligência artificial e engenharia de crescimento focado em PMEs. Oferecemos soluções Done-For-You que geram resultado em até 30 dias com garantia contratual de reembolso.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como funciona a garantia de 30 dias?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cada produto tem uma meta auditável. Se não atingirmos o resultado prometido dentro de 30 dias, devolvemos 100% do valor investido. Sem burocracia, sem letras pequenas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Preciso ter conhecimento técnico para usar as soluções?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não. Todas as nossas soluções são Done-For-You. Você contrata e nós fazemos tudo — da configuração à entrega do resultado. Zero configuração do seu lado.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Qual a diferença entre G2F SEO Local e G2F Launch?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O SEO Local foca em posicionamento no Google Maps (ideal para negócios locais). O Launch entrega uma landing page profissional + campanha de tráfego pago para captar leads ativamente.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>O que é o G2F Partner Program?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>É nosso programa de parceiros licenciados. Você indica clientes para a G2F AI e recebe 20% de comissão recorrente sobre cada venda. Sem investimento inicial.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como faço para começar?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Clique em 'Ver qual G2F é para mim', responda 3 perguntas rápidas e você será direcionado para o WhatsApp com um diagnóstico personalizado. Ou fale direto com o Gabriel pelo botão de WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo-area" style="margin-bottom: 16px;">
+                        <div class="logo-circle">G2F</div>
+                        <div class="logo-text">
+                            <span class="logo-title">GRUPO G2F AI</span>
+                            <span class="logo-subtitle">Para quem quer mais</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--color-on-surface-variant); font-size: 0.875rem;">Inteligência artificial, automação e engenharia de crescimento para PMEs.</p>
+                    <div class="social-icons">
+                        <a href="#"><span class="material-symbols-outlined">photo_camera</span></a> <!-- Instagram placeholder -->
+                        <a href="#"><span class="material-symbols-outlined">work</span></a> <!-- LinkedIn placeholder -->
+                        <a href="#"><span class="material-symbols-outlined">play_circle</span></a> <!-- YouTube placeholder -->
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Soluções</h4>
+                    <div class="footer-links">
+                        <a href="#">G2F SEO Local</a>
+                        <a href="#">G2F Agente WhatsApp</a>
+                        <a href="#">G2F Launch</a>
+                        <a href="#">G2F Business OS</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Academy & Comunidade</h4>
+                    <div class="footer-links">
+                        <a href="#">G2F Academy</a>
+                        <a href="#">Partner Program</a>
+                        <a href="#">Materiais Gratuitos</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Sobre Nós</h4>
+                    <div class="footer-links">
+                        <a href="#">O G2F AI</a>
+                        <a href="#">Carreiras</a>
+                        <a href="#">Cases</a>
+                        <a href="#">Contato</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Informações</h4>
+                    <div class="footer-links">
+                        <a href="#">Termos de Uso</a>
+                        <a href="#">Política de Privacidade</a>
+                        <a href="#">Central de Ajuda</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <span>Grupo G2F AI LTDA © 2026. Todos os direitos reservados.</span>
+                <span>100% digital. Belo Horizonte, MG.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 12. OVERLAYS & FLOATING ELEMENTS -->
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5531990000000" target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
+        <!-- Minimalist WhatsApp Icon using pure SVG -->
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+    </a>
+
+    <!-- Mobile Bottom Bar -->
+    <div class="mobile-bottom-bar">
+        <a href="solucoes.html" class="bottom-bar-item">
+            <span class="material-symbols-outlined">grid_view</span>
+            Soluções
+        </a>
+        <a href="academy.html" class="bottom-bar-item">
+            <span class="material-symbols-outlined">school</span>
+            Academy
+        </a>
+        <a href="https://wa.me/5531990000000" class="bottom-bar-item whatsapp">
+            <span class="material-symbols-outlined">chat</span>
+            WhatsApp
+        </a>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div class="modal-overlay" id="quiz-modal">
+        <div class="modal-content">
+            <button class="modal-close material-symbols-outlined" id="close-quiz" aria-label="Fechar modal">close</button>
+            
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="quiz-step active" id="step-1">
+                <h3 class="quiz-title">Qual é o maior desafio do seu negócio hoje?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="nextStep(2)">Aparecer no Google / atrair clientes locais</button>
+                    <button class="quiz-option" onclick="nextStep(2)">Responder clientes rápido no WhatsApp</button>
+                    <button class="quiz-option" onclick="nextStep(2)">Gerar leads com landing page e anúncios</button>
+                    <button class="quiz-option" onclick="nextStep(2)">Ter visão clara de métricas e KPIs</button>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="quiz-step" id="step-2">
+                <h3 class="quiz-title">Qual o faturamento mensal do seu negócio?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="nextStep(3)">Até R$ 30 mil</button>
+                    <button class="quiz-option" onclick="nextStep(3)">R$ 30 mil – R$ 100 mil</button>
+                    <button class="quiz-option" onclick="nextStep(3)">R$ 100 mil – R$ 500 mil</button>
+                    <button class="quiz-option" onclick="nextStep(3)">Acima de R$ 500 mil</button>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="quiz-step" id="step-3">
+                <h3 class="quiz-title">Como você prefere investir?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="finishQuiz()">Pix à vista com desconto</button>
+                    <button class="quiz-option" onclick="finishQuiz()">Parcelado no cartão</button>
+                    <button class="quiz-option" onclick="finishQuiz()">Quero entender melhor antes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Mobile Menu Logic
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileDrawer = document.querySelector('.mobile-drawer');
+        const closeDrawer = document.querySelector('.close-drawer');
+        const drawerOverlay = document.querySelector('.drawer-overlay');
+
+        function toggleMenu() {
+            mobileDrawer.classList.toggle('open');
+            drawerOverlay.classList.toggle('open');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeDrawer.addEventListener('click', toggleMenu);
+        drawerOverlay.addEventListener('click', toggleMenu);
+
+        // 2. Testimonials Carousel Logic
+        const track = document.getElementById('testimonial-track');
+        const slides = Array.from(track.children);
+        const nextBtn = document.getElementById('carousel-next');
+        const prevBtn = document.getElementById('carousel-prev');
+        const dotsContainer = document.getElementById('carousel-dots');
+        
+        let currentIndex = 0;
+        let slideWidth = 0;
+        let gap = 24;
+        let visibleSlides = 3;
+        
+        function updateCarouselMetrics() {
+            if (window.innerWidth <= 768) {
+                visibleSlides = 1;
+            } else if (window.innerWidth <= 1024) {
+                visibleSlides = 2;
+            } else {
+                visibleSlides = 3;
+            }
+            
+            // Adjust dots count based on how many "pages" we have
+            const pages = Math.max(1, slides.length - visibleSlides + 1);
+            dotsContainer.innerHTML = '';
+            for(let i=0; i<pages; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if(i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+            
+            // Calculate width
+            slideWidth = track.getBoundingClientRect().width / visibleSlides - (gap * (visibleSlides - 1) / visibleSlides);
+            slides.forEach(slide => {
+                slide.style.minWidth = `${slideWidth}px`;
+            });
+            
+            // Reset position
+            currentIndex = 0;
+            updateCarouselPosition();
+        }
+
+        function updateCarouselPosition() {
+            const pages = Math.max(1, slides.length - visibleSlides + 1);
+            if (currentIndex > pages - 1) currentIndex = pages - 1;
+            if (currentIndex < 0) currentIndex = 0;
+            
+            const amountToMove = -(slideWidth + gap) * currentIndex;
+            track.style.transform = `translateX(${amountToMove}px)`;
+            
+            // Update dots
+            Array.from(dotsContainer.children).forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarouselPosition();
+        }
+
+        nextBtn.addEventListener('click', () => {
+            const pages = Math.max(1, slides.length - visibleSlides + 1);
+            if(currentIndex < pages - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarouselPosition();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const pages = Math.max(1, slides.length - visibleSlides + 1);
+            if(currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = pages - 1;
+            }
+            updateCarouselPosition();
+        });
+
+        window.addEventListener('resize', updateCarouselMetrics);
+        // Initialize carousel
+        updateCarouselMetrics();
+
+        // Autoplay
+        let carouselInterval = setInterval(() => nextBtn.click(), 5000);
+        document.getElementById('testimonial-carousel').addEventListener('mouseenter', () => clearInterval(carouselInterval));
+        document.getElementById('testimonial-carousel').addEventListener('mouseleave', () => {
+            carouselInterval = setInterval(() => nextBtn.click(), 5000);
+        });
+
+        // 3. Counter Animation Logic
+        const counters = document.querySelectorAll('.counter-value');
+        let hasCounted = false;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                const isFloat = counter.getAttribute('data-float') === 'true';
+                const duration = 2000;
+                const stepTime = Math.abs(Math.floor(duration / 50));
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    const increment = target / 50;
+                    current += increment;
+                    
+                    if (current >= target) {
+                        counter.innerText = isFloat ? target.toFixed(1) : target;
+                        clearInterval(timer);
+                    } else {
+                        counter.innerText = isFloat ? current.toFixed(1) : Math.floor(current);
+                    }
+                }, stepTime);
+            });
+        };
+
+        // Observer for numbers section
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !hasCounted) {
+                animateCounters();
+                hasCounted = true;
+            }
+        }, { threshold: 0.5 });
+        
+        observer.observe(document.getElementById('numeros'));
+
+        // 4. Content Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-tab');
+        const contentCards = document.querySelectorAll('.content-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                contentCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 5. FAQ Accordion Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current
+                item.classList.toggle('active');
+            });
+        });
+
+        // 6. Quiz Modal Logic
+        const quizModal = document.getElementById('quiz-modal');
+        const openQuizBtns = document.querySelectorAll('.open-quiz');
+        const closeQuizBtn = document.getElementById('close-quiz');
+        const progressBar = document.getElementById('quiz-progress-bar');
+        
+        function openQuiz(e) {
+            if(e) e.preventDefault();
+            quizModal.classList.add('open');
+            // Reset to step 1
+            document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step-1').classList.add('active');
+            progressBar.style.width = '33.33%';
+        }
+        
+        function closeQuiz() {
+            quizModal.classList.remove('open');
+        }
+
+        openQuizBtns.forEach(btn => {
+            btn.addEventListener('click', openQuiz);
+        });
+        
+        closeQuizBtn.addEventListener('click', closeQuiz);
+        quizModal.addEventListener('click', (e) => {
+            if(e.target === quizModal) closeQuiz();
+        });
+
+        // Make functions globally available for inline onclick attributes
+        window.nextStep = function(step) {
+            document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+            document.getElementById(`step-${step}`).classList.add('active');
+            progressBar.style.width = `${step * 33.33}%`;
+        };
+
+        window.finishQuiz = function() {
+            // Redirect to whatsapp with pre-filled message
+            const text = encodeURIComponent("Olá, acabei de fazer o diagnóstico pelo site e gostaria de falar sobre as soluções da G2F AI.");
+            window.open(`https://wa.me/5531990000000?text=${text}`, '_blank');
+            closeQuiz();
+        };
+
+    </script>
+</body>
+</html>
